@@ -11298,7 +11298,7 @@ XVARISTOR.DEV&lt;br&gt;</description>
 <part name="FRAME2" library="frames" deviceset="DINA4_L" device=""/>
 <part name="T2" library="transistor" deviceset="BC238" device="" value="BC548"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="0207/10" value="2k2"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="0207/10" value="1k"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="0207/15" value="1k"/>
 <part name="C3" library="rcl" deviceset="C-EU" device="025_050-025X075" value="15n/60V"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
