@@ -30,6 +30,7 @@
 #include <Bounce2.h>
 
 #define sensorPin A0    // select the input pin for the potentiometer
+#define sensorPin2 A1    // select the input pin for the potentiometer
 #define ledPin 13      // select the pin for the LED
 #define ledPWMPin 9    // select the pin for the LED
 //#define PWMout 12
@@ -47,6 +48,7 @@ int skipcounter=0;
 //int sensorValue = 128;  // variable to store the value coming from the sensor
 int sensorValue = 1;  // variable to store the value coming from the sensor
 int battVoltage = 0;
+int battCurrent = 0;
 bool ledState = LOW;
 //bool pwmState = LOW;
 
@@ -168,16 +170,19 @@ void loop() {
     }
 
     
-    if ( ( skipcounter > 32 ) && Serial.available()) {
+    if ( ( skipcounter > 64 ) /*&& Serial.available()*/) {
       skipcounter=0;
 
 
     analogWrite(ledPWMPin, 0);
-    delay(10);
+    delay(30);
     battVoltage = analogRead(sensorPin);
     float f = 5.0 / 1024 * battVoltage; 
     char buf[8];
     ftoa(buf, f, 3);
+
+    delay(30);
+    battCurrent = analogRead(sensorPin2);
 
       Serial.print("sensorValue: ");
       Serial.print((long)sensorValue, DEC);
@@ -189,8 +194,8 @@ void loop() {
       Serial.print(buf[3]);
       Serial.print(buf[4]);
       //Serial.print("%s", (char*)ftoa(buf, f, 3));
-      //Serial.print(" A0: ");
-      //Serial.print(sensorValue, DEC);
+      Serial.print(" A1: ");
+      Serial.print(battCurrent, DEC);
       Serial.println();
       
 
