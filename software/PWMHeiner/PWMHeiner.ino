@@ -32,12 +32,12 @@
 #define sensorPin A0    // select the input pin for the potentiometer
 #define sensorPin2 A1    // select the input pin for the potentiometer
 #define ledPin 13      // select the pin for the LED
-#define ledPWMPin 9    // select the pin for the LED
+#define ledPWMPin 3    // select the pin for the LED
 //#define PWMout 12
 
-#define butDown     3
-#define butUp       4
-#define butStart    5
+#define butDown     4
+#define butUp       5
+#define butStart    6
 
 Bounce debDown  = Bounce();
 Bounce debUp    = Bounce();
@@ -48,10 +48,11 @@ unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
 int skipcounter = 0;
 //int sensorValue = 128;  // variable to store the value coming from the sensor
-int sensorValue = 1;  // variable to store the value coming from the sensor
+int sensorValue = 0;  // variable to store the value coming from the sensor
 int battVoltage = 0;
 int battLoadVoltage = 0;
 int battCurrent = 0;
+float currentSet = 1.0;
 
 bool ledState = LOW;
 
@@ -140,7 +141,14 @@ char *ftoa(char *a, double f, int precision)
 
 void setup() {
 
-  setPwmFrequency(ledPWMPin, 1);
+  //setPwmFrequency(ledPWMPin, 1);
+  TCCR2A = 0x23;
+  TCCR2B = 0x09;  // select timer2 clock as unscaled 16 MHz I/O clock
+  OCR2A = 159;  // top/overflow value is 159 => produces a 100 kHz PWM
+  pinMode(ledPWMPin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 3)
+
+  // declare the ledPin as an OUTPUT:
+  pinMode(ledPin, OUTPUT);
 
   pinMode(butDown, INPUT_PULLUP);
   debDown.attach(butDown);
@@ -154,10 +162,6 @@ void setup() {
   debStart.attach(butStart);
   debStart.interval(25);
 
-  // declare the ledPin as an OUTPUT:
-  pinMode(ledPin, OUTPUT);
-  //pinMode(PWMout, OUTPUT);
-
   Serial.begin(9600);
 }
 
@@ -168,24 +172,53 @@ void loop() {
   debUp.update();
   debStart.update();
 
-  if (debStart.fell())
+  if ((runCharge == true) && debStart.fell())
+  {
+    sensorValue = 0;
+    runCharge = false;
+    Serial.println(F("STOP"));
+  } else if ((runCharge == false) && debStart.fell())
   {
     runCharge = true;
+    Serial.println(F("START"));
   }
 
   if (currentMillis - previousMillis >= interval) {
     // save the last time you blinked the LED
     previousMillis = currentMillis;
 
-    if (!debDown.read() && (sensorValue > 0))
+    if (runCharge == true)
     {
-      sensorValue--;
-    }
-    else if (!debUp.read() && (sensorValue < 255))
-    {
-      sensorValue++;
-    }
 
+      if (!debDown.read() && (currentSet >= 0.05))
+      {
+        currentSet -= 0.05;
+        Serial.print(F("ISet: "));
+        Serial.println(currentSet, 3);
+      }
+      else if (!debUp.read() && (currentSet <= 4.80))
+      {
+        currentSet += 0.05;
+        Serial.print(F("ISet: "));
+        Serial.println(currentSet, 3);
+      }
+    }
+    else
+    {
+      if (!debDown.read() && (sensorValue > 0))
+      {
+        sensorValue--;
+        Serial.print(F("PWM: "));
+        Serial.println(sensorValue, DEC);
+      }
+      else if (!debUp.read() && (sensorValue < 255))
+      {
+        sensorValue++;
+        Serial.print(F("PWM: "));
+        Serial.println(sensorValue, DEC);
+      }
+
+    }
 
     if ( ( skipcounter > 64 ) /*&& Serial.available()*/) {
       skipcounter = 0;
@@ -203,6 +236,7 @@ void loop() {
       if (f >= 1.45 || f < 0.7)
       {
         runCharge = false;
+        sensorValue = 0;
       }
 
       //char buf[8];
@@ -211,6 +245,7 @@ void loop() {
       if (runCharge == true)
       {
         Serial.print(F("ON |"));
+
       }
       else
       {
@@ -219,10 +254,10 @@ void loop() {
 
       Serial.print(F("PWM: "));
       Serial.print((long)sensorValue, DEC);
-      Serial.print(F(" Batt: "));
+      Serial.print(F(", Batt: "));
       Serial.print(f, 3);
       f = 5.0 / 1024 * battLoadVoltage;
-      Serial.print(F(" Load: "));
+      Serial.print(F(", Load: "));
       Serial.print(f, 3);
       //Serial.print((long)battVoltage, DEC);
       //Serial.print(buf[0]);
@@ -234,22 +269,22 @@ void loop() {
       f = 5.0 / 1024 * battCurrent;
       if (runCharge == true)
       {
-        float diff = f - 2.0;
-        Serial.print(F(" diff: "));
+        float diff = f - currentSet;
+        Serial.print(F(", diff: "));
         Serial.print(diff, 3);
         float abso = abs(diff);
-        if (abso > 0.3)
+        /*if (abso > 0.3)
         {
           if (diff >= 0.3 )
           {
-            sensorValue -= abso*20;
+            sensorValue -= abso * 20;
           }
           else
           {
-            sensorValue += abso*20;
+            sensorValue += abso * 20;
           }
         }
-        else
+        else*/
         {
           if (diff >= 0.1 )
           {
@@ -260,13 +295,20 @@ void loop() {
             sensorValue++;
           }
         }
-        
-        if (sensorValue > 255 )
+
+        if (sensorValue < 0)
+        {
+          sensorValue = 0;
+        }
+        else if (sensorValue > 255)
         {
           sensorValue = 255;
         }
+
       }
-      Serial.print(F(" I: "));
+      Serial.print(F(", ISet: "));
+      Serial.print(currentSet, 3);
+      Serial.print(F(", I: "));
       Serial.print(f, 3);
       Serial.println();
 
@@ -287,7 +329,7 @@ void loop() {
     else
       ledState = LOW;
 
-    if (sensorValue == 0)
+    if (sensorValue == 0 /*|| runCharge == false*/)
       ledState = LOW;
     else if (sensorValue == 255)
       ledState = HIGH;
@@ -321,7 +363,8 @@ void loop() {
   }
   else
   {
-    analogWrite(ledPWMPin, 0);
+    //analogWrite(ledPWMPin, 0);
+    analogWrite(ledPWMPin, sensorValue);
   }
 
 
