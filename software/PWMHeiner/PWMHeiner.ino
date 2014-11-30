@@ -1,3 +1,4 @@
+
 /*
   Analog Input
  Demonstrates analog input by reading an analog sensor on analog pin 0 and
@@ -26,22 +27,27 @@
  http://arduino.cc/en/Tutorial/AnalogInput
 
  */
-
+ 
+#include <Time.h>
 #include <Bounce2.h>
 
 #define sensorPin A0    // select the input pin for the potentiometer
 #define sensorPin2 A1    // select the input pin for the potentiometer
+
 #define ledPin 13      // select the pin for the LED
 #define ledPWMPin 3    // select the pin for the LED
+#define sinkPWMPin 10    // select the pin for the LED
 //#define PWMout 12
 
 #define butDown     4
-#define butUp       5
-#define butStart    6
+#define butUp       7
+#define butStart    8
+#define butTest    12
 
 Bounce debDown  = Bounce();
 Bounce debUp    = Bounce();
 Bounce debStart    = Bounce();
+Bounce debTest    = Bounce();
 
 const long interval = 100;
 unsigned long previousMillis = 0;        // will store last time LED was updated
@@ -55,6 +61,7 @@ int battCurrent = 0;
 float currentSet = 1.0;
 
 bool ledState = LOW;
+bool dischargeState = LOW;
 
 bool runCharge = false;
 //bool pwmState = LOW;
@@ -138,6 +145,13 @@ char *ftoa(char *a, double f, int precision)
   return ret;
 }
 
+void printDigits(int digits){
+  // utility function for digital clock display: prints preceding colon and leading 0
+  Serial.print(":");
+  if(digits < 10)
+    Serial.print('0');
+  Serial.print(digits);
+}
 
 void setup() {
 
@@ -149,6 +163,8 @@ void setup() {
 
   // declare the ledPin as an OUTPUT:
   pinMode(ledPin, OUTPUT);
+  pinMode(sinkPWMPin, OUTPUT);
+
 
   pinMode(butDown, INPUT_PULLUP);
   debDown.attach(butDown);
@@ -162,6 +178,10 @@ void setup() {
   debStart.attach(butStart);
   debStart.interval(25);
 
+  pinMode(butTest, INPUT_PULLUP);
+  debTest.attach(butTest);
+  debTest.interval(25);
+
   Serial.begin(9600);
 }
 
@@ -171,6 +191,23 @@ void loop() {
   debDown.update();
   debUp.update();
   debStart.update();
+  debTest.update();
+
+  if (debTest.fell())
+  {
+    if (dischargeState == false)
+    {
+      dischargeState = true;
+      runCharge = false;
+      sensorValue = 0;
+      Serial.println(F("Discharging..."));
+    }
+    else
+    {
+      dischargeState = false;
+      Serial.println(F("Stop Discharge"));
+    }
+  }
 
   if ((runCharge == true) && debStart.fell())
   {
@@ -233,19 +270,46 @@ void loop() {
       battVoltage = analogRead(sensorPin);
       float f = 5.0 / 1024 * battVoltage;
 
-      if (f >= 1.45 || f < 0.7)
+      if (f >= 1.45)
       {
         runCharge = false;
+        //dischargeState = false;
+        sensorValue = 0;
+        Serial.println(F("Reached End-Voltage."));
+      } 
+      else if (f < 1.02)
+      {
+        runCharge = false;
+        dischargeState = false;
+        Serial.println(F("Discharge LOW-Voltage reached."));
         sensorValue = 0;
       }
 
       //char buf[8];
       //ftoa(buf, f, 3);
 
-      if (runCharge == true)
+
+ // digital clock display of the time
+  Serial.print(hour());
+  printDigits(minute());
+  printDigits(second());
+  Serial.print(",");
+  Serial.print(day());
+  Serial.print(",");
+  Serial.print(month());
+  Serial.print(",");
+  Serial.print(year());
+  Serial.print("|");
+  //Serial.println(); 
+
+
+      if (dischargeState == true)
+      {
+        Serial.print(F("DIS|"));
+      }
+      else if (runCharge == true)
       {
         Serial.print(F("ON |"));
-
       }
       else
       {
@@ -360,6 +424,7 @@ void loop() {
   if (runCharge == true)
   {
     analogWrite(ledPWMPin, sensorValue);
+    dischargeState = false;
   }
   else
   {
@@ -367,6 +432,11 @@ void loop() {
     analogWrite(ledPWMPin, sensorValue);
   }
 
+if(sensorValue > 0)
+{
+dischargeState = false;
+}
+  digitalWrite(sinkPWMPin, dischargeState);
 
   // wait for 30 milliseconds to see the dimming effect
   //delay(30);
