@@ -13439,7 +13439,7 @@ at 18.06.2012 12:14:32&lt;br&gt;</description>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="0207/10" value="1k"/>
 <part name="Q1" library="transistor-pnp" deviceset="BD648" device=""/>
-<part name="D1" library="diode" deviceset="SCHOTTKY-DIODE" device="C4111-15"/>
+<part name="D1" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7"/>
 <part name="L1" library="rcl" deviceset="L-EU" device="0207/12" value="100µ"/>
 <part name="V1" library="Misc" deviceset="CELL" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
