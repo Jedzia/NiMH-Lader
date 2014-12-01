@@ -61,7 +61,7 @@ int battCurrent = 0;
 float currentSet = 1.0;
 
 bool ledState = LOW;
-bool dischargeState = LOW;
+//bool dischargeState = LOW;
 
 //bool runCharge = false;
 //bool pwmState = LOW;
@@ -154,10 +154,15 @@ char *ftoa(char *a, double f, int precision)
 
 void printDigits(int digits) {
   // utility function for digital clock display: prints preceding colon and leading 0
-  Serial.print(":");
   if (digits < 10)
     Serial.print('0');
   Serial.print(digits);
+}
+
+void printDigitsWithColon(int digits) {
+  // utility function for digital clock display: prints preceding colon and leading 0
+  Serial.print(":");
+  printDigits(digits);
 }
 
 void setup() {
@@ -202,9 +207,9 @@ void loop() {
 
   if (debTest.fell())
   {
-    if (dischargeState == false)
+    if (appState!=Discharging)
     {
-      dischargeState = true;
+      //dischargeState = true;
       appState=Discharging;
       //runCharge = false;
       sensorValue = 0;
@@ -212,7 +217,8 @@ void loop() {
     }
     else
     {
-      dischargeState = false;
+      //dischargeState = false;
+      appState=Running;
       Serial.println(F("Stop Discharge"));
     }
   }
@@ -235,7 +241,6 @@ void loop() {
 
     if (appState==Charging)
     {
-
       if (!debDown.read() && (currentSet >= 0.05))
       {
         currentSet -= 0.05;
@@ -277,7 +282,7 @@ void loop() {
       
       digitalWrite(sinkPWMPin, LOW);
       analogWrite(ledPWMPin, 0);
-      if(dischargeState==true)
+      if(appState==Discharging)
         delay(100);
       else
         delay(300+sensorValue*2);
@@ -297,7 +302,7 @@ void loop() {
       {
         appState=Running;
         //runCharge = false;
-        dischargeState = false;
+        //dischargeState = false;
         Serial.println(F("Discharge LOW-Voltage reached."));
         sensorValue = 0;
       }
@@ -307,9 +312,10 @@ void loop() {
 
 
       // digital clock display of the time
-      Serial.print(hour());
-      printDigits(minute());
-      printDigits(second());
+      //Serial.print(hour(),2);
+      printDigits(hour());
+      printDigitsWithColon(minute());
+      printDigitsWithColon(second());
       Serial.print(",");
       Serial.print(day());
       Serial.print(",");
@@ -320,7 +326,7 @@ void loop() {
       //Serial.println();
 
 
-      if (dischargeState == true)
+      if (appState==Discharging)
       {
         Serial.print(F("DIS|"));
       }
@@ -441,7 +447,8 @@ void loop() {
   if (appState == Charging)
   {
     analogWrite(ledPWMPin, sensorValue);
-    dischargeState = false;
+    //dischargeState = false;
+    //appState=Running;
   }
   else
   {
@@ -449,11 +456,21 @@ void loop() {
     analogWrite(ledPWMPin, sensorValue);
   }
 
-  if (sensorValue > 0)
+  if (sensorValue > 0 && (appState == Discharging))
   {
-    dischargeState = false;
+    //dischargeState = false;
+    appState=Running;
   }
-  digitalWrite(sinkPWMPin, dischargeState);
+  
+  if (appState == Discharging)
+  {
+     digitalWrite(sinkPWMPin, HIGH);
+  }
+  else
+  {
+     digitalWrite(sinkPWMPin, LOW);
+  }
+  
 
   // wait for 30 milliseconds to see the dimming effect
   //delay(30);
