@@ -27,7 +27,7 @@
  http://arduino.cc/en/Tutorial/AnalogInput
 
  */
- 
+
 #include <Time.h>
 #include <Bounce2.h>
 
@@ -145,10 +145,10 @@ char *ftoa(char *a, double f, int precision)
   return ret;
 }
 
-void printDigits(int digits){
+void printDigits(int digits) {
   // utility function for digital clock display: prints preceding colon and leading 0
   Serial.print(":");
-  if(digits < 10)
+  if (digits < 10)
     Serial.print('0');
   Serial.print(digits);
 }
@@ -260,14 +260,20 @@ void loop() {
     if ( ( skipcounter > 64 ) /*&& Serial.available()*/) {
       skipcounter = 0;
 
-      delay(30);
+      delay(1);
       battLoadVoltage = analogRead(sensorPin);
-      delay(30);
+      delay(1);
       battCurrent = analogRead(sensorPin2);
-
+      delay(1);
+      
+      digitalWrite(sinkPWMPin, LOW);
       analogWrite(ledPWMPin, 0);
-      delay(300);
+      if(dischargeState==true)
+        delay(100);
+      else
+        delay(300+sensorValue*2);
       battVoltage = analogRead(sensorPin);
+      delay(1);
       float f = 5.0 / 1024 * battVoltage;
 
       if (f >= 1.45)
@@ -276,7 +282,7 @@ void loop() {
         //dischargeState = false;
         sensorValue = 0;
         Serial.println(F("Reached End-Voltage."));
-      } 
+      }
       else if (f < 1.02)
       {
         runCharge = false;
@@ -289,18 +295,18 @@ void loop() {
       //ftoa(buf, f, 3);
 
 
- // digital clock display of the time
-  Serial.print(hour());
-  printDigits(minute());
-  printDigits(second());
-  Serial.print(",");
-  Serial.print(day());
-  Serial.print(",");
-  Serial.print(month());
-  Serial.print(",");
-  Serial.print(year());
-  Serial.print("|");
-  //Serial.println(); 
+      // digital clock display of the time
+      Serial.print(hour());
+      printDigits(minute());
+      printDigits(second());
+      Serial.print(",");
+      Serial.print(day());
+      Serial.print(",");
+      Serial.print(month());
+      Serial.print(",");
+      Serial.print(year());
+      Serial.print("|");
+      //Serial.println();
 
 
       if (dischargeState == true)
@@ -318,10 +324,10 @@ void loop() {
 
       Serial.print(F("PWM: "));
       Serial.print((long)sensorValue, DEC);
-      Serial.print(F(", Batt: "));
+      Serial.print(F("|Batt: "));
       Serial.print(f, 3);
       f = 5.0 / 1024 * battLoadVoltage;
-      Serial.print(F(", Load: "));
+      Serial.print(F("|Load: "));
       Serial.print(f, 3);
       //Serial.print((long)battVoltage, DEC);
       //Serial.print(buf[0]);
@@ -334,7 +340,7 @@ void loop() {
       if (runCharge == true)
       {
         float diff = f - currentSet;
-        Serial.print(F(", diff: "));
+        Serial.print(F("|diff: "));
         Serial.print(diff, 3);
         float abso = abs(diff);
         /*if (abso > 0.3)
@@ -370,9 +376,9 @@ void loop() {
         }
 
       }
-      Serial.print(F(", ISet: "));
+      Serial.print(F("|ISet: "));
       Serial.print(currentSet, 3);
-      Serial.print(F(", I: "));
+      Serial.print(F("|I: "));
       Serial.print(f, 3);
       Serial.println();
 
@@ -432,10 +438,10 @@ void loop() {
     analogWrite(ledPWMPin, sensorValue);
   }
 
-if(sensorValue > 0)
-{
-dischargeState = false;
-}
+  if (sensorValue > 0)
+  {
+    dischargeState = false;
+  }
   digitalWrite(sinkPWMPin, dischargeState);
 
   // wait for 30 milliseconds to see the dimming effect

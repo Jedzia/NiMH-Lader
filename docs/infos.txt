@@ -1,0 +1,21 @@
+-X-X-X-X- Montag, 1. Dezember 2014 -----------------------------------------------------------------------------
+http://www.mikrocontroller.net/topic/213590#3047383
+
+Hallo,
+
+wenn die Spannung (Uo) von neu gekauften und vorgeladenen Akkus gemessen 
+wird ist dies die Leerlaufspannung (ohne Last). Diese ist im ersten 
+Moment nicht aussagekräftig über die vorhandene Kapazität. Den Akku erst 
+einmal bis zur Entladeschlussspannung (0,9 Volt / Zelle)entladen und 
+nach Herstellerangaben laden (meist 1/10 C über 15 h). Ich messe die 
+Kapazität meiner Akkus nach mehreren Zyklen durch. Kaufe keine billigen 
+Akkus - wer billig kauf, kauf 2 mal. Bei der Ladezeit mit Konstantstrom 
+ist zu beachten, dass Zeit mal Strom bei Normalladung 1,5 mal C ist. Bei 
+Schnellladung musst Du mit 1,4 mal C rechnen. Die Ladeschlussspannung 
+ist dann sekundär.
+
+Gruß Klaus
+
+----------------------------------------------------------------------------------------------------------------
+
+
