@@ -63,10 +63,17 @@ float currentSet = 1.0;
 bool ledState = LOW;
 bool dischargeState = LOW;
 
-bool runCharge = false;
+//bool runCharge = false;
 //bool pwmState = LOW;
 
 
+enum AppState {
+  Startup,
+  Running,
+  Charging,
+  Discharging,
+  Finished
+} appState;
 
 /**
  * Divides a given PWM pin frequency by a divisor.
@@ -198,7 +205,8 @@ void loop() {
     if (dischargeState == false)
     {
       dischargeState = true;
-      runCharge = false;
+      appState=Discharging;
+      //runCharge = false;
       sensorValue = 0;
       Serial.println(F("Discharging..."));
     }
@@ -209,14 +217,15 @@ void loop() {
     }
   }
 
-  if ((runCharge == true) && debStart.fell())
+  if ((appState==Charging) && debStart.fell())
   {
     sensorValue = 0;
-    runCharge = false;
+    //runCharge = false;
+    appState=Running;
     Serial.println(F("STOP"));
-  } else if ((runCharge == false) && debStart.fell())
+  } else if (!(appState==Charging) && debStart.fell())
   {
-    runCharge = true;
+    appState=Charging;
     Serial.println(F("START"));
   }
 
@@ -224,7 +233,7 @@ void loop() {
     // save the last time you blinked the LED
     previousMillis = currentMillis;
 
-    if (runCharge == true)
+    if (appState==Charging)
     {
 
       if (!debDown.read() && (currentSet >= 0.05))
@@ -278,14 +287,16 @@ void loop() {
 
       if (f >= 1.45)
       {
-        runCharge = false;
+        //runCharge = false;
+        appState=Running;
         //dischargeState = false;
         sensorValue = 0;
         Serial.println(F("Reached End-Voltage."));
       }
       else if (f < 1.02)
       {
-        runCharge = false;
+        appState=Running;
+        //runCharge = false;
         dischargeState = false;
         Serial.println(F("Discharge LOW-Voltage reached."));
         sensorValue = 0;
@@ -313,9 +324,9 @@ void loop() {
       {
         Serial.print(F("DIS|"));
       }
-      else if (runCharge == true)
+      else if (appState == Charging)
       {
-        Serial.print(F("ON |"));
+        Serial.print(F("CHG|"));
       }
       else
       {
@@ -337,7 +348,7 @@ void loop() {
       //Serial.print(buf[4]);
       //Serial.print("%s", (char*)ftoa(buf, f, 3));
       f = 5.0 / 1024 * battCurrent;
-      if (runCharge == true)
+      if (appState == Charging)
       {
         float diff = f - currentSet;
         Serial.print(F("|diff: "));
@@ -427,7 +438,7 @@ void loop() {
         pwmState = LOW;
       digitalWrite(PWMout, pwmState); */
 
-  if (runCharge == true)
+  if (appState == Charging)
   {
     analogWrite(ledPWMPin, sensorValue);
     dischargeState = false;
