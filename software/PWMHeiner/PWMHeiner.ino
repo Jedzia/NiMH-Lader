@@ -207,10 +207,10 @@ void loop() {
 
   if (debTest.fell())
   {
-    if (appState!=Discharging)
+    if (appState != Discharging)
     {
       //dischargeState = true;
-      appState=Discharging;
+      appState = Discharging;
       //runCharge = false;
       sensorValue = 0;
       Serial.println(F("Discharging..."));
@@ -218,20 +218,20 @@ void loop() {
     else
     {
       //dischargeState = false;
-      appState=Running;
+      appState = Running;
       Serial.println(F("Stop Discharge"));
     }
   }
 
-  if ((appState==Charging) && debStart.fell())
+  if ((appState == Charging) && debStart.fell())
   {
     sensorValue = 0;
     //runCharge = false;
-    appState=Running;
+    appState = Running;
     Serial.println(F("STOP"));
-  } else if (!(appState==Charging) && debStart.fell())
+  } else if (!(appState == Charging) && debStart.fell())
   {
-    appState=Charging;
+    appState = Charging;
     Serial.println(F("START"));
   }
 
@@ -239,7 +239,7 @@ void loop() {
     // save the last time you blinked the LED
     previousMillis = currentMillis;
 
-    if (appState==Charging)
+    if (appState == Charging)
     {
       if (!debDown.read() && (currentSet >= 0.05))
       {
@@ -279,28 +279,28 @@ void loop() {
       delay(1);
       battCurrent = analogRead(sensorPin2);
       delay(1);
-      
+
       digitalWrite(sinkPWMPin, LOW);
       analogWrite(ledPWMPin, 0);
-      if(appState==Discharging)
+      if (appState == Discharging)
         delay(100);
       else
-        delay(300+sensorValue*2);
+        delay(300 + sensorValue * 2);
       battVoltage = analogRead(sensorPin);
       delay(1);
       float f = 5.0 / 1024 * battVoltage;
 
-      if (f >= 1.45)
+      if (f >= 1.45 && appState == Charging)
       {
         //runCharge = false;
-        appState=Running;
+        appState = Running;
         //dischargeState = false;
         sensorValue = 0;
         Serial.println(F("Reached End-Voltage."));
       }
       else if (f < 1.02)
       {
-        appState=Running;
+        appState = Running;
         //runCharge = false;
         //dischargeState = false;
         Serial.println(F("Discharge LOW-Voltage reached."));
@@ -326,7 +326,7 @@ void loop() {
       //Serial.println();
 
 
-      if (appState==Discharging)
+      if (appState == Discharging)
       {
         Serial.print(F("DIS|"));
       }
@@ -459,18 +459,18 @@ void loop() {
   if (sensorValue > 0 && (appState == Discharging))
   {
     //dischargeState = false;
-    appState=Running;
+    appState = Running;
   }
-  
+
   if (appState == Discharging)
   {
-     digitalWrite(sinkPWMPin, HIGH);
+    digitalWrite(sinkPWMPin, HIGH);
   }
   else
   {
-     digitalWrite(sinkPWMPin, LOW);
+    digitalWrite(sinkPWMPin, LOW);
   }
-  
+
 
   // wait for 30 milliseconds to see the dimming effect
   //delay(30);
