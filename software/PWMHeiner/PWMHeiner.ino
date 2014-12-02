@@ -51,7 +51,11 @@ Bounce debUp    = Bounce();
 Bounce debStart    = Bounce();
 Bounce debTest    = Bounce();
 
+const float CHARGE_ENDVOLTAGE = 1.48;
+const float DISCHARGE_ENDVOLTAGE = 1.02;
+const float BLA = 1.02;
 const long interval = 100;
+
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
 int skipcounter = 0;
@@ -60,7 +64,7 @@ int sensorValue = 0;  // variable to store the value coming from the sensor
 int battVoltage = 0;
 int battLoadVoltage = 0;
 int battCurrent = 0;
-float currentSet = 1.0;
+float currentSet = 2.0;
 
 bool ledState = LOW;
 //bool dischargeState = LOW;
@@ -356,7 +360,7 @@ void loop() {
       delay(1);
       f = 5.0 / 1024 * battVoltage;
 
-      if (f >= 1.48 && appState == Charging)
+      if (f >= CHARGE_ENDVOLTAGE && appState == Charging)
       {
         //runCharge = false;
         appState = Running;
@@ -364,7 +368,7 @@ void loop() {
         sensorValue = 0;
         Serial.println(F("Reached End-Voltage."));
       }
-      else if (f < 1.02)
+      else if (f < DISCHARGE_ENDVOLTAGE)
       {
         appState = Running;
         //runCharge = false;

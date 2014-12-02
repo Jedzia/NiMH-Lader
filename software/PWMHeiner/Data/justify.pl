@@ -13,6 +13,7 @@ while (<FILE1>) {
     #my $ref=$1 if /^Referer: (.*)/;
     my $prn = $line;
     $prn =~ s/PWM: //;
+    $prn =~ s/diff: //;
     $prn =~ s/Batt: //;
     $prn =~ s/Load: //;
     $prn =~ s/ISet: //;
