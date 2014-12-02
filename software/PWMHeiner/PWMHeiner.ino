@@ -271,13 +271,69 @@ void loop() {
 
     }
 
+    float f = 0;
+    delay(1);
+    battLoadVoltage = analogRead(sensorPin);
+    delay(1);
+    battCurrent = analogRead(sensorPin2);
+
+    if ( ( skipcounter % 8 == 0 ) /*&& Serial.available()*/) {
+
+      f = 5.0 / 1024 * battCurrent;
+      if (appState == Charging)
+      {
+        float diff = f - currentSet;
+        //float abso = abs(diff);
+        /*if (abso > 0.3)
+        {
+          if (diff >= 0.3 )
+          {
+            sensorValue -= abso * 20;
+          }
+          else
+          {
+            sensorValue += abso * 20;
+          }
+        }
+        else*/
+        {
+          if (diff >= 0.1 )
+          {
+            sensorValue--;
+            Serial.print(F("PWM--: "));
+            Serial.print((long)sensorValue, DEC);
+            Serial.print(F("|diff: "));
+            Serial.println(diff, 3);
+          }
+          else if (diff <= -0.1 )
+          {
+            sensorValue++;
+            Serial.print(F("PWM++: "));
+            Serial.print((long)sensorValue, DEC);
+            Serial.print(F("|diff: "));
+            Serial.println(diff, 3);
+          }
+          else
+          {
+            //Serial.println(F("No Change"));
+          }
+        }
+
+        if (sensorValue < 0)
+        {
+          sensorValue = 0;
+        }
+        else if (sensorValue > 255)
+        {
+          sensorValue = 255;
+        }
+
+      }
+    }
+
     if ( ( skipcounter > 64 ) /*&& Serial.available()*/) {
       skipcounter = 0;
 
-      delay(1);
-      battLoadVoltage = analogRead(sensorPin);
-      delay(1);
-      battCurrent = analogRead(sensorPin2);
       delay(1);
 
       digitalWrite(sinkPWMPin, LOW);
@@ -288,7 +344,7 @@ void loop() {
         delay(300 + sensorValue * 2);
       battVoltage = analogRead(sensorPin);
       delay(1);
-      float f = 5.0 / 1024 * battVoltage;
+      f = 5.0 / 1024 * battVoltage;
 
       if (f >= 1.45 && appState == Charging)
       {
@@ -359,39 +415,7 @@ void loop() {
         float diff = f - currentSet;
         Serial.print(F("|diff: "));
         Serial.print(diff, 3);
-        float abso = abs(diff);
-        /*if (abso > 0.3)
-        {
-          if (diff >= 0.3 )
-          {
-            sensorValue -= abso * 20;
-          }
-          else
-          {
-            sensorValue += abso * 20;
-          }
-        }
-        else*/
-        {
-          if (diff >= 0.1 )
-          {
-            sensorValue--;
-          }
-          else
-          {
-            sensorValue++;
-          }
-        }
-
-        if (sensorValue < 0)
-        {
-          sensorValue = 0;
-        }
-        else if (sensorValue > 255)
-        {
-          sensorValue = 255;
-        }
-
+        //float abso = abs(diff);
       }
       Serial.print(F("|ISet: "));
       Serial.print(currentSet, 3);
