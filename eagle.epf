@@ -412,8 +412,7 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
-Views=" 1: 85.855 44.3364 277.221 175.165"
-Sheet=2
+Sheet=1
 
 [Win_2]
 Type="Board Editor"

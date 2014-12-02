@@ -31,6 +31,8 @@
 #include <Time.h>
 #include <Bounce2.h>
 
+#define PWMMAX 60        // restrict pwm max-value for testing.
+
 #define sensorPin A0    // select the input pin for the potentiometer
 #define sensorPin2 A1    // select the input pin for the potentiometer
 
@@ -244,14 +246,18 @@ void loop() {
       if (!debDown.read() && (currentSet >= 0.05))
       {
         currentSet -= 0.05;
+#if DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
+#endif        
       }
       else if (!debUp.read() && (currentSet <= 4.80))
       {
         currentSet += 0.05;
+#if DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
+#endif        
       }
     }
     else
@@ -262,7 +268,7 @@ void loop() {
         Serial.print(F("PWM: "));
         Serial.println(sensorValue, DEC);
       }
-      else if (!debUp.read() && (sensorValue < 255))
+      else if (!debUp.read() && (sensorValue < PWMMAX))
       {
         sensorValue++;
         Serial.print(F("PWM: "));
@@ -300,18 +306,22 @@ void loop() {
           if (diff >= 0.1 )
           {
             sensorValue--;
+#if DEBUG_PWM
             Serial.print(F("PWM--: "));
             Serial.print((long)sensorValue, DEC);
             Serial.print(F("|diff: "));
             Serial.println(diff, 3);
+#endif
           }
           else if (diff <= -0.1 )
           {
             sensorValue++;
+#if DEBUG_PWM
             Serial.print(F("PWM++: "));
             Serial.print((long)sensorValue, DEC);
             Serial.print(F("|diff: "));
             Serial.println(diff, 3);
+#endif
           }
           else
           {
@@ -323,9 +333,9 @@ void loop() {
         {
           sensorValue = 0;
         }
-        else if (sensorValue > 255)
+        else if (sensorValue > PWMMAX)
         {
-          sensorValue = 255;
+          sensorValue = PWMMAX;
         }
 
       }
@@ -346,7 +356,7 @@ void loop() {
       delay(1);
       f = 5.0 / 1024 * battVoltage;
 
-      if (f >= 1.45 && appState == Charging)
+      if (f >= 1.48 && appState == Charging)
       {
         //runCharge = false;
         appState = Running;
@@ -442,7 +452,7 @@ void loop() {
 
     if (sensorValue == 0 /*|| runCharge == false*/)
       ledState = LOW;
-    else if (sensorValue == 255)
+    else if (sensorValue == PWMMAX)
       ledState = HIGH;
 
     // set the LED with the ledState of the variable:
@@ -478,6 +488,17 @@ void loop() {
   {
     //analogWrite(ledPWMPin, 0);
     analogWrite(ledPWMPin, sensorValue);
+  }
+
+
+  // security check pwm output
+  if (sensorValue < 0)
+  {
+    sensorValue = 0;
+  }
+  else if (sensorValue > PWMMAX)
+  {
+    sensorValue = PWMMAX;
   }
 
   if (sensorValue > 0 && (appState == Discharging))
