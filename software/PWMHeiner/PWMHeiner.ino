@@ -30,11 +30,13 @@
 
 #include <Time.h>
 #include <Bounce2.h>
+#include "trend.h"
 
 #define PWMMAX 60        // restrict pwm max-value for testing.
 
-#define sensorPin A0    // select the input pin for the potentiometer
-#define sensorPin2 A1    // select the input pin for the potentiometer
+#define sensorPin A0    // Battery Voltage
+#define sensorPin2 A1    // Battery charge current
+#define sensorPin3 A2    // Battery discharge current
 
 #define ledPin 13      // select the pin for the LED
 #define ledPWMPin 3    // select the pin for the LED
@@ -53,7 +55,7 @@ Bounce debTest    = Bounce();
 
 const float CHARGE_ENDVOLTAGE = 1.48;
 const float DISCHARGE_ENDVOLTAGE = 1.02;
-const float BLA = 1.02;
+const float REF = 5.00;
 const long interval = 100;
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
@@ -64,6 +66,14 @@ int sensorValue = 0;  // variable to store the value coming from the sensor
 int battVoltage = 0;
 int battLoadVoltage = 0;
 int battCurrent = 0;
+int battDisCurrent = 0;
+
+//const int TRENDSIZE = 8;
+//int trend[TRENDSIZE];
+//int trendp = 0;
+
+Trend trend;
+
 float currentSet = 2.0;
 
 bool ledState = LOW;
@@ -200,6 +210,8 @@ void setup() {
   debTest.attach(butTest);
   debTest.interval(25);
 
+  trend.erase();
+
   Serial.begin(9600);
 }
 
@@ -253,7 +265,7 @@ void loop() {
 #if DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
-#endif        
+#endif
       }
       else if (!debUp.read() && (currentSet <= 4.80))
       {
@@ -261,7 +273,7 @@ void loop() {
 #if DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
-#endif        
+#endif
       }
     }
     else
@@ -287,9 +299,14 @@ void loop() {
     delay(1);
     battCurrent = analogRead(sensorPin2);
 
+    if ( ( skipcounter % 32 == 0 ) /*&& Serial.available()*/) {
+      delay(1);
+      battDisCurrent = analogRead(sensorPin3);
+    }
+
     if ( ( skipcounter % 8 == 0 ) /*&& Serial.available()*/) {
 
-      f = 5.0 / 1024 * battCurrent;
+      f = REF / 1024 * battCurrent;
       if (appState == Charging)
       {
         float diff = f - currentSet;
@@ -345,7 +362,7 @@ void loop() {
       }
     }
 
-    if ( ( skipcounter > 64 ) /*&& Serial.available()*/) {
+    if ( ( skipcounter >= 64 ) /*&& Serial.available()*/) {
       skipcounter = 0;
 
       delay(1);
@@ -357,8 +374,18 @@ void loop() {
       else
         delay(300 + sensorValue * 2);
       battVoltage = analogRead(sensorPin);
+      trend.update(battVoltage);
       delay(1);
-      f = 5.0 / 1024 * battVoltage;
+
+      /*Serial.print(F("trendp="));
+      Serial.print(trendp, DEC);
+      Serial.print(F(" trend[0]="));
+      Serial.print(trend[0], DEC);
+      Serial.print(F(" trend[1]="));
+      Serial.print(trend[1], DEC);
+      Serial.println("");*/
+
+      f = REF / 1024 * battVoltage;
 
       if (f >= CHARGE_ENDVOLTAGE && appState == Charging)
       {
@@ -413,7 +440,7 @@ void loop() {
       Serial.print((long)sensorValue, DEC);
       Serial.print(F("|Batt: "));
       Serial.print(f, 3);
-      f = 5.0 / 1024 * battLoadVoltage;
+      f = REF / 1024 * battLoadVoltage;
       Serial.print(F("|Load: "));
       Serial.print(f, 3);
       //Serial.print((long)battVoltage, DEC);
@@ -423,18 +450,29 @@ void loop() {
       //Serial.print(buf[3]);
       //Serial.print(buf[4]);
       //Serial.print("%s", (char*)ftoa(buf, f, 3));
-      f = 5.0 / 1024 * battCurrent;
-      if (appState == Charging)
+      f = REF / 1024 * battCurrent;
+      //if (appState == Charging)
       {
         float diff = f - currentSet;
         Serial.print(F("|diff: "));
         Serial.print(diff, 3);
         //float abso = abs(diff);
       }
-      Serial.print(F("|ISet: "));
+      Serial.print(F("|Iset: "));
       Serial.print(currentSet, 3);
-      Serial.print(F("|I: "));
+      Serial.print(F("|Ichg: "));
       Serial.print(f, 3);
+
+      f = REF / 1024 * battDisCurrent;
+      Serial.print(F("|Idis: "));
+      Serial.print(f, 3);
+
+      f = REF / 1024 * trend.average();
+      Serial.print(F("|Bavg: "));
+      Serial.print(f, 3);
+
+
+
       Serial.println();
 
 
