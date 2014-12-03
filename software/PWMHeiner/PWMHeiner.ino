@@ -53,10 +53,10 @@ Bounce debUp    = Bounce();
 Bounce debStart    = Bounce();
 Bounce debTest    = Bounce();
 
-const float CHARGE_ENDVOLTAGE = 1.48;
+const float CHARGE_ENDVOLTAGE = 1.52;
 const float DISCHARGE_ENDVOLTAGE = 1.02;
 const float REF = 5.00;
-const long interval = 100;
+const long interval = 12ba0;
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
@@ -72,6 +72,7 @@ int battDisCurrent = 0;
 //int trend[TRENDSIZE];
 //int trendp = 0;
 
+Average average;
 Trend trend;
 
 float currentSet = 2.0;
@@ -210,7 +211,8 @@ void setup() {
   debTest.attach(butTest);
   debTest.interval(25);
 
-  trend.erase();
+  average.clear();
+  trend.clear();
 
   Serial.begin(9600);
 }
@@ -374,7 +376,7 @@ void loop() {
       else
         delay(300 + sensorValue * 2);
       battVoltage = analogRead(sensorPin);
-      trend.update(battVoltage);
+      average.update(battVoltage);
       delay(1);
 
       /*Serial.print(F("trendp="));
@@ -467,7 +469,7 @@ void loop() {
       Serial.print(F("|Idis: "));
       Serial.print(f, 3);
 
-      f = REF / 1024 * trend.average();
+      f = REF / 1024 * average.averagef();
       Serial.print(F("|Bavg: "));
       Serial.print(f, 3);
 

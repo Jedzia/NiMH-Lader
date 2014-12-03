@@ -2,11 +2,65 @@
 #include "trend.h"
 #include "Arduino.h"
 
-void Trend::begin( void ) {
+void Average::begin( void ) {
   Serial.println( "Called MyClass::begin" );
 }
 
-void Trend::erase( void ) {
+void Average::clear( void ) {
+  fill(0);
+}
+
+void Average::fill( int value ) {
+  for (int i = 0; i < AVGSIZE; i++)
+  {
+    avg[i] = value;
+  }
+}
+
+
+void Average::increment( void ) {
+  if (avgp < AVGSIZE - 1)
+    avgp++;
+  else
+    avgp = 0;
+}
+
+void Average::update( int value ) {
+
+  if (firstrun)
+  {
+    fill(value);
+    firstrun = false;
+  }
+  avg[avgp] = value;
+  increment();
+}
+
+
+int Average::average( void ) {
+  long trsum = 0;
+  for (int i = 0; i < AVGSIZE; i++)
+  {
+    trsum = trsum + avg[i];
+    //Serial.print(F("|trend: "));
+    //Serial.print(trend[i], DEC);
+  }
+
+  return (trsum) / (AVGSIZE);
+}
+
+float Average::averagef( void ) {
+  long trsum = 0;
+  for (int i = 0; i < AVGSIZE; i++)
+  {
+    trsum = trsum + avg[i];
+  }
+
+  return (trsum) / ((float)AVGSIZE);
+}
+
+
+void Trend::clear( void ) {
   fill(0);
 }
 
@@ -15,14 +69,6 @@ void Trend::fill( int value ) {
   {
     trend[i] = value;
   }
-}
-
-
-void Trend::increment( void ) {
-  if (trendp < TRENDSIZE - 1)
-    trendp++;
-  else
-    trendp = 0;
 }
 
 void Trend::update( int value ) {
@@ -36,20 +82,12 @@ void Trend::update( int value ) {
   increment();
 }
 
-
-float Trend::average( void ) {
-  long trsum = 0;
-  for (int i = 0; i < TRENDSIZE; i++)
-  {
-    trsum = trsum + trend[i];
-    //Serial.print(F("|trend: "));
-    //Serial.print(trend[i], DEC);
-  }
-
-  return (trsum) / ((float)TRENDSIZE);
+void Trend::increment( void ) {
+  if (trendp < TRENDSIZE - 1)
+    trendp++;
+  else
+    trendp = 0;
 }
-
-
 
 
 /*int bla(int x)

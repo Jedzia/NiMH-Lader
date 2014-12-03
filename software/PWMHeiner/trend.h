@@ -1,22 +1,40 @@
 #ifndef HEADER_TREND
 #define HEADER_TREND
 
-class Trend {
+class Average {
   public:
     void begin( void );
     void fill( int value );
-    void erase( void );
+    void clear( void );
     void update( int value );
-    float average( void );
+    int average( void );
+    float averagef( void );
   private:
     void increment( void );
-    static const int TRENDSIZE = 8;
+    
+    static const int AVGSIZE = 8;
+    int avg[AVGSIZE];
+    int avgp = 0;
+    
+    bool firstrun = true;
+};
+
+class Trend {
+  public:
+    void fill( int value );
+    void clear( void );
+    void update( int value );
+    //float average( void );
+  private:
+    void increment( void );
+    
+    static const int TRENDSIZE = 64;
     int trend[TRENDSIZE];
     int trendp = 0;
+
     bool firstrun = true;
 
 };
-
 
 //#include <stdarg.h>
 // include the library code:
