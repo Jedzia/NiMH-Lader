@@ -1,31 +1,16 @@
 
 /*
-  Analog Input
- Demonstrates analog input by reading an analog sensor on analog pin 0 and
- turning on and off a light emitting diode(LED)  connected to digital pin 13.
- The amount of time the LED will be on and off depends on
- the value obtained by analogRead().
-
- The circuit:
- * Potentiometer attached to analog input 0
- * center pin of the potentiometer to the analog pin
- * one side pin (either one) to ground
- * the other side pin to +5V
- * LED anode (long leg) attached to digital output 13
- * LED cathode (short leg) attached to ground
-
- * Note: because most Arduinos have a built-in LED attached
- to pin 13 on the board, the LED is optional.
 
 
- Created by David Cuartielles
- modified 30 Aug 2011
- By Tom Igoe
+ Created by Jedzia
 
+ v01b0c831ec2e85947132d056214242f15cb9296d
  This example code is in the public domain.
+ http://www.forum64.de/wbb3/board36-sonstige-themen/board40-laberecke/board76-forum-64-spezial/board78-das-erweiterte-forum/59147-chaosloader/
 
- http://arduino.cc/en/Tutorial/AnalogInput
-
+ This code is dedicated to Dita von Theese.
+ 
+ The comments may lead you in the wrong direction, this is an early bird
  */
 
 #include <Time.h>
@@ -56,7 +41,7 @@ Bounce debTest    = Bounce();
 const float CHARGE_ENDVOLTAGE = 1.52;
 const float DISCHARGE_ENDVOLTAGE = 1.02;
 const float REF = 5.00;
-const long interval = 12ba0;
+const long interval = 140;
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
