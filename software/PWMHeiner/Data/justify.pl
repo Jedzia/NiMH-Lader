@@ -23,6 +23,8 @@ while (<FILE1>) {
     $prn =~ s/Bavg: //;
     $prn =~ s/Temp1: //;
     $prn =~ s/Temp2: //;
+    $prn =~ s/Trnd: //;
+
 
     $prn =~ s/,1,1,1970//;
 #    $prn =~ s/DIS\|//;

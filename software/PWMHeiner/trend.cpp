@@ -7,7 +7,9 @@ void Average::begin( void ) {
 }
 
 void Average::clear( void ) {
+  firstrun = true;
   fill(0);
+  avgp = 0;
 }
 
 void Average::fill( int value ) {
@@ -68,6 +70,8 @@ float Average::averagef( void ) {
 
 void Trend::clear( void ) {
   fill(0);
+  firstrun = true;
+  updCnt = 0;
 }
 
 void Trend::fill( float value ) {
@@ -85,8 +89,8 @@ void Trend::update( float value ) {
     firstrun = false;
   }
 
-  for (int i = 0; i < TRENDSIZE-1; i++)
-  //for (int i = TRENDSIZE - 2; i > -1 ; i--)
+  for (int i = 0; i < TRENDSIZE - 1; i++)
+    //for (int i = TRENDSIZE - 2; i > -1 ; i--)
   {
     trend[i] = trend[i + 1];
     //Serial.print(F(" i: "));
@@ -95,6 +99,13 @@ void Trend::update( float value ) {
 
   trend[TRENDSIZE - 1] = value;
   //increment();
+  updCnt++;
+  if (updCnt > TRENDSIZE + 1)
+    updCnt = TRENDSIZE + 1;
+}
+
+bool Trend::isValid( void ) {
+  return updCnt > TRENDSIZE;
 }
 
 /*void Trend::increment( void ) {

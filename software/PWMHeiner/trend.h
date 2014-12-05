@@ -24,13 +24,14 @@ class Trend {
     void clear( void );
     void update( float value );
     float gettrend( void );
+    bool isValid( void );
   private:
     //void increment( void );
     void fill( float value );
     
     static const int TRENDSIZE = 16;
     float trend[TRENDSIZE];
-    int trendp = 0;
+    int updCnt = 0;
 
     bool firstrun = true;
 

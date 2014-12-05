@@ -12,7 +12,7 @@
 
  The comments may lead you in the wrong direction, this is an early bird
  */
-#define DEBUG_I 
+#define DEBUG_I
 
 
 #include <Time.h>
@@ -73,6 +73,7 @@ int battDisCurrent = 0;
 
 Average average;
 Trend trend;
+Trend trendTemp;
 
 float currentSet = 2.0;
 
@@ -212,6 +213,7 @@ void setup() {
 
   average.clear();
   trend.clear();
+  trendTemp.clear();
 
   // Start up the library
   sensors.begin();
@@ -235,6 +237,9 @@ void loop() {
       appState = Discharging;
       //runCharge = false;
       sensorValue = 0;
+    average.clear();
+    trend.clear();
+    trendTemp.clear();
       Serial.println(F("Discharging..."));
     }
     else
@@ -251,10 +256,14 @@ void loop() {
     //runCharge = false;
     appState = Running;
     Serial.println(F("STOP"));
-  } else if (!(appState == Charging) && debStart.fell())
+  } 
+  else if (!(appState == Charging) && debStart.fell())
   {
     appState = Charging;
     Serial.println(F("START"));
+    average.clear();
+    trend.clear();
+    trendTemp.clear();
   }
 
   if (currentMillis - previousMillis >= interval) {
@@ -375,7 +384,8 @@ void loop() {
       analogWrite(ledPWMPin, 0);
       sensors.requestTemperatures();
       float temp1 = sensors.getTempCByIndex(0);
-      if (appState == Discharging)
+      float temp2 = sensors.getTempCByIndex(1);
+     if (appState == Discharging)
         delay(100);
       else
         delay(300 + sensorValue * 2);
@@ -395,23 +405,45 @@ void loop() {
 
       f = REF / 1024 * battVoltage;
 
-      if (f >= CHARGE_ENDVOLTAGE && appState == Charging)
+      if (appState == Charging)
       {
-        //runCharge = false;
-        appState = Running;
-        //dischargeState = false;
-        sensorValue = 0;
-        Serial.println(F("Reached End-Voltage."));
-      }
-      else if (f < DISCHARGE_ENDVOLTAGE)
-      {
-        appState = Running;
-        //runCharge = false;
-        //dischargeState = false;
-        Serial.println(F("Discharge LOW-Voltage reached."));
-        sensorValue = 0;
-      }
+        if (f >= CHARGE_ENDVOLTAGE )
+        {
+          //runCharge = false;
+          appState = Running;
+          //dischargeState = false;
+          sensorValue = 0;
+          Serial.println(F("Reached End-Voltage."));
+        }
+        if (trend.isValid() && ( trend.gettrend() < -0.01 ))
+        {
+          //runCharge = false;
+          appState = Running;
+          //dischargeState = false;
+          sensorValue = 0;
+          Serial.println(F("Delta Voltage shut off."));
+        }
+        if (( temp2-temp1) > 7.0 )
+        {
+          //runCharge = false;
+          appState = Running;
+          //dischargeState = false;
+          sensorValue = 0;
+          Serial.println(F("Max Temperature shut off."));
+        }
 
+      }
+      if (appState == Discharging)
+      {
+        if (f < DISCHARGE_ENDVOLTAGE)
+        {
+          appState = Running;
+          //runCharge = false;
+          //dischargeState = false;
+          Serial.println(F("Discharge LOW-Voltage reached."));
+          sensorValue = 0;
+        }
+      }
       //char buf[8];
       //ftoa(buf, f, 3);
 
@@ -483,10 +515,14 @@ void loop() {
 
 
       Serial.print(F("|Temp1: "));
-      float temp2 = sensors.getTempCByIndex(1);
       Serial.print(temp1);
       Serial.print(F("|Temp2: "));
       Serial.print(temp2);
+
+      trendTemp.update(temp2 - temp1);
+      Serial.print(F("|TempT: "));
+      Serial.print(trendTemp.gettrend());
+
 
       Serial.println();
 
