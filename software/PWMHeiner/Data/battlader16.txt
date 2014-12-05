@@ -1,0 +1,412 @@
+partial discharge/charge 1300mAh + delta temperature + delta trend
+00:00:10,1,1,1970|OFF|PWM: 0|Batt: 1.470|Load: 1.470|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 2.046|Bavg: 1.470|Trnd: 0.0000|Temp1: 21.19|Temp2: 25.94|TempT: 0.00
+00:00:20,1,1,1970|OFF|PWM: 0|Batt: 0.000|Load: 0.029|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.039|Bavg: 1.286|Trnd: -0.0459|Temp1: 21.19|Temp2: 25.37|TempT: -0.14
+00:00:30,1,1,1970|OFF|PWM: 0|Batt: 1.357|Load: 1.353|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 1.895|Bavg: 1.272|Trnd: -0.0954|Temp1: 21.19|Temp2: 24.37|TempT: -0.53
+00:00:40,1,1,1970|OFF|PWM: 0|Batt: 1.357|Load: 1.357|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 1.895|Bavg: 1.258|Trnd: -0.1483|Temp1: 21.19|Temp2: 23.50|TempT: -1.14
+00:00:50,1,1,1970|OFF|PWM: 0|Batt: 1.357|Load: 1.357|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 1.895|Bavg: 1.244|Trnd: -0.2048|Temp1: 21.19|Temp2: 23.87|TempT: -1.66
+00:01:00,1,1,1970|OFF|PWM: 0|Batt: 1.357|Load: 1.357|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 1.895|Bavg: 1.230|Trnd: -0.2188|Temp1: 21.19|Temp2: 24.06|TempT: -1.98
+00:01:10,1,1,1970|OFF|PWM: 0|Batt: 1.357|Load: 1.357|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 1.899|Bavg: 1.216|Trnd: -0.2328|Temp1: 21.19|Temp2: 23.62|TempT: -2.17
+Discharging...
+00:01:19,1,1,1970|DIS|PWM: 0|Batt: 1.357|Load: 1.011|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.357|Trnd: 0.0000|Temp1: 21.19|Temp2: 23.00|TempT: 0.00
+00:01:29,1,1,1970|DIS|PWM: 0|Batt: 1.353|Load: 1.016|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.449|Bavg: 1.357|Trnd: -0.0002|Temp1: 21.19|Temp2: 22.56|TempT: -0.11
+00:01:39,1,1,1970|DIS|PWM: 0|Batt: 1.353|Load: 1.011|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.356|Trnd: -0.0005|Temp1: 21.19|Temp2: 22.19|TempT: -0.31
+00:01:49,1,1,1970|DIS|PWM: 0|Batt: 1.353|Load: 1.011|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.356|Trnd: -0.0009|Temp1: 21.19|Temp2: 21.94|TempT: -0.58
+00:01:59,1,1,1970|DIS|PWM: 0|Batt: 1.353|Load: 1.011|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.355|Trnd: -0.0015|Temp1: 21.25|Temp2: 21.69|TempT: -0.92
+00:02:08,1,1,1970|DIS|PWM: 0|Batt: 1.348|Load: 1.011|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.354|Trnd: -0.0023|Temp1: 21.25|Temp2: 21.56|TempT: -1.19
+00:02:18,1,1,1970|DIS|PWM: 0|Batt: 1.348|Load: 1.011|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.353|Trnd: -0.0032|Temp1: 21.25|Temp2: 21.44|TempT: -1.39
+00:02:28,1,1,1970|DIS|PWM: 0|Batt: 1.348|Load: 1.011|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.351|Trnd: -0.0043|Temp1: 21.25|Temp2: 21.31|TempT: -1.56
+00:02:38,1,1,1970|DIS|PWM: 0|Batt: 1.343|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.349|Trnd: -0.0056|Temp1: 21.25|Temp2: 21.25|TempT: -1.67
+00:02:48,1,1,1970|DIS|PWM: 0|Batt: 1.338|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.348|Trnd: -0.0072|Temp1: 21.25|Temp2: 21.19|TempT: -1.77
+00:02:57,1,1,1970|DIS|PWM: 0|Batt: 1.343|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.346|Trnd: -0.0087|Temp1: 21.31|Temp2: 21.12|TempT: -1.86
+00:03:07,1,1,1970|DIS|PWM: 0|Batt: 1.338|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.345|Trnd: -0.0104|Temp1: 21.31|Temp2: 21.06|TempT: -1.94
+00:03:17,1,1,1970|DIS|PWM: 0|Batt: 1.338|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.343|Trnd: -0.0121|Temp1: 21.31|Temp2: 21.00|TempT: -2.02
+00:03:27,1,1,1970|DIS|PWM: 0|Batt: 1.343|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.342|Trnd: -0.0133|Temp1: 21.31|Temp2: 20.94|TempT: -1.98
+00:03:37,1,1,1970|DIS|PWM: 0|Batt: 1.343|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.342|Trnd: -0.0142|Temp1: 21.31|Temp2: 20.94|TempT: -1.83
+00:03:46,1,1,1970|DIS|PWM: 0|Batt: 1.343|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.341|Trnd: -0.0146|Temp1: 21.37|Temp2: 20.87|TempT: -1.63
+00:03:56,1,1,1970|DIS|PWM: 0|Batt: 1.343|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.341|Trnd: -0.0145|Temp1: 21.37|Temp2: 20.87|TempT: -1.33
+00:04:06,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.340|Trnd: -0.0142|Temp1: 21.37|Temp2: 20.81|TempT: -1.11
+00:04:16,1,1,1970|DIS|PWM: 0|Batt: 1.338|Load: 1.006|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.340|Trnd: -0.0137|Temp1: 21.37|Temp2: 20.81|TempT: -0.95
+00:04:26,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 1.001|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.339|Trnd: -0.0131|Temp1: 21.37|Temp2: 20.81|TempT: -0.80
+00:04:35,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 1.001|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.339|Trnd: -0.0124|Temp1: 21.37|Temp2: 20.81|TempT: -0.70
+00:04:45,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.996|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.337|Trnd: -0.0116|Temp1: 21.44|Temp2: 20.81|TempT: -0.63
+00:04:55,1,1,1970|DIS|PWM: 0|Batt: 1.338|Load: 0.996|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.337|Trnd: -0.0108|Temp1: 21.44|Temp2: 20.75|TempT: -0.56
+00:05:05,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.335|Trnd: -0.0101|Temp1: 21.44|Temp2: 20.75|TempT: -0.52
+00:05:14,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.996|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.334|Trnd: -0.0095|Temp1: 21.44|Temp2: 20.75|TempT: -0.47
+00:05:24,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.996|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.334|Trnd: -0.0089|Temp1: 21.44|Temp2: 20.75|TempT: -0.41
+00:05:34,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.334|Trnd: -0.0084|Temp1: 21.44|Temp2: 20.75|TempT: -0.36
+00:05:44,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.334|Trnd: -0.0079|Temp1: 21.50|Temp2: 20.75|TempT: -0.31
+00:05:54,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.996|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.334|Trnd: -0.0076|Temp1: 21.50|Temp2: 20.75|TempT: -0.28
+00:06:03,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.334|Trnd: -0.0073|Temp1: 21.50|Temp2: 20.75|TempT: -0.25
+00:06:13,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.996|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.333|Trnd: -0.0070|Temp1: 21.50|Temp2: 20.75|TempT: -0.22
+00:06:23,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.333|Trnd: -0.0067|Temp1: 21.56|Temp2: 20.75|TempT: -0.22
+00:06:33,1,1,1970|DIS|PWM: 0|Batt: 1.333|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.333|Trnd: -0.0063|Temp1: 21.56|Temp2: 20.75|TempT: -0.22
+00:06:43,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.430|Bavg: 1.332|Trnd: -0.0058|Temp1: 21.56|Temp2: 20.75|TempT: -0.22
+00:06:52,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.332|Trnd: -0.0053|Temp1: 21.56|Temp2: 20.75|TempT: -0.20
+00:07:02,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.430|Bavg: 1.331|Trnd: -0.0049|Temp1: 21.62|Temp2: 20.75|TempT: -0.19
+00:07:12,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.331|Trnd: -0.0044|Temp1: 21.62|Temp2: 20.75|TempT: -0.17
+00:07:22,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.430|Bavg: 1.330|Trnd: -0.0043|Temp1: 21.62|Temp2: 20.75|TempT: -0.17
+00:07:32,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.329|Trnd: -0.0041|Temp1: 21.62|Temp2: 20.75|TempT: -0.19
+00:07:41,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.430|Bavg: 1.329|Trnd: -0.0043|Temp1: 21.62|Temp2: 20.69|TempT: -0.19
+00:07:51,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.328|Trnd: -0.0047|Temp1: 21.62|Temp2: 20.69|TempT: -0.19
+00:08:01,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.328|Trnd: -0.0050|Temp1: 21.62|Temp2: 20.69|TempT: -0.19
+00:08:11,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.328|Trnd: -0.0052|Temp1: 21.62|Temp2: 20.75|TempT: -0.17
+00:08:21,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.328|Trnd: -0.0053|Temp1: 21.69|Temp2: 20.75|TempT: -0.16
+00:08:30,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.327|Trnd: -0.0055|Temp1: 21.69|Temp2: 20.75|TempT: -0.14
+00:08:40,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.327|Trnd: -0.0055|Temp1: 21.69|Temp2: 20.69|TempT: -0.14
+00:08:50,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.326|Trnd: -0.0056|Temp1: 21.69|Temp2: 20.69|TempT: -0.16
+00:09:00,1,1,1970|DIS|PWM: 0|Batt: 1.328|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.326|Trnd: -0.0055|Temp1: 21.69|Temp2: 20.69|TempT: -0.16
+00:09:10,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.326|Trnd: -0.0052|Temp1: 21.69|Temp2: 20.69|TempT: -0.16
+00:09:19,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.325|Trnd: -0.0050|Temp1: 21.69|Temp2: 20.69|TempT: -0.14
+00:09:29,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.323|Trnd: -0.0052|Temp1: 21.69|Temp2: 20.69|TempT: -0.12
+00:09:39,1,1,1970|DIS|PWM: 0|Batt: 1.338|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.325|Trnd: -0.0049|Temp1: 21.69|Temp2: 20.69|TempT: -0.11
+00:09:49,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.449|Bavg: 1.325|Trnd: -0.0044|Temp1: 21.75|Temp2: 20.69|TempT: -0.11
+00:09:59,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.324|Trnd: -0.0043|Temp1: 21.75|Temp2: 20.69|TempT: -0.11
+00:10:08,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.324|Trnd: -0.0038|Temp1: 21.75|Temp2: 20.69|TempT: -0.12
+00:10:18,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.991|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.323|Trnd: -0.0041|Temp1: 21.75|Temp2: 20.69|TempT: -0.14
+00:10:28,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.322|Trnd: -0.0046|Temp1: 21.75|Temp2: 20.69|TempT: -0.14
+00:10:38,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.321|Trnd: -0.0049|Temp1: 21.75|Temp2: 20.69|TempT: -0.12
+00:10:47,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.323|Trnd: -0.0047|Temp1: 21.75|Temp2: 20.69|TempT: -0.09
+00:10:57,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.320|Trnd: -0.0052|Temp1: 21.75|Temp2: 20.69|TempT: -0.08
+00:11:07,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.319|Trnd: -0.0056|Temp1: 21.69|Temp2: 20.69|TempT: -0.05
+00:11:17,1,1,1970|DIS|PWM: 0|Batt: 1.323|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.320|Trnd: -0.0056|Temp1: 21.75|Temp2: 20.75|TempT: -0.03
+00:11:27,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.318|Trnd: -0.0060|Temp1: 21.75|Temp2: 20.75|TempT: -0.02
+00:11:36,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.318|Trnd: -0.0060|Temp1: 21.75|Temp2: 20.75|TempT: 0.00
+00:11:46,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.318|Trnd: -0.0060|Temp1: 21.75|Temp2: 20.75|TempT: 0.02
+00:11:56,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.318|Trnd: -0.0061|Temp1: 21.75|Temp2: 20.75|TempT: 0.03
+00:12:06,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.317|Trnd: -0.0066|Temp1: 21.75|Temp2: 20.75|TempT: 0.05
+00:12:16,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.318|Trnd: -0.0061|Temp1: 21.75|Temp2: 20.75|TempT: 0.06
+00:12:25,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.318|Trnd: -0.0055|Temp1: 21.75|Temp2: 20.69|TempT: 0.05
+00:12:35,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.317|Trnd: -0.0050|Temp1: 21.75|Temp2: 20.69|TempT: 0.03
+00:12:45,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.318|Trnd: -0.0046|Temp1: 21.75|Temp2: 20.69|TempT: 0.02
+00:12:55,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.317|Trnd: -0.0040|Temp1: 21.75|Temp2: 20.69|TempT: 0.00
+00:13:05,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.317|Trnd: -0.0034|Temp1: 21.75|Temp2: 20.75|TempT: 0.00
+00:13:14,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.318|Trnd: -0.0027|Temp1: 21.75|Temp2: 20.75|TempT: 0.00
+00:13:24,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.986|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.444|Bavg: 1.317|Trnd: -0.0018|Temp1: 21.75|Temp2: 20.69|TempT: -0.02
+00:13:34,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.317|Trnd: -0.0015|Temp1: 21.75|Temp2: 20.69|TempT: -0.03
+00:13:44,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.317|Trnd: -0.0015|Temp1: 21.75|Temp2: 20.69|TempT: -0.05
+00:13:54,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.315|Trnd: -0.0017|Temp1: 21.75|Temp2: 20.69|TempT: -0.06
+00:14:03,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.314|Trnd: -0.0021|Temp1: 21.75|Temp2: 20.69|TempT: -0.06
+00:14:13,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.314|Trnd: -0.0027|Temp1: 21.75|Temp2: 20.69|TempT: -0.06
+00:14:23,1,1,1970|DIS|PWM: 0|Batt: 1.318|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.314|Trnd: -0.0032|Temp1: 21.75|Temp2: 20.69|TempT: -0.05
+00:14:33,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.313|Trnd: -0.0035|Temp1: 21.75|Temp2: 20.69|TempT: -0.03
+00:14:43,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.313|Trnd: -0.0038|Temp1: 21.75|Temp2: 20.69|TempT: -0.02
+00:14:52,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.313|Trnd: -0.0040|Temp1: 21.75|Temp2: 20.69|TempT: 0.00
+00:15:02,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.312|Trnd: -0.0043|Temp1: 21.75|Temp2: 20.75|TempT: 0.00
+00:15:12,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.313|Trnd: -0.0046|Temp1: 21.75|Temp2: 20.75|TempT: 0.00
+00:15:22,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.313|Trnd: -0.0044|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:15:31,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.313|Trnd: -0.0044|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:15:41,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.430|Bavg: 1.312|Trnd: -0.0044|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:15:51,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.311|Trnd: -0.0043|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:16:01,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.311|Trnd: -0.0041|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:16:11,1,1,1970|DIS|PWM: 0|Batt: 1.313|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.311|Trnd: -0.0038|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:16:20,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.311|Trnd: -0.0034|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:16:30,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.310|Trnd: -0.0031|Temp1: 21.81|Temp2: 20.69|TempT: -0.02
+00:16:40,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.310|Trnd: -0.0032|Temp1: 21.81|Temp2: 20.69|TempT: -0.03
+00:16:50,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.310|Trnd: -0.0032|Temp1: 21.81|Temp2: 20.69|TempT: -0.05
+00:17:00,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.310|Trnd: -0.0031|Temp1: 21.81|Temp2: 20.69|TempT: -0.08
+00:17:09,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.310|Trnd: -0.0031|Temp1: 21.81|Temp2: 20.69|TempT: -0.09
+00:17:19,1,1,1970|DIS|PWM: 0|Batt: 1.304|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.309|Trnd: -0.0034|Temp1: 21.81|Temp2: 20.69|TempT: -0.09
+00:17:29,1,1,1970|DIS|PWM: 0|Batt: 1.304|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.307|Trnd: -0.0040|Temp1: 21.81|Temp2: 20.75|TempT: -0.08
+00:17:39,1,1,1970|DIS|PWM: 0|Batt: 1.304|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.307|Trnd: -0.0046|Temp1: 21.81|Temp2: 20.75|TempT: -0.05
+00:17:49,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.307|Trnd: -0.0049|Temp1: 21.81|Temp2: 20.75|TempT: -0.02
+00:17:58,1,1,1970|DIS|PWM: 0|Batt: 1.304|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.306|Trnd: -0.0049|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:18:08,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.306|Trnd: -0.0047|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:18:18,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.306|Trnd: -0.0047|Temp1: 21.81|Temp2: 20.75|TempT: 0.00
+00:18:28,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.306|Trnd: -0.0047|Temp1: 21.81|Temp2: 20.81|TempT: 0.03
+00:18:38,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.307|Trnd: -0.0043|Temp1: 21.81|Temp2: 20.81|TempT: 0.06
+00:18:47,1,1,1970|DIS|PWM: 0|Batt: 1.304|Load: 0.981|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.439|Bavg: 1.307|Trnd: -0.0038|Temp1: 21.81|Temp2: 20.81|TempT: 0.09
+00:18:57,1,1,1970|DIS|PWM: 0|Batt: 1.309|Load: 0.977|diff: -2.000|Iset: 2.000|Ichg: 0.000|Idis: 0.435|Bavg: 1.307|Trnd: -0.0032|Temp1: 21.81|Temp2: 20.81|TempT: 0.12
+START
+00:19:07,1,1,1970|CHG|PWM: 6|Batt: 1.309|Load: 1.421|diff: -0.931|Iset: 2.000|Ichg: 1.069|Idis: 1.997|Bavg: 1.309|Trnd: 0.0000|Temp1: 21.81|Temp2: 20.81|TempT: 0.00
+00:19:17,1,1,1970|CHG|PWM: 11|Batt: 1.313|Load: 1.567|diff: -0.184|Iset: 2.000|Ichg: 1.816|Idis: 2.124|Bavg: 1.309|Trnd: 0.0002|Temp1: 21.81|Temp2: 20.81|TempT: 0.00
+00:19:27,1,1,1970|CHG|PWM: 11|Batt: 1.313|Load: 1.499|diff: -0.213|Iset: 2.000|Ichg: 1.787|Idis: 2.109|Bavg: 1.310|Trnd: 0.0005|Temp1: 21.81|Temp2: 20.81|TempT: 0.00
+ISet: 2.050
+ISet: 2.100
+ISet: 2.150
+ISet: 2.200
+ISet: 2.250
+ISet: 2.300
+ISet: 2.350
+ISet: 2.400
+ISet: 2.450
+ISet: 2.500
+ISet: 2.550
+ISet: 2.600
+ISet: 2.650
+ISet: 2.700
+ISet: 2.750
+ISet: 2.800
+ISet: 2.850
+ISet: 2.900
+ISet: 2.950
+ISet: 3.000
+00:19:37,1,1,1970|CHG|PWM: 13|Batt: 1.318|Load: 1.475|diff: -0.729|Iset: 3.000|Ichg: 2.271|Idis: 2.202|Bavg: 1.311|Trnd: 0.0011|Temp1: 21.81|Temp2: 20.81|TempT: 0.00
+00:19:47,1,1,1970|CHG|PWM: 17|Batt: 1.328|Load: 1.519|diff: -0.056|Iset: 3.000|Ichg: 2.944|Idis: 2.295|Bavg: 1.313|Trnd: 0.0023|Temp1: 21.81|Temp2: 20.87|TempT: 0.02
+00:19:57,1,1,1970|CHG|PWM: 17|Batt: 1.323|Load: 1.743|diff: 0.135|Iset: 3.000|Ichg: 3.135|Idis: 2.354|Bavg: 1.315|Trnd: 0.0038|Temp1: 21.81|Temp2: 20.87|TempT: 0.03
+ISet: 3.050
+ISet: 3.100
+ISet: 3.150
+ISet: 3.200
+ISet: 3.250
+ISet: 3.300
+ISet: 3.350
+ISet: 3.400
+ISet: 3.450
+ISet: 3.500
+ISet: 3.550
+ISet: 3.600
+ISet: 3.650
+ISet: 3.700
+ISet: 3.750
+ISet: 3.800
+ISet: 3.850
+ISet: 3.900
+ISet: 3.950
+00:20:07,1,1,1970|CHG|PWM: 21|Batt: 1.318|Load: 1.543|diff: -0.649|Iset: 3.950|Ichg: 3.301|Idis: 2.373|Bavg: 1.317|Trnd: 0.0055|Temp1: 21.81|Temp2: 20.87|TempT: 0.05
+ISet: 4.000
+00:20:17,1,1,1970|CHG|PWM: 28|Batt: 1.328|Load: 1.816|diff: 0.053|Iset: 4.000|Ichg: 4.053|Idis: 2.480|Bavg: 1.319|Trnd: 0.0075|Temp1: 21.81|Temp2: 20.94|TempT: 0.08
+00:20:27,1,1,1970|CHG|PWM: 29|Batt: 1.323|Load: 1.777|diff: -0.201|Iset: 4.000|Ichg: 3.799|Idis: 2.402|Bavg: 1.321|Trnd: 0.0093|Temp1: 21.81|Temp2: 20.94|TempT: 0.09
+00:20:37,1,1,1970|CHG|PWM: 28|Batt: 1.333|Load: 1.860|diff: 0.194|Iset: 4.000|Ichg: 4.194|Idis: 2.505|Bavg: 1.323|Trnd: 0.0113|Temp1: 21.81|Temp2: 21.00|TempT: 0.12
+00:20:47,1,1,1970|CHG|PWM: 28|Batt: 1.328|Load: 1.606|diff: 0.058|Iset: 4.000|Ichg: 4.058|Idis: 2.495|Bavg: 1.325|Trnd: 0.0134|Temp1: 21.81|Temp2: 21.06|TempT: 0.17
+00:20:58,1,1,1970|CHG|PWM: 28|Batt: 1.333|Load: 1.787|diff: -0.230|Iset: 4.000|Ichg: 3.770|Idis: 2.407|Bavg: 1.327|Trnd: 0.0154|Temp1: 21.81|Temp2: 21.06|TempT: 0.20
+00:21:08,1,1,1970|CHG|PWM: 28|Batt: 1.333|Load: 1.797|diff: -0.191|Iset: 4.000|Ichg: 3.809|Idis: 2.417|Bavg: 1.328|Trnd: 0.0171|Temp1: 21.81|Temp2: 21.12|TempT: 0.25
+00:21:18,1,1,1970|CHG|PWM: 28|Batt: 1.333|Load: 1.851|diff: 0.214|Iset: 4.000|Ichg: 4.214|Idis: 2.524|Bavg: 1.329|Trnd: 0.0183|Temp1: 21.81|Temp2: 21.12|TempT: 0.28
+00:21:28,1,1,1970|CHG|PWM: 29|Batt: 1.333|Load: 1.802|diff: -0.147|Iset: 4.000|Ichg: 3.853|Idis: 2.427|Bavg: 1.331|Trnd: 0.0194|Temp1: 21.75|Temp2: 21.12|TempT: 0.31
+00:21:38,1,1,1970|CHG|PWM: 28|Batt: 1.333|Load: 1.631|diff: 0.111|Iset: 4.000|Ichg: 4.111|Idis: 2.505|Bavg: 1.331|Trnd: 0.0198|Temp1: 21.75|Temp2: 21.12|TempT: 0.34
+00:21:48,1,1,1970|CHG|PWM: 28|Batt: 1.338|Load: 1.616|diff: 0.067|Iset: 4.000|Ichg: 4.067|Idis: 2.505|Bavg: 1.333|Trnd: 0.0200|Temp1: 21.75|Temp2: 21.12|TempT: 0.34
+00:21:58,1,1,1970|CHG|PWM: 28|Batt: 1.338|Load: 1.631|diff: 0.102|Iset: 4.000|Ichg: 4.102|Idis: 2.510|Bavg: 1.334|Trnd: 0.0197|Temp1: 21.75|Temp2: 21.19|TempT: 0.36
+00:22:08,1,1,1970|CHG|PWM: 29|Batt: 1.338|Load: 1.826|diff: -0.162|Iset: 4.000|Ichg: 3.838|Idis: 2.466|Bavg: 1.335|Trnd: 0.0191|Temp1: 21.75|Temp2: 21.19|TempT: 0.36
+00:22:18,1,1,1970|CHG|PWM: 29|Batt: 1.343|Load: 1.772|diff: -0.221|Iset: 4.000|Ichg: 3.779|Idis: 2.476|Bavg: 1.336|Trnd: 0.0183|Temp1: 21.75|Temp2: 21.19|TempT: 0.34
+00:22:28,1,1,1970|CHG|PWM: 29|Batt: 1.343|Load: 1.807|diff: -0.196|Iset: 4.000|Ichg: 3.804|Idis: 2.441|Bavg: 1.337|Trnd: 0.0175|Temp1: 21.69|Temp2: 21.19|TempT: 0.36
+00:22:38,1,1,1970|CHG|PWM: 28|Batt: 1.343|Load: 1.631|diff: 0.004|Iset: 4.000|Ichg: 4.004|Idis: 2.515|Bavg: 1.339|Trnd: 0.0168|Temp1: 21.69|Temp2: 21.19|TempT: 0.34
+00:22:48,1,1,1970|CHG|PWM: 29|Batt: 1.348|Load: 1.772|diff: -0.211|Iset: 4.000|Ichg: 3.789|Idis: 2.471|Bavg: 1.340|Trnd: 0.0160|Temp1: 21.69|Temp2: 21.19|TempT: 0.31
+00:22:58,1,1,1970|CHG|PWM: 29|Batt: 1.348|Load: 1.646|diff: 0.072|Iset: 4.000|Ichg: 4.072|Idis: 2.520|Bavg: 1.342|Trnd: 0.0156|Temp1: 21.69|Temp2: 21.19|TempT: 0.30
+00:23:08,1,1,1970|CHG|PWM: 29|Batt: 1.348|Load: 1.641|diff: 0.082|Iset: 4.000|Ichg: 4.082|Idis: 2.524|Bavg: 1.343|Trnd: 0.0154|Temp1: 21.69|Temp2: 21.19|TempT: 0.25
+00:23:18,1,1,1970|CHG|PWM: 29|Batt: 1.357|Load: 1.831|diff: -0.069|Iset: 4.000|Ichg: 3.931|Idis: 2.471|Bavg: 1.346|Trnd: 0.0159|Temp1: 21.62|Temp2: 21.25|TempT: 0.25
+00:23:28,1,1,1970|CHG|PWM: 29|Batt: 1.353|Load: 1.821|diff: -0.187|Iset: 4.000|Ichg: 3.813|Idis: 2.456|Bavg: 1.348|Trnd: 0.0163|Temp1: 21.62|Temp2: 21.25|TempT: 0.25
+00:23:38,1,1,1970|CHG|PWM: 28|Batt: 1.357|Load: 1.865|diff: 0.028|Iset: 4.000|Ichg: 4.028|Idis: 2.524|Bavg: 1.349|Trnd: 0.0171|Temp1: 21.62|Temp2: 21.25|TempT: 0.25
+00:23:48,1,1,1970|CHG|PWM: 29|Batt: 1.353|Load: 1.880|diff: 0.233|Iset: 4.000|Ichg: 4.233|Idis: 2.549|Bavg: 1.351|Trnd: 0.0175|Temp1: 21.62|Temp2: 21.25|TempT: 0.27
+00:23:58,1,1,1970|CHG|PWM: 29|Batt: 1.357|Load: 1.655|diff: 0.185|Iset: 4.000|Ichg: 4.185|Idis: 2.549|Bavg: 1.353|Trnd: 0.0180|Temp1: 21.56|Temp2: 21.25|TempT: 0.25
+00:24:08,1,1,1970|CHG|PWM: 29|Batt: 1.357|Load: 1.787|diff: -0.211|Iset: 4.000|Ichg: 3.789|Idis: 2.490|Bavg: 1.354|Trnd: 0.0185|Temp1: 21.56|Temp2: 21.31|TempT: 0.27
+00:24:19,1,1,1970|CHG|PWM: 28|Batt: 1.357|Load: 1.875|diff: 0.048|Iset: 4.000|Ichg: 4.048|Idis: 2.534|Bavg: 1.355|Trnd: 0.0186|Temp1: 21.56|Temp2: 21.31|TempT: 0.28
+00:24:29,1,1,1970|CHG|PWM: 28|Batt: 1.362|Load: 1.880|diff: 0.160|Iset: 4.000|Ichg: 4.160|Idis: 2.554|Bavg: 1.357|Trnd: 0.0191|Temp1: 21.56|Temp2: 21.37|TempT: 0.30
+00:24:39,1,1,1970|CHG|PWM: 28|Batt: 1.362|Load: 1.875|diff: 0.053|Iset: 4.000|Ichg: 4.053|Idis: 2.544|Bavg: 1.357|Trnd: 0.0191|Temp1: 21.56|Temp2: 21.37|TempT: 0.31
+00:24:49,1,1,1970|CHG|PWM: 28|Batt: 1.362|Load: 1.880|diff: 0.146|Iset: 4.000|Ichg: 4.146|Idis: 2.554|Bavg: 1.359|Trnd: 0.0189|Temp1: 21.50|Temp2: 21.37|TempT: 0.33
+00:24:59,1,1,1970|CHG|PWM: 28|Batt: 1.367|Load: 1.870|diff: 0.023|Iset: 4.000|Ichg: 4.023|Idis: 2.534|Bavg: 1.360|Trnd: 0.0186|Temp1: 21.50|Temp2: 21.44|TempT: 0.36
+00:25:09,1,1,1970|CHG|PWM: 28|Batt: 1.357|Load: 1.880|diff: 0.116|Iset: 4.000|Ichg: 4.116|Idis: 2.554|Bavg: 1.360|Trnd: 0.0180|Temp1: 21.50|Temp2: 21.44|TempT: 0.39
+00:25:19,1,1,1970|CHG|PWM: 29|Batt: 1.372|Load: 1.792|diff: -0.240|Iset: 4.000|Ichg: 3.760|Idis: 2.500|Bavg: 1.362|Trnd: 0.0174|Temp1: 21.50|Temp2: 21.44|TempT: 0.39
+00:25:29,1,1,1970|CHG|PWM: 29|Batt: 1.367|Load: 1.831|diff: -0.216|Iset: 4.000|Ichg: 3.784|Idis: 2.471|Bavg: 1.364|Trnd: 0.0168|Temp1: 21.50|Temp2: 21.44|TempT: 0.37
+00:25:39,1,1,1970|CHG|PWM: 28|Batt: 1.372|Load: 1.655|diff: -0.035|Iset: 4.000|Ichg: 3.965|Idis: 2.544|Bavg: 1.365|Trnd: 0.0163|Temp1: 21.50|Temp2: 21.44|TempT: 0.34
+00:25:49,1,1,1970|CHG|PWM: 28|Batt: 1.372|Load: 1.885|diff: 0.106|Iset: 4.000|Ichg: 4.106|Idis: 2.559|Bavg: 1.367|Trnd: 0.0160|Temp1: 21.50|Temp2: 21.44|TempT: 0.31
+00:25:59,1,1,1970|CHG|PWM: 29|Batt: 1.372|Load: 1.846|diff: -0.094|Iset: 4.000|Ichg: 3.906|Idis: 2.495|Bavg: 1.368|Trnd: 0.0157|Temp1: 21.50|Temp2: 21.50|TempT: 0.31
+00:26:09,1,1,1970|CHG|PWM: 29|Batt: 1.377|Load: 1.670|diff: 0.023|Iset: 4.000|Ichg: 4.023|Idis: 2.559|Bavg: 1.370|Trnd: 0.0157|Temp1: 21.44|Temp2: 21.50|TempT: 0.31
+00:26:19,1,1,1970|CHG|PWM: 29|Batt: 1.377|Load: 1.670|diff: 0.146|Iset: 4.000|Ichg: 4.146|Idis: 2.573|Bavg: 1.371|Trnd: 0.0157|Temp1: 21.44|Temp2: 21.50|TempT: 0.31
+00:26:29,1,1,1970|CHG|PWM: 30|Batt: 1.377|Load: 1.826|diff: -0.094|Iset: 4.000|Ichg: 3.906|Idis: 2.539|Bavg: 1.373|Trnd: 0.0159|Temp1: 21.44|Temp2: 21.50|TempT: 0.30
+00:26:39,1,1,1970|CHG|PWM: 30|Batt: 1.377|Load: 1.675|diff: 0.082|Iset: 4.000|Ichg: 4.082|Idis: 2.568|Bavg: 1.374|Trnd: 0.0162|Temp1: 21.44|Temp2: 21.56|TempT: 0.30
+00:26:49,1,1,1970|CHG|PWM: 29|Batt: 1.377|Load: 1.675|diff: 0.106|Iset: 4.000|Ichg: 4.106|Idis: 2.573|Bavg: 1.375|Trnd: 0.0163|Temp1: 21.44|Temp2: 21.56|TempT: 0.28
+00:26:59,1,1,1970|CHG|PWM: 30|Batt: 1.382|Load: 1.865|diff: -0.069|Iset: 4.000|Ichg: 3.931|Idis: 2.524|Bavg: 1.376|Trnd: 0.0165|Temp1: 21.44|Temp2: 21.62|TempT: 0.27
+00:27:09,1,1,1970|CHG|PWM: 29|Batt: 1.382|Load: 1.675|diff: -0.079|Iset: 4.000|Ichg: 3.921|Idis: 2.554|Bavg: 1.378|Trnd: 0.0166|Temp1: 21.44|Temp2: 21.62|TempT: 0.27
+00:27:19,1,1,1970|CHG|PWM: 31|Batt: 1.387|Load: 1.865|diff: -0.108|Iset: 4.000|Ichg: 3.892|Idis: 2.529|Bavg: 1.379|Trnd: 0.0168|Temp1: 21.44|Temp2: 21.62|TempT: 0.25
+00:27:29,1,1,1970|CHG|PWM: 30|Batt: 1.392|Load: 1.909|diff: 0.204|Iset: 4.000|Ichg: 4.204|Idis: 2.578|Bavg: 1.381|Trnd: 0.0171|Temp1: 21.44|Temp2: 21.62|TempT: 0.25
+00:27:40,1,1,1970|CHG|PWM: 30|Batt: 1.392|Load: 1.870|diff: -0.099|Iset: 4.000|Ichg: 3.901|Idis: 2.529|Bavg: 1.383|Trnd: 0.0174|Temp1: 21.37|Temp2: 21.62|TempT: 0.27
+00:27:50,1,1,1970|CHG|PWM: 30|Batt: 1.392|Load: 1.821|diff: -0.245|Iset: 4.000|Ichg: 3.755|Idis: 2.534|Bavg: 1.385|Trnd: 0.0177|Temp1: 21.37|Temp2: 21.62|TempT: 0.28
+00:28:00,1,1,1970|CHG|PWM: 30|Batt: 1.392|Load: 1.860|diff: -0.177|Iset: 4.000|Ichg: 3.823|Idis: 2.520|Bavg: 1.387|Trnd: 0.0182|Temp1: 21.37|Temp2: 21.69|TempT: 0.30
+00:28:10,1,1,1970|CHG|PWM: 30|Batt: 1.392|Load: 1.870|diff: -0.074|Iset: 4.000|Ichg: 3.926|Idis: 2.534|Bavg: 1.389|Trnd: 0.0185|Temp1: 21.37|Temp2: 21.69|TempT: 0.30
+00:28:20,1,1,1970|CHG|PWM: 29|Batt: 1.396|Load: 1.685|diff: -0.006|Iset: 4.000|Ichg: 3.994|Idis: 2.573|Bavg: 1.390|Trnd: 0.0189|Temp1: 21.37|Temp2: 21.69|TempT: 0.28
+00:28:30,1,1,1970|CHG|PWM: 29|Batt: 1.401|Load: 1.689|diff: 0.106|Iset: 4.000|Ichg: 4.106|Idis: 2.593|Bavg: 1.393|Trnd: 0.0192|Temp1: 21.37|Temp2: 21.69|TempT: 0.27
+00:28:40,1,1,1970|CHG|PWM: 30|Batt: 1.396|Load: 1.865|diff: -0.182|Iset: 4.000|Ichg: 3.818|Idis: 2.529|Bavg: 1.394|Trnd: 0.0195|Temp1: 21.37|Temp2: 21.69|TempT: 0.23
+00:28:50,1,1,1970|CHG|PWM: 30|Batt: 1.392|Load: 1.689|diff: 0.058|Iset: 4.000|Ichg: 4.058|Idis: 2.588|Bavg: 1.394|Trnd: 0.0195|Temp1: 21.37|Temp2: 21.69|TempT: 0.22
+00:29:00,1,1,1970|CHG|PWM: 29|Batt: 1.401|Load: 1.699|diff: 0.102|Iset: 4.000|Ichg: 4.102|Idis: 2.598|Bavg: 1.395|Trnd: 0.0194|Temp1: 21.37|Temp2: 21.69|TempT: 0.19
+00:29:10,1,1,1970|CHG|PWM: 31|Batt: 1.401|Load: 1.875|diff: -0.108|Iset: 4.000|Ichg: 3.892|Idis: 2.539|Bavg: 1.396|Trnd: 0.0192|Temp1: 21.37|Temp2: 21.69|TempT: 0.16
+00:29:20,1,1,1970|CHG|PWM: 31|Batt: 1.406|Load: 1.846|diff: -0.182|Iset: 4.000|Ichg: 3.818|Idis: 2.568|Bavg: 1.398|Trnd: 0.0189|Temp1: 21.37|Temp2: 21.75|TempT: 0.16
+00:29:30,1,1,1970|CHG|PWM: 31|Batt: 1.401|Load: 1.841|diff: -0.177|Iset: 4.000|Ichg: 3.823|Idis: 2.563|Bavg: 1.400|Trnd: 0.0188|Temp1: 21.37|Temp2: 21.75|TempT: 0.16
+00:29:40,1,1,1970|CHG|PWM: 30|Batt: 1.411|Load: 1.924|diff: 0.209|Iset: 4.000|Ichg: 4.209|Idis: 2.607|Bavg: 1.401|Trnd: 0.0186|Temp1: 21.37|Temp2: 21.75|TempT: 0.16
+00:29:50,1,1,1970|CHG|PWM: 29|Batt: 1.401|Load: 1.689|diff: -0.055|Iset: 4.000|Ichg: 3.945|Idis: 2.583|Bavg: 1.401|Trnd: 0.0180|Temp1: 21.37|Temp2: 21.75|TempT: 0.16
+00:30:00,1,1,1970|CHG|PWM: 30|Batt: 1.411|Load: 1.929|diff: 0.180|Iset: 4.000|Ichg: 4.180|Idis: 2.607|Bavg: 1.403|Trnd: 0.0174|Temp1: 21.37|Temp2: 21.75|TempT: 0.12
+00:30:10,1,1,1970|CHG|PWM: 31|Batt: 1.411|Load: 1.880|diff: -0.143|Iset: 4.000|Ichg: 3.857|Idis: 2.559|Bavg: 1.406|Trnd: 0.0171|Temp1: 21.37|Temp2: 21.81|TempT: 0.11
+00:30:20,1,1,1970|CHG|PWM: 30|Batt: 1.411|Load: 1.714|diff: 0.126|Iset: 4.000|Ichg: 4.126|Idis: 2.612|Bavg: 1.407|Trnd: 0.0166|Temp1: 21.37|Temp2: 21.81|TempT: 0.11
+00:30:30,1,1,1970|CHG|PWM: 30|Batt: 1.411|Load: 1.924|diff: 0.165|Iset: 4.000|Ichg: 4.165|Idis: 2.612|Bavg: 1.408|Trnd: 0.0163|Temp1: 21.37|Temp2: 21.81|TempT: 0.11
+00:30:40,1,1,1970|CHG|PWM: 31|Batt: 1.416|Load: 1.885|diff: -0.162|Iset: 4.000|Ichg: 3.838|Idis: 2.559|Bavg: 1.409|Trnd: 0.0160|Temp1: 21.37|Temp2: 21.81|TempT: 0.12
+00:30:51,1,1,1970|CHG|PWM: 30|Batt: 1.416|Load: 1.919|diff: 0.019|Iset: 4.000|Ichg: 4.019|Idis: 2.598|Bavg: 1.411|Trnd: 0.0160|Temp1: 21.37|Temp2: 21.81|TempT: 0.12
+00:31:01,1,1,1970|CHG|PWM: 31|Batt: 1.421|Load: 1.855|diff: -0.216|Iset: 4.000|Ichg: 3.784|Idis: 2.583|Bavg: 1.412|Trnd: 0.0162|Temp1: 21.37|Temp2: 21.81|TempT: 0.12
+00:31:11,1,1,1970|CHG|PWM: 32|Batt: 1.416|Load: 1.865|diff: -0.113|Iset: 4.000|Ichg: 3.887|Idis: 2.588|Bavg: 1.414|Trnd: 0.0168|Temp1: 21.37|Temp2: 21.81|TempT: 0.12
+00:31:21,1,1,1970|CHG|PWM: 31|Batt: 1.421|Load: 1.714|diff: 0.097|Iset: 4.000|Ichg: 4.097|Idis: 2.612|Bavg: 1.415|Trnd: 0.0172|Temp1: 21.37|Temp2: 21.81|TempT: 0.11
+00:31:31,1,1,1970|CHG|PWM: 30|Batt: 1.416|Load: 1.924|diff: 0.023|Iset: 4.000|Ichg: 4.023|Idis: 2.603|Bavg: 1.416|Trnd: 0.0171|Temp1: 21.37|Temp2: 21.87|TempT: 0.11
+00:31:41,1,1,1970|CHG|PWM: 30|Batt: 1.431|Load: 1.938|diff: 0.121|Iset: 4.000|Ichg: 4.121|Idis: 2.617|Bavg: 1.418|Trnd: 0.0171|Temp1: 21.37|Temp2: 21.87|TempT: 0.11
+00:31:51,1,1,1970|CHG|PWM: 31|Batt: 1.421|Load: 1.724|diff: 0.082|Iset: 4.000|Ichg: 4.082|Idis: 2.622|Bavg: 1.420|Trnd: 0.0172|Temp1: 21.37|Temp2: 21.87|TempT: 0.11
+00:32:01,1,1,1970|CHG|PWM: 31|Batt: 1.426|Load: 1.865|diff: -0.172|Iset: 4.000|Ichg: 3.828|Idis: 2.588|Bavg: 1.421|Trnd: 0.0174|Temp1: 21.37|Temp2: 21.87|TempT: 0.12
+00:32:11,1,1,1970|CHG|PWM: 30|Batt: 1.421|Load: 1.714|diff: 0.043|Iset: 4.000|Ichg: 4.043|Idis: 2.612|Bavg: 1.422|Trnd: 0.0172|Temp1: 21.37|Temp2: 21.87|TempT: 0.11
+00:32:21,1,1,1970|CHG|PWM: 31|Batt: 1.426|Load: 1.899|diff: -0.108|Iset: 4.000|Ichg: 3.892|Idis: 2.583|Bavg: 1.422|Trnd: 0.0168|Temp1: 21.37|Temp2: 21.87|TempT: 0.09
+00:32:31,1,1,1970|CHG|PWM: 31|Batt: 1.426|Load: 1.870|diff: -0.157|Iset: 4.000|Ichg: 3.843|Idis: 2.598|Bavg: 1.423|Trnd: 0.0160|Temp1: 21.37|Temp2: 21.94|TempT: 0.09
+00:32:41,1,1,1970|CHG|PWM: 30|Batt: 1.431|Load: 1.938|diff: 0.097|Iset: 4.000|Ichg: 4.097|Idis: 2.627|Bavg: 1.425|Trnd: 0.0154|Temp1: 21.37|Temp2: 21.87|TempT: 0.08
+00:32:51,1,1,1970|CHG|PWM: 30|Batt: 1.431|Load: 1.724|diff: 0.067|Iset: 4.000|Ichg: 4.067|Idis: 2.632|Bavg: 1.426|Trnd: 0.0153|Temp1: 21.37|Temp2: 21.87|TempT: 0.08
+00:33:01,1,1,1970|CHG|PWM: 30|Batt: 1.431|Load: 1.729|diff: 0.170|Iset: 4.000|Ichg: 4.170|Idis: 2.642|Bavg: 1.426|Trnd: 0.0150|Temp1: 21.37|Temp2: 21.87|TempT: 0.08
+00:33:11,1,1,1970|CHG|PWM: 30|Batt: 1.436|Load: 1.724|diff: 0.023|Iset: 4.000|Ichg: 4.023|Idis: 2.627|Bavg: 1.428|Trnd: 0.0146|Temp1: 21.37|Temp2: 21.94|TempT: 0.08
+00:33:21,1,1,1970|CHG|PWM: 30|Batt: 1.431|Load: 1.729|diff: 0.131|Iset: 4.000|Ichg: 4.131|Idis: 2.637|Bavg: 1.429|Trnd: 0.0142|Temp1: 21.37|Temp2: 21.94|TempT: 0.09
+00:33:31,1,1,1970|CHG|PWM: 31|Batt: 1.436|Load: 1.875|diff: -0.211|Iset: 4.000|Ichg: 3.789|Idis: 2.598|Bavg: 1.431|Trnd: 0.0140|Temp1: 21.37|Temp2: 21.94|TempT: 0.09
+00:33:41,1,1,1970|CHG|PWM: 31|Batt: 1.436|Load: 1.904|diff: -0.177|Iset: 4.000|Ichg: 3.823|Idis: 2.583|Bavg: 1.432|Trnd: 0.0139|Temp1: 21.37|Temp2: 21.94|TempT: 0.09
+00:33:51,1,1,1970|CHG|PWM: 31|Batt: 1.436|Load: 1.904|diff: -0.172|Iset: 4.000|Ichg: 3.828|Idis: 2.583|Bavg: 1.433|Trnd: 0.0137|Temp1: 21.31|Temp2: 21.94|TempT: 0.09
+00:34:02,1,1,1970|CHG|PWM: 31|Batt: 1.440|Load: 1.733|diff: 0.097|Iset: 4.000|Ichg: 4.097|Idis: 2.637|Bavg: 1.434|Trnd: 0.0137|Temp1: 21.37|Temp2: 21.94|TempT: 0.08
+00:34:12,1,1,1970|CHG|PWM: 31|Batt: 1.440|Load: 1.919|diff: -0.089|Iset: 4.000|Ichg: 3.911|Idis: 2.598|Bavg: 1.436|Trnd: 0.0136|Temp1: 21.37|Temp2: 22.00|TempT: 0.09
+00:34:22,1,1,1970|CHG|PWM: 31|Batt: 1.440|Load: 1.919|diff: -0.089|Iset: 4.000|Ichg: 3.911|Idis: 2.603|Bavg: 1.437|Trnd: 0.0139|Temp1: 21.37|Temp2: 21.94|TempT: 0.09
+00:34:32,1,1,1970|CHG|PWM: 31|Batt: 1.440|Load: 1.958|diff: 0.204|Iset: 4.000|Ichg: 4.204|Idis: 2.646|Bavg: 1.437|Trnd: 0.0140|Temp1: 21.37|Temp2: 22.00|TempT: 0.08
+00:34:42,1,1,1970|CHG|PWM: 31|Batt: 1.445|Load: 1.924|diff: -0.060|Iset: 4.000|Ichg: 3.940|Idis: 2.612|Bavg: 1.439|Trnd: 0.0143|Temp1: 21.37|Temp2: 22.00|TempT: 0.09
+00:34:52,1,1,1970|CHG|PWM: 31|Batt: 1.445|Load: 1.748|diff: 0.043|Iset: 4.000|Ichg: 4.043|Idis: 2.651|Bavg: 1.440|Trnd: 0.0143|Temp1: 21.37|Temp2: 22.00|TempT: 0.09
+00:35:02,1,1,1970|CHG|PWM: 32|Batt: 1.445|Load: 1.895|diff: -0.138|Iset: 4.000|Ichg: 3.862|Idis: 2.627|Bavg: 1.442|Trnd: 0.0145|Temp1: 21.37|Temp2: 22.00|TempT: 0.11
+00:35:12,1,1,1970|CHG|PWM: 30|Batt: 1.440|Load: 1.958|diff: 0.111|Iset: 4.000|Ichg: 4.111|Idis: 2.646|Bavg: 1.442|Trnd: 0.0145|Temp1: 21.37|Temp2: 22.12|TempT: 0.14
+00:35:22,1,1,1970|CHG|PWM: 31|Batt: 1.445|Load: 1.753|diff: 0.009|Iset: 4.000|Ichg: 4.009|Idis: 2.651|Bavg: 1.443|Trnd: 0.0143|Temp1: 21.37|Temp2: 22.12|TempT: 0.16
+00:35:32,1,1,1970|CHG|PWM: 31|Batt: 1.450|Load: 1.958|diff: 0.058|Iset: 4.000|Ichg: 4.058|Idis: 2.642|Bavg: 1.444|Trnd: 0.0142|Temp1: 21.37|Temp2: 22.06|TempT: 0.16
+00:35:42,1,1,1970|CHG|PWM: 32|Batt: 1.450|Load: 1.929|diff: -0.123|Iset: 4.000|Ichg: 3.877|Idis: 2.617|Bavg: 1.445|Trnd: 0.0137|Temp1: 21.37|Temp2: 22.06|TempT: 0.16
+00:35:52,1,1,1970|CHG|PWM: 32|Batt: 1.450|Load: 1.924|diff: -0.138|Iset: 4.000|Ichg: 3.862|Idis: 2.612|Bavg: 1.447|Trnd: 0.0136|Temp1: 21.37|Temp2: 22.06|TempT: 0.12
+00:36:02,1,1,1970|CHG|PWM: 32|Batt: 1.450|Load: 1.899|diff: -0.182|Iset: 4.000|Ichg: 3.818|Idis: 2.637|Bavg: 1.447|Trnd: 0.0133|Temp1: 21.37|Temp2: 22.12|TempT: 0.12
+00:36:12,1,1,1970|CHG|PWM: 31|Batt: 1.455|Load: 1.963|diff: 0.053|Iset: 4.000|Ichg: 4.053|Idis: 2.651|Bavg: 1.448|Trnd: 0.0131|Temp1: 21.37|Temp2: 22.12|TempT: 0.12
+00:36:22,1,1,1970|CHG|PWM: 31|Batt: 1.455|Load: 1.758|diff: 0.136|Iset: 4.000|Ichg: 4.136|Idis: 2.676|Bavg: 1.450|Trnd: 0.0130|Temp1: 21.37|Temp2: 22.12|TempT: 0.14
+00:36:32,1,1,1970|CHG|PWM: 33|Batt: 1.455|Load: 1.904|diff: -0.104|Iset: 4.000|Ichg: 3.896|Idis: 2.651|Bavg: 1.451|Trnd: 0.0131|Temp1: 21.37|Temp2: 22.12|TempT: 0.16
+00:36:42,1,1,1970|CHG|PWM: 32|Batt: 1.455|Load: 1.909|diff: -0.191|Iset: 4.000|Ichg: 3.809|Idis: 2.642|Bavg: 1.453|Trnd: 0.0133|Temp1: 21.37|Temp2: 22.19|TempT: 0.16
+00:36:52,1,1,1970|CHG|PWM: 31|Batt: 1.455|Load: 1.768|diff: -0.016|Iset: 4.000|Ichg: 3.984|Idis: 2.661|Bavg: 1.453|Trnd: 0.0133|Temp1: 21.37|Temp2: 22.19|TempT: 0.17
+00:37:03,1,1,1970|CHG|PWM: 32|Batt: 1.460|Load: 1.987|diff: 0.243|Iset: 4.000|Ichg: 4.243|Idis: 2.686|Bavg: 1.454|Trnd: 0.0133|Temp1: 21.37|Temp2: 22.19|TempT: 0.17
+00:37:13,1,1,1970|CHG|PWM: 31|Batt: 1.460|Load: 1.978|diff: 0.146|Iset: 4.000|Ichg: 4.146|Idis: 2.676|Bavg: 1.456|Trnd: 0.0131|Temp1: 21.37|Temp2: 22.19|TempT: 0.16
+00:37:23,1,1,1970|CHG|PWM: 32|Batt: 1.460|Load: 1.953|diff: -0.055|Iset: 4.000|Ichg: 3.945|Idis: 2.651|Bavg: 1.457|Trnd: 0.0133|Temp1: 21.37|Temp2: 22.19|TempT: 0.12
+00:37:33,1,1,1970|CHG|PWM: 31|Batt: 1.460|Load: 1.768|diff: -0.006|Iset: 4.000|Ichg: 3.994|Idis: 2.671|Bavg: 1.458|Trnd: 0.0134|Temp1: 21.37|Temp2: 22.19|TempT: 0.11
+00:37:43,1,1,1970|CHG|PWM: 31|Batt: 1.465|Load: 1.768|diff: 0.131|Iset: 4.000|Ichg: 4.131|Idis: 2.686|Bavg: 1.459|Trnd: 0.0136|Temp1: 21.37|Temp2: 22.19|TempT: 0.09
+00:37:53,1,1,1970|CHG|PWM: 33|Batt: 1.465|Load: 1.919|diff: -0.138|Iset: 4.000|Ichg: 3.862|Idis: 2.661|Bavg: 1.460|Trnd: 0.0136|Temp1: 21.37|Temp2: 22.19|TempT: 0.11
+00:38:03,1,1,1970|CHG|PWM: 31|Batt: 1.465|Load: 1.777|diff: -0.035|Iset: 4.000|Ichg: 3.965|Idis: 2.671|Bavg: 1.461|Trnd: 0.0136|Temp1: 21.37|Temp2: 22.19|TempT: 0.11
+00:38:13,1,1,1970|CHG|PWM: 32|Batt: 1.460|Load: 1.997|diff: 0.224|Iset: 4.000|Ichg: 4.224|Idis: 2.690|Bavg: 1.462|Trnd: 0.0136|Temp1: 21.31|Temp2: 22.19|TempT: 0.11
+00:38:23,1,1,1970|CHG|PWM: 32|Batt: 1.470|Load: 1.948|diff: -0.147|Iset: 4.000|Ichg: 3.853|Idis: 2.646|Bavg: 1.463|Trnd: 0.0136|Temp1: 21.37|Temp2: 22.25|TempT: 0.11
+00:38:33,1,1,1970|CHG|PWM: 31|Batt: 1.470|Load: 1.768|diff: 0.116|Iset: 4.000|Ichg: 4.116|Idis: 2.686|Bavg: 1.464|Trnd: 0.0134|Temp1: 21.37|Temp2: 22.25|TempT: 0.11
+00:38:43,1,1,1970|CHG|PWM: 31|Batt: 1.470|Load: 1.978|diff: 0.028|Iset: 4.000|Ichg: 4.028|Idis: 2.666|Bavg: 1.465|Trnd: 0.0131|Temp1: 21.37|Temp2: 22.31|TempT: 0.12
+00:38:53,1,1,1970|CHG|PWM: 31|Batt: 1.465|Load: 1.982|diff: 0.106|Iset: 4.000|Ichg: 4.106|Idis: 2.676|Bavg: 1.466|Trnd: 0.0130|Temp1: 21.31|Temp2: 22.31|TempT: 0.14
+00:39:03,1,1,1970|CHG|PWM: 32|Batt: 1.465|Load: 1.953|diff: -0.069|Iset: 4.000|Ichg: 3.931|Idis: 2.666|Bavg: 1.466|Trnd: 0.0125|Temp1: 21.37|Temp2: 22.31|TempT: 0.14
+00:39:13,1,1,1970|CHG|PWM: 31|Batt: 1.470|Load: 1.772|diff: 0.116|Iset: 4.000|Ichg: 4.116|Idis: 2.690|Bavg: 1.467|Trnd: 0.0121|Temp1: 21.31|Temp2: 22.25|TempT: 0.14
+00:39:23,1,1,1970|CHG|PWM: 32|Batt: 1.475|Load: 1.953|diff: -0.069|Iset: 4.000|Ichg: 3.931|Idis: 2.671|Bavg: 1.468|Trnd: 0.0116|Temp1: 21.37|Temp2: 22.31|TempT: 0.14
+00:39:33,1,1,1970|CHG|PWM: 31|Batt: 1.475|Load: 1.992|diff: 0.126|Iset: 4.000|Ichg: 4.126|Idis: 2.686|Bavg: 1.470|Trnd: 0.0114|Temp1: 21.37|Temp2: 22.31|TempT: 0.12
+00:39:43,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.953|diff: -0.157|Iset: 4.000|Ichg: 3.843|Idis: 2.656|Bavg: 1.471|Trnd: 0.0116|Temp1: 21.37|Temp2: 22.31|TempT: 0.12
+00:39:53,1,1,1970|CHG|PWM: 33|Batt: 1.475|Load: 1.929|diff: -0.133|Iset: 4.000|Ichg: 3.867|Idis: 2.681|Bavg: 1.472|Trnd: 0.0117|Temp1: 21.31|Temp2: 22.37|TempT: 0.16
+00:40:04,1,1,1970|CHG|PWM: 32|Batt: 1.475|Load: 1.963|diff: -0.084|Iset: 4.000|Ichg: 3.916|Idis: 2.671|Bavg: 1.472|Trnd: 0.0117|Temp1: 21.31|Temp2: 22.37|TempT: 0.19
+00:40:14,1,1,1970|CHG|PWM: 31|Batt: 1.470|Load: 1.787|diff: -0.030|Iset: 4.000|Ichg: 3.970|Idis: 2.690|Bavg: 1.473|Trnd: 0.0114|Temp1: 21.37|Temp2: 22.37|TempT: 0.19
+00:40:24,1,1,1970|CHG|PWM: 32|Batt: 1.475|Load: 1.782|diff: 0.092|Iset: 4.000|Ichg: 4.092|Idis: 2.695|Bavg: 1.474|Trnd: 0.0111|Temp1: 21.37|Temp2: 22.37|TempT: 0.19
+00:40:34,1,1,1970|CHG|PWM: 31|Batt: 1.479|Load: 1.992|diff: 0.106|Iset: 4.000|Ichg: 4.106|Idis: 2.686|Bavg: 1.475|Trnd: 0.0110|Temp1: 21.37|Temp2: 22.37|TempT: 0.16
+00:40:44,1,1,1970|CHG|PWM: 32|Batt: 1.475|Load: 1.787|diff: 0.077|Iset: 4.000|Ichg: 4.077|Idis: 2.695|Bavg: 1.475|Trnd: 0.0107|Temp1: 21.37|Temp2: 22.44|TempT: 0.12
+00:40:54,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.782|diff: 0.097|Iset: 4.000|Ichg: 4.097|Idis: 2.695|Bavg: 1.476|Trnd: 0.0104|Temp1: 21.37|Temp2: 22.44|TempT: 0.11
+00:41:04,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.792|diff: 0.204|Iset: 4.000|Ichg: 4.204|Idis: 2.729|Bavg: 1.476|Trnd: 0.0101|Temp1: 21.31|Temp2: 22.44|TempT: 0.12
+00:41:14,1,1,1970|CHG|PWM: 31|Batt: 1.479|Load: 1.987|diff: 0.023|Iset: 4.000|Ichg: 4.023|Idis: 2.686|Bavg: 1.476|Trnd: 0.0098|Temp1: 21.31|Temp2: 22.50|TempT: 0.16
+00:41:24,1,1,1970|CHG|PWM: 33|Batt: 1.479|Load: 1.934|diff: -0.157|Iset: 4.000|Ichg: 3.843|Idis: 2.690|Bavg: 1.477|Trnd: 0.0096|Temp1: 21.31|Temp2: 22.56|TempT: 0.20
+00:41:34,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.782|diff: 0.170|Iset: 4.000|Ichg: 4.170|Idis: 2.715|Bavg: 1.478|Trnd: 0.0093|Temp1: 21.31|Temp2: 22.56|TempT: 0.27
+00:41:44,1,1,1970|CHG|PWM: 33|Batt: 1.479|Load: 1.938|diff: -0.157|Iset: 4.000|Ichg: 3.843|Idis: 2.695|Bavg: 1.479|Trnd: 0.0089|Temp1: 21.31|Temp2: 22.62|TempT: 0.31
+00:41:54,1,1,1970|CHG|PWM: 33|Batt: 1.479|Load: 1.934|diff: -0.147|Iset: 4.000|Ichg: 3.853|Idis: 2.690|Bavg: 1.479|Trnd: 0.0082|Temp1: 21.31|Temp2: 22.62|TempT: 0.31
+00:42:04,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.787|diff: 0.087|Iset: 4.000|Ichg: 4.087|Idis: 2.705|Bavg: 1.479|Trnd: 0.0078|Temp1: 21.31|Temp2: 22.62|TempT: 0.30
+00:42:14,1,1,1970|CHG|PWM: 32|Batt: 1.475|Load: 1.797|diff: 0.043|Iset: 4.000|Ichg: 4.043|Idis: 2.710|Bavg: 1.479|Trnd: 0.0072|Temp1: 21.31|Temp2: 22.62|TempT: 0.30
+00:42:24,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.787|diff: 0.082|Iset: 4.000|Ichg: 4.082|Idis: 2.700|Bavg: 1.479|Trnd: 0.0066|Temp1: 21.31|Temp2: 22.69|TempT: 0.30
+00:42:34,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.797|diff: 0.053|Iset: 4.000|Ichg: 4.053|Idis: 2.715|Bavg: 1.479|Trnd: 0.0058|Temp1: 21.31|Temp2: 22.69|TempT: 0.33
+00:42:44,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.792|diff: 0.180|Iset: 4.000|Ichg: 4.180|Idis: 2.720|Bavg: 1.480|Trnd: 0.0052|Temp1: 21.31|Temp2: 22.69|TempT: 0.34
+00:42:54,1,1,1970|CHG|PWM: 33|Batt: 1.484|Load: 1.943|diff: -0.147|Iset: 4.000|Ichg: 3.853|Idis: 2.695|Bavg: 1.481|Trnd: 0.0049|Temp1: 21.31|Temp2: 22.75|TempT: 0.36
+00:43:05,1,1,1970|CHG|PWM: 33|Batt: 1.484|Load: 1.943|diff: -0.147|Iset: 4.000|Ichg: 3.853|Idis: 2.690|Bavg: 1.481|Trnd: 0.0049|Temp1: 21.31|Temp2: 22.75|TempT: 0.34
+00:43:15,1,1,1970|CHG|PWM: 33|Batt: 1.479|Load: 1.943|diff: -0.143|Iset: 4.000|Ichg: 3.857|Idis: 2.690|Bavg: 1.481|Trnd: 0.0050|Temp1: 21.31|Temp2: 22.81|TempT: 0.33
+00:43:25,1,1,1970|CHG|PWM: 33|Batt: 1.484|Load: 1.938|diff: -0.147|Iset: 4.000|Ichg: 3.853|Idis: 2.695|Bavg: 1.482|Trnd: 0.0050|Temp1: 21.31|Temp2: 22.87|TempT: 0.33
+00:43:35,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.802|diff: 0.043|Iset: 4.000|Ichg: 4.043|Idis: 2.720|Bavg: 1.483|Trnd: 0.0049|Temp1: 21.31|Temp2: 22.87|TempT: 0.31
+00:43:45,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.934|diff: -0.245|Iset: 4.000|Ichg: 3.755|Idis: 2.681|Bavg: 1.483|Trnd: 0.0044|Temp1: 21.31|Temp2: 22.87|TempT: 0.30
+00:43:55,1,1,1970|CHG|PWM: 32|Batt: 1.479|Load: 1.968|diff: -0.084|Iset: 4.000|Ichg: 3.916|Idis: 2.686|Bavg: 1.483|Trnd: 0.0041|Temp1: 21.31|Temp2: 22.94|TempT: 0.30
+00:44:05,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.812|diff: 0.131|Iset: 4.000|Ichg: 4.131|Idis: 2.734|Bavg: 1.483|Trnd: 0.0037|Temp1: 21.31|Temp2: 22.94|TempT: 0.30
+00:44:15,1,1,1970|CHG|PWM: 33|Batt: 1.479|Load: 1.938|diff: -0.167|Iset: 4.000|Ichg: 3.833|Idis: 2.695|Bavg: 1.482|Trnd: 0.0034|Temp1: 21.31|Temp2: 22.94|TempT: 0.30
+00:44:25,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 2.012|diff: 0.194|Iset: 4.000|Ichg: 4.194|Idis: 2.710|Bavg: 1.482|Trnd: 0.0031|Temp1: 21.31|Temp2: 23.00|TempT: 0.31
+00:44:35,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.938|diff: -0.235|Iset: 4.000|Ichg: 3.765|Idis: 2.676|Bavg: 1.483|Trnd: 0.0029|Temp1: 21.31|Temp2: 23.06|TempT: 0.33
+00:44:45,1,1,1970|CHG|PWM: 33|Batt: 1.484|Load: 1.943|diff: -0.143|Iset: 4.000|Ichg: 3.857|Idis: 2.695|Bavg: 1.483|Trnd: 0.0027|Temp1: 21.31|Temp2: 23.06|TempT: 0.34
+00:44:55,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.973|diff: -0.079|Iset: 4.000|Ichg: 3.921|Idis: 2.686|Bavg: 1.483|Trnd: 0.0026|Temp1: 21.31|Temp2: 23.12|TempT: 0.36
+00:45:05,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.934|diff: -0.230|Iset: 4.000|Ichg: 3.770|Idis: 2.686|Bavg: 1.483|Trnd: 0.0024|Temp1: 21.31|Temp2: 23.12|TempT: 0.37
+00:45:15,1,1,1970|CHG|PWM: 31|Batt: 1.479|Load: 2.007|diff: 0.131|Iset: 4.000|Ichg: 4.131|Idis: 2.705|Bavg: 1.483|Trnd: 0.0021|Temp1: 21.31|Temp2: 23.12|TempT: 0.36
+00:45:25,1,1,1970|CHG|PWM: 32|Batt: 1.489|Load: 1.792|diff: 0.092|Iset: 4.000|Ichg: 4.092|Idis: 2.705|Bavg: 1.484|Trnd: 0.0020|Temp1: 21.31|Temp2: 23.19|TempT: 0.34
+00:45:35,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.792|diff: 0.077|Iset: 4.000|Ichg: 4.077|Idis: 2.700|Bavg: 1.484|Trnd: 0.0018|Temp1: 21.31|Temp2: 23.19|TempT: 0.33
+00:45:45,1,1,1970|CHG|PWM: 32|Batt: 1.489|Load: 1.934|diff: -0.230|Iset: 4.000|Ichg: 3.770|Idis: 2.686|Bavg: 1.485|Trnd: 0.0020|Temp1: 21.31|Temp2: 23.19|TempT: 0.31
+00:45:56,1,1,1970|CHG|PWM: 31|Batt: 1.484|Load: 2.007|diff: 0.116|Iset: 4.000|Ichg: 4.116|Idis: 2.690|Bavg: 1.485|Trnd: 0.0021|Temp1: 21.31|Temp2: 23.25|TempT: 0.31
+00:46:06,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.792|diff: 0.082|Iset: 4.000|Ichg: 4.082|Idis: 2.705|Bavg: 1.485|Trnd: 0.0023|Temp1: 21.31|Temp2: 23.31|TempT: 0.33
+00:46:16,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.807|diff: 0.146|Iset: 4.000|Ichg: 4.146|Idis: 2.729|Bavg: 1.485|Trnd: 0.0026|Temp1: 21.31|Temp2: 23.31|TempT: 0.34
+00:46:26,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.807|diff: 0.063|Iset: 4.000|Ichg: 4.063|Idis: 2.725|Bavg: 1.485|Trnd: 0.0027|Temp1: 21.31|Temp2: 23.37|TempT: 0.36
+00:46:36,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 2.021|diff: 0.194|Iset: 4.000|Ichg: 4.194|Idis: 2.700|Bavg: 1.486|Trnd: 0.0029|Temp1: 21.31|Temp2: 23.44|TempT: 0.37
+00:46:46,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.968|diff: -0.094|Iset: 4.000|Ichg: 3.906|Idis: 2.690|Bavg: 1.485|Trnd: 0.0029|Temp1: 21.31|Temp2: 23.44|TempT: 0.37
+00:46:56,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 2.007|diff: 0.165|Iset: 4.000|Ichg: 4.165|Idis: 2.700|Bavg: 1.485|Trnd: 0.0026|Temp1: 21.31|Temp2: 23.44|TempT: 0.36
+00:47:06,1,1,1970|CHG|PWM: 32|Batt: 1.489|Load: 2.012|diff: 0.170|Iset: 4.000|Ichg: 4.170|Idis: 2.705|Bavg: 1.485|Trnd: 0.0023|Temp1: 21.31|Temp2: 23.44|TempT: 0.34
+00:47:16,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.792|diff: 0.165|Iset: 4.000|Ichg: 4.165|Idis: 2.710|Bavg: 1.485|Trnd: 0.0020|Temp1: 21.31|Temp2: 23.50|TempT: 0.34
+00:47:26,1,1,1970|CHG|PWM: 33|Batt: 1.484|Load: 1.943|diff: -0.162|Iset: 4.000|Ichg: 3.838|Idis: 2.695|Bavg: 1.485|Trnd: 0.0017|Temp1: 21.31|Temp2: 23.56|TempT: 0.34
+00:47:36,1,1,1970|CHG|PWM: 33|Batt: 1.484|Load: 1.943|diff: -0.152|Iset: 4.000|Ichg: 3.848|Idis: 2.690|Bavg: 1.485|Trnd: 0.0014|Temp1: 21.31|Temp2: 23.56|TempT: 0.36
+00:47:46,1,1,1970|CHG|PWM: 33|Batt: 1.489|Load: 1.948|diff: -0.162|Iset: 4.000|Ichg: 3.838|Idis: 2.695|Bavg: 1.486|Trnd: 0.0011|Temp1: 21.31|Temp2: 23.62|TempT: 0.39
+00:47:56,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.968|diff: -0.074|Iset: 4.000|Ichg: 3.926|Idis: 2.690|Bavg: 1.486|Trnd: 0.0008|Temp1: 21.31|Temp2: 23.69|TempT: 0.41
+00:48:06,1,1,1970|CHG|PWM: 32|Batt: 1.484|Load: 1.797|diff: 0.087|Iset: 4.000|Ichg: 4.087|Idis: 2.700|Bavg: 1.486|Trnd: 0.0006|Temp1: 21.31|Temp2: 23.75|TempT: 0.42
+00:48:16,1,1,1970|CHG|PWM: 32|Batt: 1.489|Load: 1.997|diff: 0.097|Iset: 4.000|Ichg: 4.097|Idis: 2.686|Bavg: 1.486|Trnd: 0.0008|Temp1: 21.31|Temp2: 23.81|TempT: 0.45
+Delta Temperatur shut off.
+00:48:26,1,1,1970|OFF|PWM: 0|Batt: 1.489|Load: 1.938|diff: -0.157|Iset: 4.000|Ichg: 3.843|Idis: 2.695|Bavg: 1.486|Trnd: 0.0009|Temp1: 21.31|Temp2: 23.81|TempT: 0.45
+00:48:36,1,1,1970|OFF|PWM: 0|Batt: 1.484|Load: 1.479|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.070|Bavg: 1.486|Trnd: 0.0009|Temp1: 21.31|Temp2: 23.81|TempT: 0.44
+00:48:46,1,1,1970|OFF|PWM: 0|Batt: 1.479|Load: 1.479|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.065|Bavg: 1.486|Trnd: 0.0009|Temp1: 21.37|Temp2: 23.81|TempT: 0.41
+00:48:56,1,1,1970|OFF|PWM: 0|Batt: 1.475|Load: 1.475|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.061|Bavg: 1.484|Trnd: 0.0005|Temp1: 21.37|Temp2: 23.75|TempT: 0.34
+00:49:06,1,1,1970|OFF|PWM: 0|Batt: 1.470|Load: 1.475|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.056|Bavg: 1.482|Trnd: -0.0006|Temp1: 21.37|Temp2: 23.81|TempT: 0.31
+00:49:16,1,1,1970|OFF|PWM: 0|Batt: 1.470|Load: 1.475|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.051|Bavg: 1.480|Trnd: -0.0020|Temp1: 21.37|Temp2: 23.81|TempT: 0.28
+00:49:26,1,1,1970|OFF|PWM: 0|Batt: 1.465|Load: 1.465|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.051|Bavg: 1.478|Trnd: -0.0040|Temp1: 21.37|Temp2: 23.81|TempT: 0.25
+00:49:36,1,1,1970|OFF|PWM: 0|Batt: 1.470|Load: 1.470|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.056|Bavg: 1.475|Trnd: -0.0063|Temp1: 21.37|Temp2: 23.81|TempT: 0.23
+00:49:46,1,1,1970|OFF|PWM: 0|Batt: 1.470|Load: 1.470|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.051|Bavg: 1.473|Trnd: -0.0087|Temp1: 21.37|Temp2: 23.87|TempT: 0.20
+00:49:56,1,1,1970|OFF|PWM: 0|Batt: 1.465|Load: 1.465|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.046|Bavg: 1.470|Trnd: -0.0113|Temp1: 21.31|Temp2: 23.87|TempT: 0.19
+00:50:06,1,1,1970|OFF|PWM: 0|Batt: 1.470|Load: 1.460|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.051|Bavg: 1.469|Trnd: -0.0136|Temp1: 21.31|Temp2: 23.87|TempT: 0.17
+00:50:16,1,1,1970|OFF|PWM: 0|Batt: 1.465|Load: 1.465|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.041|Bavg: 1.468|Trnd: -0.0157|Temp1: 21.31|Temp2: 23.87|TempT: 0.14
+00:50:26,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.460|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.046|Bavg: 1.467|Trnd: -0.0174|Temp1: 21.31|Temp2: 23.87|TempT: 0.11
+00:50:36,1,1,1970|OFF|PWM: 0|Batt: 1.470|Load: 1.465|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.041|Bavg: 1.467|Trnd: -0.0185|Temp1: 21.31|Temp2: 23.87|TempT: 0.08
+00:50:46,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.465|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.041|Bavg: 1.465|Trnd: -0.0194|Temp1: 21.31|Temp2: 23.87|TempT: 0.08
+00:50:56,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.460|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.464|Trnd: -0.0198|Temp1: 21.31|Temp2: 23.94|TempT: 0.12
+00:51:06,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.463|Trnd: -0.0197|Temp1: 21.31|Temp2: 23.94|TempT: 0.16
+00:51:16,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.465|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.041|Bavg: 1.462|Trnd: -0.0192|Temp1: 21.31|Temp2: 23.94|TempT: 0.19
+00:51:26,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.461|Trnd: -0.0183|Temp1: 21.31|Temp2: 24.00|TempT: 0.22
+00:51:36,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.460|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.460|Trnd: -0.0171|Temp1: 21.25|Temp2: 23.94|TempT: 0.22
+00:51:46,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.459|Trnd: -0.0157|Temp1: 21.25|Temp2: 24.00|TempT: 0.23
+00:51:56,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.460|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.041|Bavg: 1.458|Trnd: -0.0143|Temp1: 21.25|Temp2: 24.00|TempT: 0.23
+00:52:06,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.031|Bavg: 1.458|Trnd: -0.0130|Temp1: 21.25|Temp2: 24.00|TempT: 0.22
+00:52:16,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.458|Trnd: -0.0117|Temp1: 21.25|Temp2: 24.00|TempT: 0.20
+00:52:26,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.458|Trnd: -0.0107|Temp1: 21.25|Temp2: 24.06|TempT: 0.20
+00:52:36,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.460|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.458|Trnd: -0.0099|Temp1: 21.25|Temp2: 24.06|TempT: 0.22
+00:52:46,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.031|Bavg: 1.458|Trnd: -0.0092|Temp1: 21.25|Temp2: 24.06|TempT: 0.23
+00:52:56,1,1,1970|OFF|PWM: 0|Batt: 1.460|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.031|Bavg: 1.458|Trnd: -0.0081|Temp1: 21.25|Temp2: 24.00|TempT: 0.22
+00:53:06,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.460|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.031|Bavg: 1.458|Trnd: -0.0070|Temp1: 21.25|Temp2: 24.00|TempT: 0.19
+00:53:16,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.455|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.458|Trnd: -0.0060|Temp1: 21.25|Temp2: 24.00|TempT: 0.16
+00:53:26,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.031|Bavg: 1.458|Trnd: -0.0049|Temp1: 21.19|Temp2: 24.00|TempT: 0.12
+00:53:36,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.036|Bavg: 1.458|Trnd: -0.0040|Temp1: 21.19|Temp2: 24.00|TempT: 0.12
+00:53:46,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.457|Trnd: -0.0034|Temp1: 21.19|Temp2: 24.00|TempT: 0.11
+00:53:56,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.456|Trnd: -0.0026|Temp1: 21.19|Temp2: 24.00|TempT: 0.09
+00:54:06,1,1,1970|OFF|PWM: 0|Batt: 1.450|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.031|Bavg: 1.455|Trnd: -0.0024|Temp1: 21.19|Temp2: 24.00|TempT: 0.08
+00:54:16,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.454|Trnd: -0.0026|Temp1: 21.19|Temp2: 24.00|TempT: 0.06
+00:54:26,1,1,1970|OFF|PWM: 0|Batt: 1.450|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.454|Trnd: -0.0029|Temp1: 21.19|Temp2: 24.06|TempT: 0.06
+00:54:36,1,1,1970|OFF|PWM: 0|Batt: 1.450|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.453|Trnd: -0.0035|Temp1: 21.19|Temp2: 24.06|TempT: 0.06
+00:54:46,1,1,1970|OFF|PWM: 0|Batt: 1.450|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.453|Trnd: -0.0040|Temp1: 21.19|Temp2: 24.06|TempT: 0.06
+00:54:56,1,1,1970|OFF|PWM: 0|Batt: 1.450|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.452|Trnd: -0.0047|Temp1: 21.12|Temp2: 24.06|TempT: 0.09
+00:55:06,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.451|Trnd: -0.0056|Temp1: 21.12|Temp2: 24.06|TempT: 0.12
+00:55:16,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.450|Trnd: -0.0066|Temp1: 21.12|Temp2: 24.06|TempT: 0.16
+00:55:26,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.449|Trnd: -0.0075|Temp1: 21.12|Temp2: 24.00|TempT: 0.16
+00:55:36,1,1,1970|OFF|PWM: 0|Batt: 1.450|Load: 1.450|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.448|Trnd: -0.0082|Temp1: 21.12|Temp2: 24.00|TempT: 0.12
+00:55:46,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.448|Trnd: -0.0087|Temp1: 21.12|Temp2: 24.00|TempT: 0.09
+00:55:56,1,1,1970|OFF|PWM: 0|Batt: 1.455|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.448|Trnd: -0.0087|Temp1: 21.12|Temp2: 24.00|TempT: 0.06
+00:56:06,1,1,1970|OFF|PWM: 0|Batt: 1.450|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.448|Trnd: -0.0082|Temp1: 21.12|Temp2: 24.00|TempT: 0.06
+00:56:16,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.448|Trnd: -0.0076|Temp1: 21.12|Temp2: 24.00|TempT: 0.06
+00:56:26,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.448|Trnd: -0.0069|Temp1: 21.12|Temp2: 24.00|TempT: 0.05
+00:56:36,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.448|Trnd: -0.0063|Temp1: 21.12|Temp2: 24.00|TempT: 0.03
+00:56:46,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.448|Trnd: -0.0058|Temp1: 21.06|Temp2: 24.00|TempT: 0.03
+00:56:56,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.447|Trnd: -0.0053|Temp1: 21.06|Temp2: 24.00|TempT: 0.02
+00:57:06,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.026|Bavg: 1.447|Trnd: -0.0047|Temp1: 21.06|Temp2: 24.00|TempT: 0.02
+00:57:16,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.445|Trnd: -0.0044|Temp1: 21.06|Temp2: 23.94|TempT: 0.00
+00:57:26,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.436|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.445|Trnd: -0.0043|Temp1: 21.06|Temp2: 23.94|TempT: -0.02
+00:57:36,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.445|Trnd: -0.0040|Temp1: 21.06|Temp2: 23.94|TempT: -0.02
+00:57:46,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.445|Trnd: -0.0038|Temp1: 21.06|Temp2: 23.94|TempT: -0.02
+00:57:56,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.445|Trnd: -0.0037|Temp1: 21.06|Temp2: 23.94|TempT: 0.00
+00:58:06,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.445|Trnd: -0.0035|Temp1: 21.06|Temp2: 23.94|TempT: 0.00
+00:58:16,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.444|Trnd: -0.0035|Temp1: 21.00|Temp2: 23.94|TempT: 0.02
+00:58:26,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.444|Trnd: -0.0037|Temp1: 21.00|Temp2: 23.94|TempT: 0.03
+00:58:36,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.444|Trnd: -0.0037|Temp1: 21.00|Temp2: 23.94|TempT: 0.05
+00:58:46,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.443|Trnd: -0.0038|Temp1: 21.00|Temp2: 23.87|TempT: 0.03
+00:58:56,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.443|Trnd: -0.0038|Temp1: 21.00|Temp2: 23.87|TempT: 0.00
+00:59:06,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.443|Trnd: -0.0040|Temp1: 21.00|Temp2: 23.87|TempT: -0.03
+00:59:16,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.442|Trnd: -0.0038|Temp1: 21.00|Temp2: 23.81|TempT: -0.06
+00:59:26,1,1,1970|OFF|PWM: 0|Batt: 1.445|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.442|Trnd: -0.0034|Temp1: 20.94|Temp2: 23.81|TempT: -0.05
+00:59:36,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.442|Trnd: -0.0031|Temp1: 20.94|Temp2: 23.81|TempT: -0.03
+00:59:46,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.436|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.442|Trnd: -0.0027|Temp1: 20.94|Temp2: 23.81|TempT: -0.02
+00:59:56,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.442|Trnd: -0.0027|Temp1: 20.94|Temp2: 23.75|TempT: -0.02
+01:00:06,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.021|Bavg: 1.442|Trnd: -0.0029|Temp1: 20.94|Temp2: 23.75|TempT: -0.03
+01:00:16,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.441|Trnd: -0.0031|Temp1: 20.94|Temp2: 23.75|TempT: -0.06
+01:00:26,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.441|Trnd: -0.0031|Temp1: 20.94|Temp2: 23.69|TempT: -0.11
+01:00:36,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.436|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.441|Trnd: -0.0031|Temp1: 20.94|Temp2: 23.69|TempT: -0.14
+01:00:46,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.017|Bavg: 1.440|Trnd: -0.0031|Temp1: 20.87|Temp2: 23.69|TempT: -0.14
+01:00:56,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.440|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.440|Trnd: -0.0031|Temp1: 20.87|Temp2: 23.69|TempT: -0.12
+01:01:06,1,1,1970|OFF|PWM: 0|Batt: 1.440|Load: 1.445|diff: -4.000|Iset: 4.000|Ichg: 0.000|Idis: 2.012|Bavg: 1.440|Trnd: -0.0029|Temp1: 20.87|Temp2: 23.69|TempT: -0.09

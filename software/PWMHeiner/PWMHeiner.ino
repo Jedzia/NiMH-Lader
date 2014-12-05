@@ -19,7 +19,6 @@
 #include <Bounce2.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
-
 #include "trend.h"
 
 #define PWMMAX 60        // restrict pwm max-value for testing.
@@ -28,32 +27,25 @@
 #define sensorPin2 A1    // Battery charge current
 #define sensorPin3 A2    // Battery discharge current
 
-// Data wire is plugged into port 2 on the Arduino
-#define ONE_WIRE_BUS 2
-
 #define ledPin 13      // select the pin for the LED
 #define ledPWMPin 3    // select the pin for the LED
 #define sinkPWMPin 10    // select the pin for the LED
 //#define PWMout 12
 
+// Data wire is plugged into port 2 on the Arduino
+#define ONE_WIRE_BUS 2
+// UI buttons
 #define butDown     4
 #define butUp       7
 #define butStart    8
 #define butTest    12
 
-Bounce debDown  = Bounce();
-Bounce debUp    = Bounce();
-Bounce debStart    = Bounce();
-Bounce debTest    = Bounce();
 
-// Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
-OneWire oneWire(ONE_WIRE_BUS);
-
-// Pass our oneWire reference to Dallas Temperature.
-DallasTemperature sensors(&oneWire);
-
-const float CHARGE_ENDVOLTAGE = 1.6;
+const float CHARGE_ENDVOLTAGE = 1.54;
 const float DISCHARGE_ENDVOLTAGE = 1.02;
+const float TREND_DELTA_MAX = -0.0005;
+const float TEMP_DELTA_MAX = 0.5;
+
 const float REF = 5.00;
 const long interval = 139;
 
@@ -70,6 +62,16 @@ int battDisCurrent = 0;
 //const int TRENDSIZE = 8;
 //int trend[TRENDSIZE];
 //int trendp = 0;
+
+// Debouncers
+Bounce debDown  = Bounce();
+Bounce debUp    = Bounce();
+Bounce debStart    = Bounce();
+Bounce debTest    = Bounce();
+// Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
+OneWire oneWire(ONE_WIRE_BUS);
+// Pass our oneWire reference to Dallas Temperature.
+DallasTemperature sensors(&oneWire);
 
 Average average;
 Trend trend;
@@ -415,7 +417,7 @@ void loop() {
           sensorValue = 0;
           Serial.println(F("Reached End-Voltage."));
         }
-        if (trend.isValid() && ( trend.gettrend() < -0.01 ))
+        if (trend.isValid() && ( trend.gettrend() < TREND_DELTA_MAX ))
         {
           //runCharge = false;
           appState = Running;
@@ -430,6 +432,14 @@ void loop() {
           //dischargeState = false;
           sensorValue = 0;
           Serial.println(F("Max Temperature shut off."));
+        }
+        if (trendTemp.isValid() && ( trendTemp.gettrend() > TEMP_DELTA_MAX ))
+        {
+          //runCharge = false;
+          appState = Running;
+          //dischargeState = false;
+          sensorValue = 0;
+          Serial.println(F("Delta Temperature shut off."));
         }
 
       }
