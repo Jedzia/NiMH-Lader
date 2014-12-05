@@ -4,12 +4,12 @@
 class Average {
   public:
     void begin( void );
-    void fill( int value );
     void clear( void );
     void update( int value );
     int average( void );
     float averagef( void );
   private:
+    void fill( int value );
     void increment( void );
     
     static const int AVGSIZE = 8;
@@ -21,15 +21,15 @@ class Average {
 
 class Trend {
   public:
-    void fill( int value );
     void clear( void );
-    void update( int value );
-    //float average( void );
+    void update( float value );
+    float gettrend( void );
   private:
-    void increment( void );
+    //void increment( void );
+    void fill( float value );
     
-    static const int TRENDSIZE = 64;
-    int trend[TRENDSIZE];
+    static const int TRENDSIZE = 16;
+    float trend[TRENDSIZE];
     int trendp = 0;
 
     bool firstrun = true;

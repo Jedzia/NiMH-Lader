@@ -60,35 +60,57 @@ float Average::averagef( void ) {
 }
 
 
+
+
+
+
+
+
 void Trend::clear( void ) {
   fill(0);
 }
 
-void Trend::fill( int value ) {
+void Trend::fill( float value ) {
   for (int i = 0; i < TRENDSIZE; i++)
   {
     trend[i] = value;
   }
 }
 
-void Trend::update( int value ) {
+void Trend::update( float value ) {
 
   if (firstrun)
   {
     fill(value);
     firstrun = false;
   }
-  trend[trendp] = value;
-  increment();
+
+  for (int i = 0; i < TRENDSIZE-1; i++)
+  //for (int i = TRENDSIZE - 2; i > -1 ; i--)
+  {
+    trend[i] = trend[i + 1];
+    //Serial.print(F(" i: "));
+    //Serial.print(i, DEC);
+  }
+
+  trend[TRENDSIZE - 1] = value;
+  //increment();
 }
 
-void Trend::increment( void ) {
+/*void Trend::increment( void ) {
   if (trendp < TRENDSIZE - 1)
     trendp++;
   else
     trendp = 0;
-}
+}*/
 
+float Trend::gettrend( void ) {
+
+  float first = ( trend[0] + trend[1] + trend[2] + trend[3] ) / 4.0;
+  float last = ( trend[TRENDSIZE - 1] + trend[TRENDSIZE - 2] + trend[TRENDSIZE - 3] + trend[TRENDSIZE - 4] ) / 4.0;
+
+  return last - first;
+}
 
 /*int bla(int x)
 {

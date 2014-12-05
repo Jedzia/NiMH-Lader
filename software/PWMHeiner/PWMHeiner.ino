@@ -9,12 +9,17 @@
  http://www.forum64.de/wbb3/board36-sonstige-themen/board40-laberecke/board76-forum-64-spezial/board78-das-erweiterte-forum/59147-chaosloader/
 
  This code is dedicated to Dita von Theese.
- 
+
  The comments may lead you in the wrong direction, this is an early bird
  */
+#define DEBUG_I 
+
 
 #include <Time.h>
 #include <Bounce2.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
+
 #include "trend.h"
 
 #define PWMMAX 60        // restrict pwm max-value for testing.
@@ -22,6 +27,9 @@
 #define sensorPin A0    // Battery Voltage
 #define sensorPin2 A1    // Battery charge current
 #define sensorPin3 A2    // Battery discharge current
+
+// Data wire is plugged into port 2 on the Arduino
+#define ONE_WIRE_BUS 2
 
 #define ledPin 13      // select the pin for the LED
 #define ledPWMPin 3    // select the pin for the LED
@@ -38,10 +46,16 @@ Bounce debUp    = Bounce();
 Bounce debStart    = Bounce();
 Bounce debTest    = Bounce();
 
-const float CHARGE_ENDVOLTAGE = 1.52;
+// Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
+OneWire oneWire(ONE_WIRE_BUS);
+
+// Pass our oneWire reference to Dallas Temperature.
+DallasTemperature sensors(&oneWire);
+
+const float CHARGE_ENDVOLTAGE = 1.6;
 const float DISCHARGE_ENDVOLTAGE = 1.02;
 const float REF = 5.00;
-const long interval = 140;
+const long interval = 139;
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
@@ -199,6 +213,9 @@ void setup() {
   average.clear();
   trend.clear();
 
+  // Start up the library
+  sensors.begin();
+
   Serial.begin(9600);
 }
 
@@ -249,7 +266,7 @@ void loop() {
       if (!debDown.read() && (currentSet >= 0.05))
       {
         currentSet -= 0.05;
-#if DEBUG_I
+#ifdef DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
 #endif
@@ -257,7 +274,7 @@ void loop() {
       else if (!debUp.read() && (currentSet <= 4.80))
       {
         currentSet += 0.05;
-#if DEBUG_I
+#ifdef DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
 #endif
@@ -314,7 +331,7 @@ void loop() {
           if (diff >= 0.1 )
           {
             sensorValue--;
-#if DEBUG_PWM
+#ifdef DEBUG_PWM
             Serial.print(F("PWM--: "));
             Serial.print((long)sensorValue, DEC);
             Serial.print(F("|diff: "));
@@ -324,7 +341,7 @@ void loop() {
           else if (diff <= -0.1 )
           {
             sensorValue++;
-#if DEBUG_PWM
+#ifdef DEBUG_PWM
             Serial.print(F("PWM++: "));
             Serial.print((long)sensorValue, DEC);
             Serial.print(F("|diff: "));
@@ -356,12 +373,16 @@ void loop() {
 
       digitalWrite(sinkPWMPin, LOW);
       analogWrite(ledPWMPin, 0);
+      sensors.requestTemperatures();
+      float temp1 = sensors.getTempCByIndex(0);
       if (appState == Discharging)
         delay(100);
       else
         delay(300 + sensorValue * 2);
       battVoltage = analogRead(sensorPin);
       average.update(battVoltage);
+      float averageBatt = REF / 1024 * average.averagef();
+      trend.update(averageBatt);
       delay(1);
 
       /*Serial.print(F("trendp="));
@@ -454,11 +475,18 @@ void loop() {
       Serial.print(F("|Idis: "));
       Serial.print(f, 3);
 
-      f = REF / 1024 * average.averagef();
       Serial.print(F("|Bavg: "));
-      Serial.print(f, 3);
+      Serial.print(averageBatt, 3);
+
+      Serial.print(F("|Trnd: "));
+      Serial.print(trend.gettrend(), 4);
 
 
+      Serial.print(F("|Temp1: "));
+      float temp2 = sensors.getTempCByIndex(1);
+      Serial.print(temp1);
+      Serial.print(F("|Temp2: "));
+      Serial.print(temp2);
 
       Serial.println();
 

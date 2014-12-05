@@ -16,11 +16,16 @@ while (<FILE1>) {
     $prn =~ s/diff: //;
     $prn =~ s/Batt: //;
     $prn =~ s/Load: //;
-    $prn =~ s/ISet: //;
+    $prn =~ s/Iset: //;
     $prn =~ s/I: //;
+    $prn =~ s/Ichg: //;
+    $prn =~ s/Idis: //;
+    $prn =~ s/Bavg: //;
+    $prn =~ s/Temp1: //;
+    $prn =~ s/Temp2: //;
 
     $prn =~ s/,1,1,1970//;
-    $prn =~ s/DIS\|//;
+#    $prn =~ s/DIS\|//;
 
     $prn =~ s/\./,/g;
     $prn =~ s/\|/;/g;
