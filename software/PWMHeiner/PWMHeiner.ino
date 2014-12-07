@@ -82,6 +82,7 @@ Trend trend;
 Trend trendTemp;
 
 float currentSet = 2.0;
+float maxVoltage = 0;
 
 bool ledState = LOW;
 //bool dischargeState = LOW;
@@ -243,9 +244,9 @@ void loop() {
       appState = Discharging;
       //runCharge = false;
       sensorValue = 0;
-    average.clear();
-    trend.clear();
-    trendTemp.clear();
+      average.clear();
+      trend.clear();
+      trendTemp.clear();
       Serial.println(F("Discharging..."));
     }
     else
@@ -262,7 +263,7 @@ void loop() {
     //runCharge = false;
     appState = Running;
     Serial.println(F("STOP"));
-  } 
+  }
   else if (!(appState == Charging) && debStart.fell())
   {
     appState = Charging;
@@ -270,6 +271,7 @@ void loop() {
     average.clear();
     trend.clear();
     trendTemp.clear();
+    maxVoltage = 0;
   }
 
   if (currentMillis - previousMillis >= interval) {
@@ -391,7 +393,7 @@ void loop() {
       sensors.requestTemperatures();
       float temp1 = sensors.getTempCByIndex(0);
       float temp2 = sensors.getTempCByIndex(1);
-     if (appState == Discharging)
+      if (appState == Discharging)
         delay(100);
       else
         delay(300 + sensorValue * 2);
@@ -399,6 +401,7 @@ void loop() {
       average.update(battVoltage);
       float averageBatt = REF / 1024 * average.averagef();
       trend.update(averageBatt);
+      float vtrend = trend.gettrend();
       delay(1);
 
       /*Serial.print(F("trendp="));
@@ -413,6 +416,8 @@ void loop() {
 
       if (appState == Charging)
       {
+
+
         if (f >= CHARGE_ENDVOLTAGE )
         {
           //runCharge = false;
@@ -421,24 +426,41 @@ void loop() {
           sensorValue = 0;
           Serial.println(F("Reached End-Voltage."));
         }
-        if (trend.isValid() && (f > DELTACHECK_STARTVOLTAGE) && ( trend.gettrend() < TREND_DELTA_MAX ))
+
+        if (trend.isValid())
         {
-          trendDeltaMaxCounter++;
-          if(trendDeltaMaxCounter > TREND_DELTA_MAX_COUNT)
+          if (averageBatt > maxVoltage )
           {
-          //runCharge = false;
-          appState = Running;
-          //dischargeState = false;
-          sensorValue = 0;
-          Serial.println(F("Delta Voltage shut off."));
+            maxVoltage = averageBatt;
+          }
+          if (averageBatt < (maxVoltage - 0.005) )
+          {
+            //runCharge = false;
+            appState = Running;
+            //dischargeState = false;
+            sensorValue = 0;
+            Serial.println(F("Max End-Voltage and 5mv back."));
+          }
+
+          if ((f > DELTACHECK_STARTVOLTAGE) && ( vtrend < TREND_DELTA_MAX ))
+          {
+            trendDeltaMaxCounter++;
+            if (trendDeltaMaxCounter > TREND_DELTA_MAX_COUNT)
+            {
+              //runCharge = false;
+              appState = Running;
+              //dischargeState = false;
+              sensorValue = 0;
+              Serial.println(F("Delta Voltage shut off."));
+            }
+          }
+          else
+          {
+            trendDeltaMaxCounter = 0;
           }
         }
-        else 
-        {
-            trendDeltaMaxCounter = 0;
-        }
-        
-        if (( temp2-temp1) > 7.0 )
+
+        if (( temp2 - temp1) > 7.0 )
         {
           //runCharge = false;
           appState = Running;
@@ -534,7 +556,7 @@ void loop() {
       Serial.print(averageBatt, 3);
 
       Serial.print(F("|Trnd: "));
-      Serial.print(trend.gettrend(), 4);
+      Serial.print(vtrend, 4);
       Serial.print(F("|Tmax: "));
       Serial.print(trendDeltaMaxCounter, DEC);
 
