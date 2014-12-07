@@ -42,9 +42,12 @@
 
 
 const float CHARGE_ENDVOLTAGE = 1.54;
+const float DELTACHECK_STARTVOLTAGE = 1.40;
 const float DISCHARGE_ENDVOLTAGE = 1.02;
-const float TREND_DELTA_MAX = -0.0005;
-const float TEMP_DELTA_MAX = 0.5;
+//const float TREND_DELTA_MAX = -0.0005;
+const float TREND_DELTA_MAX = 0.0012;
+const int TREND_DELTA_MAX_COUNT = 20;
+const float TEMP_DELTA_MAX = 0.59;
 
 const float REF = 5.00;
 const long interval = 139;
@@ -52,6 +55,7 @@ const long interval = 139;
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
 int skipcounter = 0;
+int trendDeltaMaxCounter = 0;
 //int sensorValue = 128;  // variable to store the value coming from the sensor
 int sensorValue = 0;  // variable to store the value coming from the sensor
 int battVoltage = 0;
@@ -417,14 +421,23 @@ void loop() {
           sensorValue = 0;
           Serial.println(F("Reached End-Voltage."));
         }
-        if (trend.isValid() && ( trend.gettrend() < TREND_DELTA_MAX ))
+        if (trend.isValid() && (f > DELTACHECK_STARTVOLTAGE) && ( trend.gettrend() < TREND_DELTA_MAX ))
         {
+          trendDeltaMaxCounter++;
+          if(trendDeltaMaxCounter > TREND_DELTA_MAX_COUNT)
+          {
           //runCharge = false;
           appState = Running;
           //dischargeState = false;
           sensorValue = 0;
           Serial.println(F("Delta Voltage shut off."));
+          }
         }
+        else 
+        {
+            trendDeltaMaxCounter = 0;
+        }
+        
         if (( temp2-temp1) > 7.0 )
         {
           //runCharge = false;
@@ -522,7 +535,8 @@ void loop() {
 
       Serial.print(F("|Trnd: "));
       Serial.print(trend.gettrend(), 4);
-
+      Serial.print(F("|Tmax: "));
+      Serial.print(trendDeltaMaxCounter, DEC);
 
       Serial.print(F("|Temp1: "));
       Serial.print(temp1);
