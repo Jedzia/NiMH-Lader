@@ -55,6 +55,7 @@ const long interval = 139;
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
 unsigned long previousMeasureTime = 0;
+unsigned long lowMeasureTime = 0;
 float chargeCapacity = 0;
 
 int skipcounter = 0;
@@ -398,6 +399,7 @@ void loop() {
 
       delay(1);
 
+      lowMeasureTime = millis();
       digitalWrite(sinkPWMPin, LOW);
       analogWrite(ledPWMPin, 0);
       sensors.requestTemperatures();
@@ -414,6 +416,8 @@ void loop() {
       float vtrend = trend.gettrend();
       delay(1);
 
+      lowMeasureTime = millis() - lowMeasureTime;
+      
       /*Serial.print(F("trendp="));
       Serial.print(trendp, DEC);
       Serial.print(F(" trend[0]="));
@@ -433,7 +437,7 @@ void loop() {
       {
 
         unsigned long curMeasTime = millis();
-        unsigned long difftime = curMeasTime - previousMeasureTime;
+        unsigned long difftime = curMeasTime - previousMeasureTime - lowMeasureTime;
 
         float curCapCount = /*fbattLoadVoltage **/ realCurrent * ( difftime / 1000.0 ); // in As
         //Serial.print(F(" CapC: "));
@@ -507,11 +511,11 @@ void loop() {
       {
 
         unsigned long curMeasTime = millis();
-        unsigned long difftime = curMeasTime - previousMeasureTime;
+        unsigned long difftime = curMeasTime - previousMeasureTime - lowMeasureTime;
 
         float curCapCount = /*fbattLoadVoltage **/ realDisCurrent * ( difftime / 1000.0 ); // in As
         //Serial.print(F(" CapC: "));
-        //Serial.print(curCapCount, 3);
+        //  Serial.print(curCapCount, 3);
 
         chargeCapacity += curCapCount * 1000.0 / 60.0 / 60.0; // mAh
 
@@ -608,6 +612,9 @@ void loop() {
 
       Serial.print(F("|Capa: "));
       Serial.print(chargeCapacity, 1);
+
+      //Serial.print(F("|lowM: "));
+      //Serial.print(lowMeasureTime, DEC);
 
       Serial.println();
 
