@@ -54,6 +54,9 @@ const long interval = 139;
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
+unsigned long previousMeasureTime = 0;
+float chargeCapacity = 0;
+
 int skipcounter = 0;
 int trendDeltaMaxCounter = 0;
 //int sensorValue = 128;  // variable to store the value coming from the sensor
@@ -83,6 +86,7 @@ Trend trendTemp;
 
 float currentSet = 2.0;
 float maxVoltage = 0;
+float fbattDisCurrent = 0;
 
 bool ledState = LOW;
 //bool dischargeState = LOW;
@@ -247,6 +251,8 @@ void loop() {
       average.clear();
       trend.clear();
       trendTemp.clear();
+      chargeCapacity = 0;
+      previousMeasureTime = millis();
       Serial.println(F("Discharging..."));
     }
     else
@@ -272,6 +278,8 @@ void loop() {
     trend.clear();
     trendTemp.clear();
     maxVoltage = 0;
+    chargeCapacity = 0;
+    previousMeasureTime = millis();
   }
 
   if (currentMillis - previousMillis >= interval) {
@@ -319,10 +327,12 @@ void loop() {
     battLoadVoltage = analogRead(sensorPin);
     delay(1);
     battCurrent = analogRead(sensorPin2);
+    float fbattCurrent = REF / 1024 * battCurrent;
 
     if ( ( skipcounter % 32 == 0 ) /*&& Serial.available()*/) {
       delay(1);
       battDisCurrent = analogRead(sensorPin3);
+      fbattDisCurrent = REF / 1024 * battDisCurrent;
     }
 
     if ( ( skipcounter % 8 == 0 ) /*&& Serial.available()*/) {
@@ -412,11 +422,26 @@ void loop() {
       Serial.print(trend[1], DEC);
       Serial.println("");*/
 
+      float fbattLoadVoltage = REF / 1024 * battLoadVoltage;
+      float realCurrent = fbattCurrent * 0.320 / 2.0; // in A
+      float realDisCurrent = fbattDisCurrent * 0.360 / 0.698; // in A
+      //Serial.print(F("rc: "));
+      //Serial.print(realCurrent, 3);
       f = REF / 1024 * battVoltage;
 
       if (appState == Charging)
       {
 
+        unsigned long curMeasTime = millis();
+        unsigned long difftime = curMeasTime - previousMeasureTime;
+
+        float curCapCount = /*fbattLoadVoltage **/ realCurrent * ( difftime / 1000.0 ); // in As
+        //Serial.print(F(" CapC: "));
+        //Serial.print(curCapCount, 3);
+
+        chargeCapacity += curCapCount * 1000.0 / 60.0 / 60.0; // mAh
+
+        previousMeasureTime = curMeasTime;
 
         if (f >= CHARGE_ENDVOLTAGE )
         {
@@ -480,6 +505,21 @@ void loop() {
       }
       if (appState == Discharging)
       {
+
+        unsigned long curMeasTime = millis();
+        unsigned long difftime = curMeasTime - previousMeasureTime;
+
+        float curCapCount = /*fbattLoadVoltage **/ realDisCurrent * ( difftime / 1000.0 ); // in As
+        //Serial.print(F(" CapC: "));
+        //Serial.print(curCapCount, 3);
+
+        chargeCapacity += curCapCount * 1000.0 / 60.0 / 60.0; // mAh
+
+        previousMeasureTime = curMeasTime;
+
+
+
+
         if (f < DISCHARGE_ENDVOLTAGE)
         {
           appState = Running;
@@ -525,9 +565,8 @@ void loop() {
       Serial.print((long)sensorValue, DEC);
       Serial.print(F("|Batt: "));
       Serial.print(f, 3);
-      f = REF / 1024 * battLoadVoltage;
       Serial.print(F("|Load: "));
-      Serial.print(f, 3);
+      Serial.print(fbattLoadVoltage, 3);
       //Serial.print((long)battVoltage, DEC);
       //Serial.print(buf[0]);
       //Serial.print(buf[1]);
@@ -535,10 +574,9 @@ void loop() {
       //Serial.print(buf[3]);
       //Serial.print(buf[4]);
       //Serial.print("%s", (char*)ftoa(buf, f, 3));
-      f = REF / 1024 * battCurrent;
       //if (appState == Charging)
       {
-        float diff = f - currentSet;
+        float diff = fbattCurrent - currentSet;
         Serial.print(F("|diff: "));
         Serial.print(diff, 3);
         //float abso = abs(diff);
@@ -546,11 +584,10 @@ void loop() {
       Serial.print(F("|Iset: "));
       Serial.print(currentSet, 3);
       Serial.print(F("|Ichg: "));
-      Serial.print(f, 3);
+      Serial.print(fbattCurrent, 3);
 
-      f = REF / 1024 * battDisCurrent;
       Serial.print(F("|Idis: "));
-      Serial.print(f, 3);
+      Serial.print(fbattDisCurrent, 3);
 
       Serial.print(F("|Bavg: "));
       Serial.print(averageBatt, 3);
@@ -569,6 +606,8 @@ void loop() {
       Serial.print(F("|TempT: "));
       Serial.print(trendTemp.gettrend());
 
+      Serial.print(F("|Capa: "));
+      Serial.print(chargeCapacity, 1);
 
       Serial.println();
 
