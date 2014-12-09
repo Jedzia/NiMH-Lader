@@ -49,8 +49,16 @@ const float TREND_DELTA_MAX = 0.0012;
 const int TREND_DELTA_MAX_COUNT = 20;
 const float TEMP_DELTA_MAX = 0.59;
 
-const float REF = 5.00;
+//const float REF = 5.00;
+const float REF = 2.208;
 const long interval = 139;
+
+const float realCurrentNorm = 0.420 / 0.817;
+const float realCurrentDisNorm = 0.360 / 0.698;
+
+float currentSet = 0.5;
+float maxVoltage = 0;
+float fbattDisCurrent = 0;
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
 unsigned long previousMillisBlink = 0;
@@ -84,10 +92,6 @@ DallasTemperature sensors(&oneWire);
 Average average;
 Trend trend;
 Trend trendTemp;
-
-float currentSet = 2.0;
-float maxVoltage = 0;
-float fbattDisCurrent = 0;
 
 bool ledState = LOW;
 //bool dischargeState = LOW;
@@ -196,12 +200,15 @@ void printDigitsWithColon(int digits) {
 
 void setup() {
 
+  analogReference(EXTERNAL);
+
   //setPwmFrequency(ledPWMPin, 1);
   TCCR2A = 0x23;
   TCCR2B = 0x09;  // select timer2 clock as unscaled 16 MHz I/O clock
   OCR2A = 159;  // top/overflow value is 159 => produces a 100 kHz PWM
   pinMode(ledPWMPin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 3)
 
+  
   // declare the ledPin as an OUTPUT:
   pinMode(ledPin, OUTPUT);
   pinMode(sinkPWMPin, OUTPUT);
@@ -297,7 +304,7 @@ void loop() {
         Serial.println(currentSet, 3);
 #endif
       }
-      else if (!debUp.read() && (currentSet <= 4.80))
+      else if (!debUp.read() && (currentSet <= (REF - 0.20)))
       {
         currentSet += 0.05;
 #ifdef DEBUG_I
@@ -336,7 +343,7 @@ void loop() {
       fbattDisCurrent = REF / 1024 * battDisCurrent;
     }
 
-    if ( ( skipcounter % 8 == 0 ) /*&& Serial.available()*/) {
+    if ( ( skipcounter % 4 == 0 ) /*&& Serial.available()*/) {
 
       f = REF / 1024 * battCurrent;
       if (appState == Charging)
@@ -356,7 +363,7 @@ void loop() {
         }
         else*/
         {
-          if (diff >= 0.1 )
+          if (diff >= 0.05 )
           {
             sensorValue--;
 #ifdef DEBUG_PWM
@@ -366,7 +373,7 @@ void loop() {
             Serial.println(diff, 3);
 #endif
           }
-          else if (diff <= -0.1 )
+          else if (diff <= -0.05 )
           {
             sensorValue++;
 #ifdef DEBUG_PWM
@@ -427,8 +434,8 @@ void loop() {
       Serial.println("");*/
 
       float fbattLoadVoltage = REF / 1024 * battLoadVoltage;
-      float realCurrent = fbattCurrent * 0.320 / 2.0; // in A
-      float realDisCurrent = fbattDisCurrent * 0.360 / 0.698; // in A
+      float realCurrent = fbattCurrent * realCurrentNorm; // in A
+      float realDisCurrent = fbattDisCurrent * realCurrentDisNorm; // in A
       //Serial.print(F("rc: "));
       //Serial.print(realCurrent, 3);
       f = REF / 1024 * battVoltage;
@@ -587,11 +594,18 @@ void loop() {
       }
       Serial.print(F("|Iset: "));
       Serial.print(currentSet, 3);
+      //Serial.print(F("|Ichg: "));
+      //Serial.print(fbattCurrent, 3);
+      //Serial.print(F("|Ichg: "));
+      //Serial.print(battCurrent, DEC);
       Serial.print(F("|Ichg: "));
-      Serial.print(fbattCurrent, 3);
+      Serial.print(fbattCurrent*realCurrentNorm, 3);
 
+
+      //Serial.print(F("|Idis: "));
+      //Serial.print(fbattDisCurrent, 3);
       Serial.print(F("|Idis: "));
-      Serial.print(fbattDisCurrent, 3);
+      Serial.print(fbattDisCurrent*realCurrentDisNorm, 3);
 
       Serial.print(F("|Bavg: "));
       Serial.print(averageBatt, 3);
