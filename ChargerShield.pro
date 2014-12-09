@@ -2,14 +2,14 @@ EAGLE AutoRouter Statistics:
 
 Job           : E:/Projects/Elektronik/Arduino/NiMH-Lader/ChargerShield.brd
 
-Start at      : 21:11:31 (09.12.2014)
-End at        : 21:11:31 (09.12.2014)
+Start at      : 21:50:17 (09.12.2014)
+End at        : 21:50:17 (09.12.2014)
 Elapsed time  : 00:00:00
 
 Signals       :    43   RoutingGrid: 50 mil  Layers: 1
-Connections   :    92   predefined:  90 ( 4 Vias )
+Connections   :    95   predefined:  93 ( 4 Vias )
 
-Router memory :   16440
+Router memory :   16920
 
 Passname          :     Route Optimize1 Optimize2 Optimize3 Optimize4
 

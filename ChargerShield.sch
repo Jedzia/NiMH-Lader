@@ -17764,12 +17764,48 @@ by R. Vogg  15.March.2002</description>
 <pin name="S" x="5.08" y="-2.54" visible="off" length="middle" direction="pas" rot="R180"/>
 <pin name="G" x="-5.08" y="-2.54" visible="off" length="short" direction="pas"/>
 </symbol>
+<symbol name="IGFET-EP-GDS">
+<wire x1="-2.54" y1="-2.54" x2="-1.2192" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="0.762" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="0" y1="3.683" x2="0" y2="1.397" width="0.254" layer="94"/>
+<wire x1="0.635" y1="0.635" x2="1.905" y2="0" width="0.254" layer="94"/>
+<wire x1="0.635" y1="-0.635" x2="1.905" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="1.905" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.905" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.397" x2="0" y2="-3.683" width="0.254" layer="94"/>
+<wire x1="-1.143" y1="2.54" x2="-1.143" y2="-2.54" width="0.254" layer="94"/>
+<text x="-11.43" y="0" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-11.43" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<pin name="D" x="5.08" y="2.54" visible="off" length="middle" direction="pas" rot="R180"/>
+<pin name="S" x="5.08" y="-2.54" visible="off" length="middle" direction="pas" rot="R180"/>
+<pin name="G" x="-5.08" y="-2.54" visible="off" length="short" direction="pas"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BUZ11" prefix="Q">
 <description>&lt;b&gt;N-Channel Enhancement MOSFET&lt;/b&gt; 50V; 30A; 0,040Ohm</description>
 <gates>
 <gate name="G$1" symbol="IGFET-EN-GDS" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO220">
+<connects>
+<connect gate="G$1" pin="D" pad="2"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BUZ171" prefix="Q">
+<description>&lt;b&gt;P-Channel Enhancement MOSFET&lt;/b&gt; -50V; 7A; 0,4Ohm</description>
+<gates>
+<gate name="G$1" symbol="IGFET-EP-GDS" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="TO220">
@@ -17902,7 +17938,7 @@ CARE: not a standard pinout. This part has 1: cathode, 2: REF, 3: anode</descrip
 <part name="FRAME2" library="frames" deviceset="DINA4_L" device=""/>
 <part name="T2" library="transistor" deviceset="BC238" device="" value="BC548"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="0207/10" value="2k2"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="0207/15" value="1k"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="0207/10" value="1k"/>
 <part name="C3" library="rcl" deviceset="C-EU" device="025_050-025X075" value="15n/60V"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
@@ -17960,6 +17996,7 @@ CARE: not a standard pinout. This part has 1: cathode, 2: REF, 3: anode</descrip
 <part name="LED4" library="bigger" deviceset="LED" device="5MM_BIG"/>
 <part name="R24" library="rcl" deviceset="R-EU_" device="0207/10" value="1k"/>
 <part name="C5" library="rcl" deviceset="CPOL-EU" device="E5-5" value="3µ3"/>
+<part name="Q3" library="transistor-fet" deviceset="BUZ171" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18346,6 +18383,7 @@ Voltage</text>
 <instance part="P+7" gate="1" x="26.67" y="54.61"/>
 <instance part="R24" gate="G$1" x="64.77" y="57.15" rot="R180"/>
 <instance part="C5" gate="G$1" x="72.39" y="40.64"/>
+<instance part="Q3" gate="G$1" x="143.51" y="133.35"/>
 </instances>
 <busses>
 </busses>
@@ -18471,8 +18509,15 @@ Voltage</text>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="109.22" y1="130.81" x2="109.22" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="B"/>
-<wire x1="109.22" y1="130.81" x2="121.92" y2="130.81" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="130.81" x2="118.11" y2="130.81" width="0.1524" layer="91"/>
 <junction x="109.22" y="130.81"/>
+<wire x1="118.11" y1="130.81" x2="121.92" y2="130.81" width="0.1524" layer="91"/>
+<wire x1="118.11" y1="130.81" x2="118.11" y2="123.19" width="0.1524" layer="91"/>
+<junction x="118.11" y="130.81"/>
+<wire x1="118.11" y1="123.19" x2="135.89" y2="123.19" width="0.1524" layer="91"/>
+<wire x1="135.89" y1="123.19" x2="135.89" y2="130.81" width="0.1524" layer="91"/>
+<pinref part="Q3" gate="G$1" pin="G"/>
+<wire x1="135.89" y1="130.81" x2="138.43" y2="130.81" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -18483,8 +18528,14 @@ Voltage</text>
 <pinref part="P+3" gate="VCC" pin="VCC"/>
 <wire x1="129.54" y1="149.86" x2="129.54" y2="156.21" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="E"/>
-<wire x1="129.54" y1="138.43" x2="129.54" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="138.43" x2="129.54" y2="140.97" width="0.1524" layer="91"/>
 <junction x="129.54" y="149.86"/>
+<pinref part="Q3" gate="G$1" pin="D"/>
+<wire x1="129.54" y1="140.97" x2="129.54" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="148.59" y1="135.89" x2="149.86" y2="135.89" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="135.89" x2="149.86" y2="140.97" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="140.97" x2="129.54" y2="140.97" width="0.1524" layer="91"/>
+<junction x="129.54" y="140.97"/>
 </segment>
 <segment>
 <pinref part="X3" gate="-1" pin="KL"/>
@@ -18499,9 +18550,15 @@ Voltage</text>
 <pinref part="Q1" gate="G$1" pin="C"/>
 <wire x1="129.54" y1="110.49" x2="129.54" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="1"/>
-<wire x1="129.54" y1="116.84" x2="129.54" y2="125.73" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="116.84" x2="129.54" y2="120.65" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="120.65" x2="129.54" y2="125.73" width="0.1524" layer="91"/>
 <wire x1="138.43" y1="116.84" x2="129.54" y2="116.84" width="0.1524" layer="91"/>
 <junction x="129.54" y="116.84"/>
+<pinref part="Q3" gate="G$1" pin="S"/>
+<wire x1="148.59" y1="130.81" x2="149.86" y2="130.81" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="130.81" x2="149.86" y2="120.65" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="120.65" x2="129.54" y2="120.65" width="0.1524" layer="91"/>
+<junction x="129.54" y="120.65"/>
 </segment>
 </net>
 <net name="N$10" class="0">
