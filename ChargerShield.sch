@@ -15289,6 +15289,40 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0092.pdf</description>
 <rectangle x1="-0.3048" y1="0.9652" x2="0.3048" y2="1.5748" layer="51"/>
 <rectangle x1="-0.3048" y1="-1.5748" x2="0.3048" y2="-0.9652" layer="51"/>
 </package>
+<package name="JP2">
+<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
+<wire x1="-3.81" y1="-1.016" x2="-3.81" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="1.27" x2="1.524" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.016" x2="1.524" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="-1.27" x2="1.524" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.016" x2="1.524" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="-1.27" x2="3.81" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="1.27" x2="3.81" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="1.016" x2="3.81" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="1.27" x2="1.27" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="1.27" x2="-1.016" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.016" x2="-1.016" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.27" x2="-1.27" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="1.016" x2="-3.556" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.27" x2="-3.556" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="-1.27" x2="1.27" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.016" x2="-1.016" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-1.27" x2="-1.27" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.016" x2="-3.556" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="-1.27" x2="-1.016" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-1.27" x2="-3.556" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="-2.54" y="0" drill="0.9144" shape="long" rot="R90"/>
+<pad name="2" x="0" y="0" drill="0.9144" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="0" drill="0.9144" shape="long" rot="R90"/>
+<text x="-3.556" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-2.667" size="0.9906" layer="21" ratio="12">1</text>
+<text x="0" y="-2.667" size="0.9906" layer="21" ratio="12">2</text>
+<text x="2.54" y="-2.667" size="0.9906" layer="21" ratio="12">3</text>
+<text x="-3.556" y="-4.318" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-2.8448" y1="-0.3048" x2="-2.2352" y2="0.3048" layer="51"/>
+<rectangle x1="-0.3048" y1="-0.3048" x2="0.3048" y2="0.3048" layer="51"/>
+<rectangle x1="2.2352" y1="-0.3048" x2="2.8448" y2="0.3048" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="LED">
@@ -15329,6 +15363,23 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0092.pdf</description>
 <text x="5.715" y="0" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="1" x="0" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
 <pin name="2" x="2.54" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
+</symbol>
+<symbol name="JP3E">
+<wire x1="2.54" y1="0" x2="2.54" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="1.27" width="0.4064" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="1.27" width="0.4064" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="1.27" width="0.4064" layer="94"/>
+<wire x1="-3.175" y1="0" x2="3.175" y2="0" width="0.4064" layer="94"/>
+<wire x1="3.175" y1="0" x2="3.175" y2="0.635" width="0.4064" layer="94"/>
+<wire x1="3.175" y1="0.635" x2="-3.175" y2="0.635" width="0.4064" layer="94"/>
+<wire x1="-3.175" y1="0.635" x2="-3.175" y2="0" width="0.4064" layer="94"/>
+<text x="-3.81" y="0" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="5.715" y="0" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="2" x="0" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="3" x="2.54" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -15766,6 +15817,24 @@ Source: www.kingbright.com</description>
 <connects>
 <connect gate="A" pin="1" pad="1"/>
 <connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="JP2E" prefix="JP" uservalue="yes">
+<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="JP3E" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="JP2">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -17912,6 +17981,84 @@ CARE: not a standard pinout. This part has 1: cathode, 2: REF, 3: anode</descrip
 </deviceset>
 </devicesets>
 </library>
+<library name="Ava">
+<packages>
+<package name="DS1820">
+<wire x1="-0.635" y1="-0.635" x2="-0.635" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-2.54" x2="5.715" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="5.715" y1="-2.54" x2="5.715" y2="0" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-0.635" x2="5.715" y2="0" width="0.127" layer="21" curve="-180"/>
+<pad name="DQ" x="2.54" y="-1.27" drill="0.8"/>
+<pad name="GND" x="0.635" y="-1.27" drill="0.8"/>
+<pad name="VDD" x="4.445" y="-1.27" drill="0.8"/>
+<text x="0" y="0" size="1.016" layer="21">DS1820</text>
+</package>
+<package name="DS18B20_SOIC">
+<wire x1="2.362" y1="-1.803" x2="2.362" y2="1.803" width="0.1524" layer="21"/>
+<wire x1="-2.362" y1="1.803" x2="-2.362" y2="-1.803" width="0.1524" layer="21"/>
+<circle x="-1.8034" y="-0.9906" radius="0.1436" width="0.2032" layer="21"/>
+<smd name="NC" x="-1.905" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="NC2" x="-0.635" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="VCC" x="0.635" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="DQ" x="1.905" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="GND" x="1.905" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="NC5" x="0.635" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="NC4" x="-0.635" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="NC3" x="-1.905" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<text x="-1.27" y="-0.635" size="0.4064" layer="27">&gt;VALUE</text>
+<text x="-1.27" y="0" size="0.4064" layer="25">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="DS1820">
+<wire x1="-5.08" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94" curve="180"/>
+<text x="-11.938" y="10.668" size="1.27" layer="95"></text>
+<text x="-3.048" y="0.508" size="1.27" layer="95">DS18B20</text>
+<pin name="GND" x="-2.54" y="-5.08" visible="pin" length="middle" direction="pwr" rot="R90"/>
+<pin name="DQ" x="0" y="-5.08" visible="pin" length="middle" rot="R90"/>
+<pin name="VCC" x="2.54" y="-5.08" visible="pin" length="middle" direction="pwr" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DS1820">
+<description>DS18B20
+Programmable Resolution 1-Wire Digital Thermometer
+
+Description
+The DS18B20 digital thermometer provides 9-bit to 12-bit Celsius temperature measurements and has an alarm function with nonvolatile user-programmable upper and lower trigger points. The DS18B20 communicates over a 1-Wire® bus that by definition requires only one data line (and ground) for communication with a central microprocessor. It has an operating temperature range of -55°C to +125°C and is accurate to ±0.5°C over the range of -10°C to +85°C. In addition, the DS18B20 can derive power directly from the data line ("parasite power"), eliminating the need for an external power supply.
+
+Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to function on the same 1-Wire bus. Thus, it is simple to use one microprocessor to control many DS18B20s distributed over a large area. Applications that can benefit from this feature include HVAC environmental controls, temperature monitoring systems inside buildings, equipment, or machinery, and process monitoring and control systems.</description>
+<gates>
+<gate name="G$1" symbol="DS1820" x="7.62" y="15.24"/>
+</gates>
+<devices>
+<device name="TO92" package="DS1820">
+<connects>
+<connect gate="G$1" pin="DQ" pad="DQ"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="VCC" pad="VDD"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SOIC" package="DS18B20_SOIC">
+<connects>
+<connect gate="G$1" pin="DQ" pad="DQ"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17978,7 +18125,7 @@ CARE: not a standard pinout. This part has 1: cathode, 2: REF, 3: anode</descrip
 <part name="C4" library="rcl" deviceset="C-EU" device="025_050-025X075" value="100n"/>
 <part name="P+5" library="supply1" deviceset="VCC" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="R19" library="rcl" deviceset="R-EU_" device="0207/10" value="1k"/>
+<part name="R19" library="rcl" deviceset="R-EU_" device="0204/7" value="1k"/>
 <part name="R20" library="rcl" deviceset="R-EU_" device="0207/10" value="470"/>
 <part name="LED2" library="bigger" deviceset="LED" device="5MM_BIG"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
@@ -17997,6 +18144,11 @@ CARE: not a standard pinout. This part has 1: cathode, 2: REF, 3: anode</descrip
 <part name="R24" library="rcl" deviceset="R-EU_" device="0207/10" value="1k"/>
 <part name="C5" library="rcl" deviceset="CPOL-EU" device="E5-5" value="3µ3"/>
 <part name="Q3" library="transistor-fet" deviceset="BUZ171" device=""/>
+<part name="U$2" library="Ava" deviceset="DS1820" device="TO92"/>
+<part name="R25" library="rcl" deviceset="R-EU_" device="0204/7" value="4k7"/>
+<part name="P+8" library="supply1" deviceset="+5V" device=""/>
+<part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="JP3" library="bigger" deviceset="JP2E" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18035,6 +18187,11 @@ progress;)</text>
 <instance part="R22" gate="G$1" x="199.39" y="160.02"/>
 <instance part="R23" gate="G$1" x="246.38" y="107.95" rot="MR270"/>
 <instance part="LED4" gate="G$1" x="246.38" y="97.79"/>
+<instance part="U$2" gate="G$1" x="195.58" y="59.69" rot="R270"/>
+<instance part="R25" gate="G$1" x="179.07" y="71.12" rot="R90"/>
+<instance part="P+8" gate="1" x="179.07" y="82.55"/>
+<instance part="GND14" gate="1" x="186.69" y="50.8"/>
+<instance part="JP3" gate="1" x="222.25" y="59.69" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -18099,6 +18256,29 @@ progress;)</text>
 <wire x1="91.44" y1="127" x2="87.63" y2="127" width="0.1524" layer="91"/>
 <junction x="87.63" y="127"/>
 </segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+<wire x1="190.5" y1="62.23" x2="186.69" y2="62.23" width="0.1524" layer="91"/>
+<wire x1="186.69" y1="62.23" x2="186.69" y2="57.15" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="VCC"/>
+<wire x1="186.69" y1="57.15" x2="186.69" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="57.15" x2="189.23" y2="57.15" width="0.1524" layer="91"/>
+<junction x="186.69" y="57.15"/>
+<wire x1="189.23" y1="57.15" x2="186.69" y2="57.15" width="0.1524" layer="91"/>
+<wire x1="186.69" y1="62.23" x2="186.69" y2="68.58" width="0.1524" layer="91"/>
+<junction x="186.69" y="62.23"/>
+<wire x1="186.69" y1="68.58" x2="215.9" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="215.9" y1="68.58" x2="215.9" y2="62.23" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="1" pin="1"/>
+<wire x1="215.9" y1="62.23" x2="219.71" y2="62.23" width="0.1524" layer="91"/>
+<wire x1="189.23" y1="57.15" x2="189.23" y2="53.34" width="0.1524" layer="91"/>
+<junction x="189.23" y="57.15"/>
+<wire x1="189.23" y1="53.34" x2="214.63" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="214.63" y1="53.34" x2="214.63" y2="57.15" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="1" pin="3"/>
+<wire x1="214.63" y1="57.15" x2="219.71" y2="57.15" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
@@ -18152,6 +18332,11 @@ progress;)</text>
 <pinref part="R21" gate="G$1" pin="2"/>
 <wire x1="214.63" y1="171.45" x2="214.63" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="214.63" y1="172.72" x2="238.76" y2="172.72" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+8" gate="1" pin="+5V"/>
+<pinref part="R25" gate="G$1" pin="2"/>
+<wire x1="179.07" y1="80.01" x2="179.07" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="U_BATT1" class="0">
@@ -18212,7 +18397,7 @@ progress;)</text>
 <wire x1="191.77" y1="137.16" x2="191.77" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="191.77" y1="129.54" x2="236.22" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="236.22" y1="129.54" x2="236.22" y2="113.03" width="0.1524" layer="91"/>
-<label x="193.04" y="137.16" size="1.778" layer="95" xref="yes"/>
+<label x="228.6" y="129.54" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PWM_CHARGE1" class="0">
@@ -18224,9 +18409,9 @@ progress;)</text>
 </net>
 <net name="PWM_CHARGE2" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="D9"/>
-<wire x1="152.4" y1="134.62" x2="167.64" y2="134.62" width="0.1524" layer="91"/>
-<label x="167.64" y="134.62" size="1.778" layer="95" xref="yes"/>
+<label x="173.99" y="139.7" size="1.778" layer="95" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="D11"/>
+<wire x1="173.99" y1="139.7" x2="152.4" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="U_BATT2" class="0">
@@ -18258,13 +18443,11 @@ progress;)</text>
 </net>
 <net name="PWM_DISCHARGE2" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="D11"/>
-<wire x1="152.4" y1="139.7" x2="167.64" y2="139.7" width="0.1524" layer="91"/>
-<label x="168.91" y="140.97" size="1.778" layer="95" xref="yes"/>
-<wire x1="167.64" y1="139.7" x2="167.64" y2="140.97" width="0.1524" layer="91"/>
+<label x="233.68" y="134.62" size="1.778" layer="95" xref="yes"/>
 <pinref part="R23" gate="G$1" pin="1"/>
-<wire x1="246.38" y1="140.97" x2="246.38" y2="113.03" width="0.1524" layer="91"/>
-<wire x1="167.64" y1="140.97" x2="246.38" y2="140.97" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="134.62" x2="246.38" y2="113.03" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="134.62" x2="246.38" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="D9"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -18311,6 +18494,26 @@ progress;)</text>
 <pinref part="R23" gate="G$1" pin="2"/>
 <wire x1="246.38" y1="102.87" x2="246.38" y2="100.33" width="0.1524" layer="91"/>
 <pinref part="LED4" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="D2"/>
+<wire x1="152.4" y1="114.3" x2="173.99" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="173.99" y1="114.3" x2="173.99" y2="59.69" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="DQ"/>
+<wire x1="173.99" y1="59.69" x2="179.07" y2="59.69" width="0.1524" layer="91"/>
+<pinref part="R25" gate="G$1" pin="1"/>
+<wire x1="179.07" y1="59.69" x2="189.23" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="189.23" y1="59.69" x2="190.5" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="179.07" y1="66.04" x2="179.07" y2="59.69" width="0.1524" layer="91"/>
+<junction x="179.07" y="59.69"/>
+<wire x1="189.23" y1="59.69" x2="189.23" y2="66.04" width="0.1524" layer="91"/>
+<junction x="189.23" y="59.69"/>
+<wire x1="189.23" y1="66.04" x2="214.63" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="214.63" y1="66.04" x2="214.63" y2="59.69" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="1" pin="2"/>
+<wire x1="214.63" y1="59.69" x2="219.71" y2="59.69" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

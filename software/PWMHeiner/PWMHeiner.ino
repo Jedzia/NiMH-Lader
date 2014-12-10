@@ -27,9 +27,12 @@
 #define sensorPin2 A1    // Battery charge current
 #define sensorPin3 A2    // Battery discharge current
 
-#define ledPin 13      // select the pin for the LED
-#define ledPWMPin 3    // select the pin for the LED
-#define sinkPWMPin 10    // select the pin for the LED
+#define chargeLed1Pin 13      // select the pin for the LED
+#define chargePWM1Pin 3    // select the pin for the LED
+#define dischargePWM1Pin 10    // select the pin for the LED
+#define chargeLed2Pin 5      // select the pin for the LED
+#define chargePWM2Pin 11    // select the pin for the LED
+#define dischargePWM2Pin 9    // select the pin for the LED
 //#define PWMout 12
 
 // Data wire is plugged into port 2 on the Arduino
@@ -202,16 +205,16 @@ void setup() {
 
   analogReference(EXTERNAL);
 
-  //setPwmFrequency(ledPWMPin, 1);
+  //setPwmFrequency(chargePWM1Pin, 1);
   TCCR2A = 0x23;
   TCCR2B = 0x09;  // select timer2 clock as unscaled 16 MHz I/O clock
   OCR2A = 159;  // top/overflow value is 159 => produces a 100 kHz PWM
-  pinMode(ledPWMPin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 3)
+  pinMode(chargePWM1Pin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 3)
 
   
-  // declare the ledPin as an OUTPUT:
-  pinMode(ledPin, OUTPUT);
-  pinMode(sinkPWMPin, OUTPUT);
+  // declare the chargeLed1Pin as an OUTPUT:
+  pinMode(chargeLed1Pin, OUTPUT);
+  pinMode(dischargePWM1Pin, OUTPUT);
 
 
   pinMode(butDown, INPUT_PULLUP);
@@ -407,8 +410,8 @@ void loop() {
       delay(1);
 
       lowMeasureTime = millis();
-      digitalWrite(sinkPWMPin, LOW);
-      analogWrite(ledPWMPin, 0);
+      digitalWrite(dischargePWM1Pin, LOW);
+      analogWrite(chargePWM1Pin, 0);
       sensors.requestTemperatures();
       float temp1 = sensors.getTempCByIndex(0);
       float temp2 = sensors.getTempCByIndex(1);
@@ -655,20 +658,20 @@ void loop() {
       ledState = HIGH;
 
     // set the LED with the ledState of the variable:
-    digitalWrite(ledPin, ledState);
+    digitalWrite(chargeLed1Pin, ledState);
     //bool anzLED = currentMillis % sensorValue;
-    //digitalWrite(ledPin, anzLED);
+    //digitalWrite(chargeLed1Pin, anzLED);
   }
 
 
   /* // read the value from the sensor:
   //sensorValue = analogRead(sensorPin);
-  // turn the ledPin on
-  digitalWrite(ledPin, HIGH);
+  // turn the chargeLed1Pin on
+  digitalWrite(chargeLed1Pin, HIGH);
   // stop the program for <sensorValue> milliseconds:
   delay(sensorValue);
-  // turn the ledPin off:
-  digitalWrite(ledPin, LOW);
+  // turn the chargeLed1Pin off:
+  digitalWrite(chargeLed1Pin, LOW);
   // stop the program for for <sensorValue> milliseconds:
   delay(sensorValue);*/
   /*    if (pwmState == LOW)
@@ -679,14 +682,14 @@ void loop() {
 
   if (appState == Charging)
   {
-    analogWrite(ledPWMPin, sensorValue);
+    analogWrite(chargePWM1Pin, sensorValue);
     //dischargeState = false;
     //appState=Running;
   }
   else
   {
-    //analogWrite(ledPWMPin, 0);
-    analogWrite(ledPWMPin, sensorValue);
+    //analogWrite(chargePWM1Pin, 0);
+    analogWrite(chargePWM1Pin, sensorValue);
   }
 
 
@@ -708,11 +711,11 @@ void loop() {
 
   if (appState == Discharging)
   {
-    digitalWrite(sinkPWMPin, HIGH);
+    digitalWrite(dischargePWM1Pin, HIGH);
   }
   else
   {
-    digitalWrite(sinkPWMPin, LOW);
+    digitalWrite(dischargePWM1Pin, LOW);
   }
 
 
