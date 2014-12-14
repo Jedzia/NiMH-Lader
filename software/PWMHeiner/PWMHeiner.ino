@@ -239,8 +239,15 @@ void setup() {
 
   // Start up the library
   sensors.begin();
+  sensors.setResolution(11);
 
   Serial.begin(9600);
+  Serial.println(F("One Wire Bus Mode is:"));
+  if(sensors.isParasitePowerMode()== true)
+  Serial.println(F("in ParasitePower Mode."));
+  else
+  Serial.println(F("in normal Powered Mode."));
+  
 }
 
 void loop() {
@@ -630,8 +637,8 @@ void loop() {
       Serial.print(F("|Capa: "));
       Serial.print(chargeCapacity, 1);
 
-      //Serial.print(F("|lowM: "));
-      //Serial.print(lowMeasureTime, DEC);
+      Serial.print(F("|lowM: "));
+      Serial.print(lowMeasureTime, DEC);
 
       Serial.println();
 
