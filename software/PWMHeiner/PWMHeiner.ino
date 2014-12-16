@@ -604,18 +604,18 @@ void loop() {
       }
       Serial.print(F("|Iset: "));
       Serial.print(currentSet, 3);
-      //Serial.print(F("|Ichg: "));
-      //Serial.print(fbattCurrent, 3);
+      Serial.print(F("|Ichg: "));
+      Serial.print(fbattCurrent, 3);
       //Serial.print(F("|Ichg: "));
       //Serial.print(battCurrent, DEC);
-      Serial.print(F("|Ichg: "));
-      Serial.print(fbattCurrent*realCurrentNorm, 3);
+      //Serial.print(F("|Ichg: "));
+      //Serial.print(fbattCurrent*realCurrentNorm, 3);
 
 
-      //Serial.print(F("|Idis: "));
-      //Serial.print(fbattDisCurrent, 3);
       Serial.print(F("|Idis: "));
-      Serial.print(fbattDisCurrent*realCurrentDisNorm, 3);
+      Serial.print(fbattDisCurrent, 3);
+      //Serial.print(F("|Idis: "));
+      //Serial.print(fbattDisCurrent*realCurrentDisNorm, 3);
 
       Serial.print(F("|Bavg: "));
       Serial.print(averageBatt, 3);
