@@ -21,7 +21,7 @@
 #include <DallasTemperature.h>
 #include "trend.h"
 
-#define PWMMAX 60        // restrict pwm max-value for testing.
+#define PWMMAX 90        // restrict pwm max-value for testing.
 
 #define sensorPin A0    // Battery Voltage
 #define sensorPin2 A1    // Battery charge current
@@ -53,10 +53,11 @@ const int TREND_DELTA_MAX_COUNT = 20;
 const float TEMP_DELTA_MAX = 0.59;
 
 //const float REF = 5.00;
-const float REF = 2.208;
+const float REF = 2.245;
 const long interval = 139;
 
-const float realCurrentNorm = 0.420 / 0.817;
+//                            display / real
+const float realCurrentNorm = 0.280 / 0.250;
 const float realCurrentDisNorm = 0.360 / 0.698;
 
 float currentSet = 0.5;
@@ -596,20 +597,21 @@ void loop() {
       //Serial.print(buf[4]);
       //Serial.print("%s", (char*)ftoa(buf, f, 3));
       //if (appState == Charging)
-      {
-        float diff = fbattCurrent - currentSet;
-        Serial.print(F("|diff: "));
-        Serial.print(diff, 3);
-        //float abso = abs(diff);
-      }
+//      {
+//        float diff = fbattCurrent - currentSet;
+//        Serial.print(F("|diff: "));
+//        Serial.print(diff, 3);
+//        //float abso = abs(diff);
+//      }
       Serial.print(F("|Iset: "));
       Serial.print(currentSet, 3);
       Serial.print(F("|Ichg: "));
       Serial.print(fbattCurrent, 3);
       //Serial.print(F("|Ichg: "));
       //Serial.print(battCurrent, DEC);
-      //Serial.print(F("|Ichg: "));
-      //Serial.print(fbattCurrent*realCurrentNorm, 3);
+      //Serial.print(F("|IchgR: "));
+      Serial.print(F("|"));
+      Serial.print(fbattCurrent*realCurrentNorm, 3);
 
 
       Serial.print(F("|Idis: "));
