@@ -18343,7 +18343,7 @@ grid 2.54 mm</description>
 <part name="XR10" library="lt-spice-simulation" deviceset="RES_RLOAD" device="" value="0R1"/>
 <part name="R9" library="rcl" deviceset="R-EU_" device="0414/15" value="1R666"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="R12" library="rcl" deviceset="R-EU_" device="0207/10" value="100k"/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="0204/7" value="100k"/>
 <part name="R19" library="rcl" deviceset="R-EU_" device="0207/12" value="1k"/>
 <part name="R24" library="rcl" deviceset="R-EU_" device="0207/10" value="100k"/>
 <part name="C5" library="rcl" deviceset="CPOL-EU" device="E5-5" value="10µ"/>
