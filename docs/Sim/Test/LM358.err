@@ -1,0 +1,8 @@
+STATUS: PSpice Schematics to Capture translator (16.6.0.d001)
+STATUS:  
+STATUS: Translator started at Wednesday, December 17, 2014 13:03:28
+STATUS: D:\OrCAD\OrCAD_16.6_Lite\tools\Capture\sch2cap -f "E:\Projects\Elektronik\Arduino\NiMH-Lader\docs\Sim\Test\LM358.lib" -o "E:\Projects\Elektronik\Arduino\NiMH-Lader\docs\Sim\Test\LM358.olb" -i D:\Users\Jedzia.pubsiX\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini
+INFO(ORSCH-1029): Using existing library 'D:\OrCAD\OrCAD_16.6_Lite\tools\Capture\Library\PSpice\modeled.etc'.
+INFO(ORSCH-1031): Created new library 'E:\Projects\Elektronik\Arduino\NiMH-Lader\docs\Sim\Test\LM358.olb'.
+STATUS: Translator stopped at Wednesday, December 17, 2014 13:03:28
+STATUS: 0 Error messages, 0 Warning messages
