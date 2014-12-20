@@ -18442,7 +18442,7 @@ Source: http://www.irf.com/product-info/datasheets/data/irfz48z.pdf</description
 <part name="JP21" library="bigger" deviceset="JP1E" device=""/>
 <part name="R37" library="rcl" deviceset="R-EU_" device="0204/7" value="0"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="R35" library="rcl" deviceset="R-EU_" device="0204/7" value="0"/>
+<part name="R35" library="rcl" deviceset="R-EU_" device="0207/10" value="0"/>
 <part name="R36" library="rcl" deviceset="R-EU_" device="0204/7" value="0"/>
 <part name="R38" library="rcl" deviceset="R-EU_" device="0204/7" value="0"/>
 <part name="JP22" library="bigger" deviceset="JP1E" device=""/>
