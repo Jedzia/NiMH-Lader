@@ -29,8 +29,8 @@
 
 #define chargeLed1Pin 13      // select the pin for the LED
 #define chargePWM1Pin 3    // select the pin for the LED
-#define dischargePWM1Pin 10    // select the pin for the LED
-#define chargeLed2Pin 5      // select the pin for the LED
+#define dischargePWM1Pin 5    // select the pin for the LED
+#define chargeLed2Pin 10      // select the pin for the LED
 #define chargePWM2Pin 11    // select the pin for the LED
 #define dischargePWM2Pin 9    // select the pin for the LED
 //#define PWMout 12
