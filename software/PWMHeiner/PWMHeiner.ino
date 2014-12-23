@@ -58,8 +58,8 @@ const float REF = 2.245;
 const long interval = 139;
 
 //                            display / real
-const float realCurrentNorm = 0.280 / 0.250;
-const float realCurrentDisNorm = 0.360 / 0.698;
+const float realCurrentNorm = 0.470 / 0.490;
+const float realCurrentDisNorm = 0.580 / 3.730;
 
 float currentSet = 0.5;
 float maxVoltage = 0;
@@ -425,19 +425,19 @@ void loop() {
       if (appState == Discharging)
       {
         analogReference(DEFAULT);
-        delay(300);
+        delay(400);
         battDisCurrent = analogRead(sensorPin3);
         delay(1);
         battDisCurrent = analogRead(sensorPin3);
         delay(1);
         analogReference(EXTERNAL);
-        delay(300);
+        delay(400);
         analogRead(sensorPin3);
-        delay(1);
+        delay(2);
         analogRead(sensorPin2);
-        delay(1);
+        delay(2);
         analogRead(sensorPin);
-        delay(1);
+        delay(2);
         //fbattDisCurrent = REF / 1024 * battDisCurrent;
         fbattDisCurrent = 5.0 / 1024 * battDisCurrent;
       }
@@ -648,8 +648,8 @@ void loop() {
 
       Serial.print(F("|Idis: "));
       Serial.print(fbattDisCurrent, 3);
-      //Serial.print(F("|Idis: "));
-      //Serial.print(fbattDisCurrent*realCurrentDisNorm, 3);
+      Serial.print(F("|"));
+      Serial.print(fbattDisCurrent*realCurrentDisNorm, 3);
 
       Serial.print(F("|Bavg: "));
       Serial.print(averageBatt, 3);
