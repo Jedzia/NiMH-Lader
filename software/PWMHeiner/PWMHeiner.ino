@@ -13,6 +13,7 @@
  The comments may lead you in the wrong direction, this is an early bird
  */
 #define DEBUG_I
+#define PROTOTYPE_BOARD
 
 
 #include <Time.h>
@@ -30,7 +31,7 @@
 #define chargeLed1Pin 13      // select the pin for the LED
 #define chargePWM1Pin 3    // select the pin for the LED
 #define dischargePWM1Pin 5    // select the pin for the LED
-#define chargeLed2Pin 10      // select the pin for the LED
+#define chargeLed2Pin 10      // on testboard is PWM for discharge
 #define chargePWM2Pin 11    // select the pin for the LED
 #define dischargePWM2Pin 9    // select the pin for the LED
 //#define PWMout 12
@@ -212,10 +213,11 @@ void setup() {
   OCR2A = 159;  // top/overflow value is 159 => produces a 100 kHz PWM
   pinMode(chargePWM1Pin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 3)
 
-  
+
   // declare the chargeLed1Pin as an OUTPUT:
   pinMode(chargeLed1Pin, OUTPUT);
   pinMode(dischargePWM1Pin, OUTPUT);
+  pinMode(chargeLed2Pin, OUTPUT);
 
 
   pinMode(butDown, INPUT_PULLUP);
@@ -244,11 +246,11 @@ void setup() {
 
   Serial.begin(9600);
   Serial.println(F("One Wire Bus Mode is:"));
-  if(sensors.isParasitePowerMode()== true)
-  Serial.println(F("in ParasitePower Mode."));
+  if (sensors.isParasitePowerMode() == true)
+    Serial.println(F("in ParasitePower Mode."));
   else
-  Serial.println(F("in normal Powered Mode."));
-  
+    Serial.println(F("in normal Powered Mode."));
+
 }
 
 void loop() {
@@ -412,19 +414,49 @@ void loop() {
       }
     }
 
+
+    /*if ( ( skipcounter = 63 ) ) {
+      }*/
+
     if ( ( skipcounter >= 64 ) /*&& Serial.available()*/) {
       skipcounter = 0;
+
+
+      if (appState == Discharging)
+      {
+        analogReference(DEFAULT);
+        delay(300);
+        battDisCurrent = analogRead(sensorPin3);
+        delay(1);
+        battDisCurrent = analogRead(sensorPin3);
+        delay(1);
+        analogReference(EXTERNAL);
+        delay(300);
+        analogRead(sensorPin3);
+        delay(1);
+        analogRead(sensorPin2);
+        delay(1);
+        analogRead(sensorPin);
+        delay(1);
+        //fbattDisCurrent = REF / 1024 * battDisCurrent;
+        fbattDisCurrent = 5.0 / 1024 * battDisCurrent;
+      }
+
+
 
       delay(1);
 
       lowMeasureTime = millis();
       digitalWrite(dischargePWM1Pin, LOW);
+#ifdef PROTOTYPE_BOARD
+      digitalWrite(chargeLed2Pin, LOW);
+#endif
       analogWrite(chargePWM1Pin, 0);
       sensors.requestTemperatures();
       float temp1 = sensors.getTempCByIndex(0);
       float temp2 = sensors.getTempCByIndex(1);
       if (appState == Discharging)
-        delay(100);
+        delay(1);
       else
         delay(300 + sensorValue * 2);
       battVoltage = analogRead(sensorPin);
@@ -435,7 +467,7 @@ void loop() {
       delay(1);
 
       lowMeasureTime = millis() - lowMeasureTime;
-      
+
       /*Serial.print(F("trendp="));
       Serial.print(trendp, DEC);
       Serial.print(F(" trend[0]="));
@@ -597,12 +629,12 @@ void loop() {
       //Serial.print(buf[4]);
       //Serial.print("%s", (char*)ftoa(buf, f, 3));
       //if (appState == Charging)
-//      {
-//        float diff = fbattCurrent - currentSet;
-//        Serial.print(F("|diff: "));
-//        Serial.print(diff, 3);
-//        //float abso = abs(diff);
-//      }
+      //      {
+      //        float diff = fbattCurrent - currentSet;
+      //        Serial.print(F("|diff: "));
+      //        Serial.print(diff, 3);
+      //        //float abso = abs(diff);
+      //      }
       Serial.print(F("|Iset: "));
       Serial.print(currentSet, 3);
       Serial.print(F("|Ichg: "));
@@ -611,7 +643,7 @@ void loop() {
       //Serial.print(battCurrent, DEC);
       //Serial.print(F("|IchgR: "));
       Serial.print(F("|"));
-      Serial.print(fbattCurrent*realCurrentNorm, 3);
+      Serial.print(fbattCurrent * realCurrentNorm, 3);
 
 
       Serial.print(F("|Idis: "));
@@ -721,10 +753,16 @@ void loop() {
   if (appState == Discharging)
   {
     digitalWrite(dischargePWM1Pin, HIGH);
+#ifdef PROTOTYPE_BOARD
+    digitalWrite(chargeLed2Pin, HIGH);
+#endif
   }
   else
   {
     digitalWrite(dischargePWM1Pin, LOW);
+#ifdef PROTOTYPE_BOARD
+    digitalWrite(chargeLed2Pin, LOW);
+#endif
   }
 
 
