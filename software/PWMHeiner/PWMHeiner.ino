@@ -22,7 +22,7 @@
 #include <DallasTemperature.h>
 #include "trend.h"
 
-#define PWMMAX 90        // restrict pwm max-value for testing.
+#define PWMMAX 190        // restrict pwm max-value for testing.
 
 #define sensorPin A0    // Battery Voltage
 #define sensorPin2 A1    // Battery charge current

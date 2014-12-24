@@ -33,9 +33,9 @@
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -46,20 +46,20 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -92,7 +92,7 @@
 <layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
 <layer number="124" name="bTestmark" color="7" fill="1" visible="no" active="yes"/>
-<layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="126" name="_bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="127" name="_tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -2667,7 +2667,7 @@ design rules under a new name.</description>
 <element name="L1" library="rcl" package="0207/12" value="100µ" x="81.915" y="27.94" rot="R180"/>
 <element name="D2" library="diode" package="DO41-10" value="1N4004" x="78.74" y="21.59" rot="R180"/>
 <element name="JP13" library="bigger" package="JP1" value="" x="74.93" y="15.24" rot="R270"/>
-<element name="R29" library="rcl" package="0207/12" value="1k" x="72.39" y="10.16" rot="R180"/>
+<element name="R29" library="rcl" package="0207/12" value="100k" x="72.39" y="10.16" rot="R180"/>
 <element name="JP15" library="bigger" package="JP1" value="" x="85.09" y="15.24" rot="R90"/>
 <element name="X2" library="con-wago-500" package="W237-102" value="VCC" x="102.87" y="72.39" rot="R180">
 <attribute name="OC_NEWARK" value="70K9898" x="115.57" y="59.69" size="1.778" layer="27" rot="R180" display="off"/>
@@ -2681,8 +2681,8 @@ design rules under a new name.</description>
 <element name="R12" library="rcl" package="0414/15" value="1R666" x="53.34" y="-10.16" rot="R180"/>
 <element name="R13" library="rcl" package="0207/10" value="100k" x="95.25" y="54.61" rot="R180"/>
 <element name="R21" library="rcl" package="0204/7" value="1k" x="49.53" y="11.43" rot="R180"/>
-<element name="R30" library="rcl" package="0207/10" value="100k" x="50.8" y="19.05" rot="R270"/>
-<element name="C7" library="rcl" package="E5-5" value="10µ" x="44.45" y="7.62" rot="R180"/>
+<element name="R30" library="rcl" package="0207/10" value="10M" x="50.8" y="19.05" rot="R270"/>
+<element name="C7" library="rcl" package="E5-5" value="100n" x="44.45" y="7.62" rot="R180"/>
 <element name="R27" library="rcl" package="0207/10" value="10k" x="48.26" y="25.4" rot="R90"/>
 <element name="C4" library="rcl" package="E5-5" value="3µ3" x="57.15" y="7.62"/>
 <element name="R18" library="rcl" package="0207/10" value="100k" x="40.64" y="29.21"/>
@@ -2690,19 +2690,25 @@ design rules under a new name.</description>
 <element name="R20" library="rcl" package="0207/15" value="1k" x="55.88" y="20.32" rot="R270"/>
 <element name="R17" library="rcl" package="0207/10" value="12k" x="40.64" y="24.13" rot="R180"/>
 <element name="C1" library="rcl" package="C025_050-025X075" value="100n" x="26.67" y="11.43" rot="R180"/>
-<element name="R11" library="rcl" package="0204/7" value="1k" x="36.195" y="40.3225" rot="R270"/>
+<element name="R11" library="rcl" package="0204/7" value="800" x="36.195" y="40.3225" rot="R270"/>
 <element name="R6" library="rcl" package="0207/10" value="470" x="-21.59" y="-10.16" rot="R180"/>
-<element name="LED3" library="bigger" package="LED5MM_BIG" value="" x="-39.37" y="-11.43" rot="R180"/>
+<element name="LED3" library="bigger" package="LED5MM_BIG" value="DIS1" x="-39.37" y="-11.43" rot="R180"/>
 <element name="S3" library="bigger" package="TACTILE-PTH-UMSE" value="Start" x="-34.29" y="26.67" rot="R270"/>
 <element name="S6" library="bigger" package="TACTILE-PTH-UMSE" value="Discharge" x="-16.51" y="26.67" rot="R270"/>
 <element name="R5" library="rcl" package="0207/10" value="470" x="-21.59" y="-6.35"/>
-<element name="LED2" library="bigger" package="LED5MM_BIG" value="CHRG2" x="-33.02" y="-3.81" rot="R180"/>
+<element name="LED2" library="bigger" package="LED5MM_BIG" value="CHRG2" x="-33.02" y="-3.81" smashed="yes" rot="R180">
+<attribute name="NAME" x="-26.67" y="0.1016" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="-27.3304" y="1.8034" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
 <element name="Q1" library="transistor-fet" package="TO220" value="BUZ11" x="80.01" y="-7.62" rot="R270"/>
 <element name="IC1" library="AWJLEagleLib" package="TO92" value="TL431" x="12.7" y="36.83"/>
 <element name="R4" library="rcl" package="0204/7" value="200" x="29.21" y="35.56"/>
 <element name="R2" library="rcl" package="0207/10" value="4k7" x="22.86" y="41.91" rot="R270"/>
 <element name="R7" library="rcl" package="0207/10" value="470" x="-21.59" y="-13.97" rot="R180"/>
-<element name="LED4" library="bigger" package="LED5MM_BIG" value="" x="-33.02" y="-11.43" rot="R180"/>
+<element name="LED4" library="bigger" package="LED5MM_BIG" value="DIS2" x="-33.02" y="-11.43" smashed="yes" rot="R180">
+<attribute name="NAME" x="-27.305" y="-16.4084" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="-27.3304" y="-14.7066" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
 <element name="R14" library="rcl" package="0207/10" value="0" x="40.64" y="21.2725"/>
 <element name="C2" library="rcl" package="E5-5" value="3µ3" x="40.64" y="17.4625"/>
 <element name="Q3" library="transistor-fet" package="TO220" value="BUZ171" x="104.14" y="21.59" rot="R180"/>
@@ -2757,6 +2763,7 @@ design rules under a new name.</description>
 <element name="JP16" library="bigger" package="JP1" value="" x="78.74" y="60.96" rot="R270"/>
 <element name="R39" library="rcl" package="0204/7" value="*" x="39.37" y="12.54125" rot="R180"/>
 <element name="JP25" library="bigger" package="JP1" value="" x="16.51" y="46.355" rot="R180"/>
+<element name="R40" library="rcl" package="0207/10" value="1M" x="77.47" y="5.08" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2880,6 +2887,7 @@ design rules under a new name.</description>
 <vertex x="-41.91" y="53.34"/>
 <vertex x="-43.18" y="-15.24"/>
 </polygon>
+<contactref element="R40" pad="1"/>
 </signal>
 <signal name="3V">
 <contactref element="U$2" pad="3V"/>
@@ -3350,8 +3358,11 @@ design rules under a new name.</description>
 <wire x1="63.5" y1="30.48" x2="68.58" y2="30.48" width="0.8128" layer="16"/>
 <wire x1="68.58" y1="30.48" x2="68.58" y2="20.32" width="0.8128" layer="16"/>
 <wire x1="68.58" y1="20.32" x2="71.12" y2="17.78" width="0.8128" layer="16"/>
-<wire x1="71.12" y1="17.78" x2="71.12" y2="-5.08" width="0.8128" layer="16"/>
+<wire x1="71.12" y1="17.78" x2="71.12" y2="5.08" width="0.8128" layer="16"/>
+<wire x1="71.12" y1="5.08" x2="71.12" y2="-5.08" width="0.8128" layer="16"/>
 <wire x1="71.12" y1="-5.08" x2="73.66" y2="-5.08" width="0.8128" layer="16"/>
+<contactref element="R40" pad="2"/>
+<wire x1="72.39" y1="5.08" x2="71.12" y2="5.08" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$27">
 <contactref element="IC1" pad="3"/>

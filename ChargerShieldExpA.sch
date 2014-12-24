@@ -18366,7 +18366,7 @@ Source: http://www.irf.com/product-info/datasheets/data/irfz48z.pdf</description
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="D2" library="diode" deviceset="1N4004" device=""/>
 <part name="JP13" library="bigger" deviceset="JP1E" device=""/>
-<part name="R29" library="rcl" deviceset="R-EU_" device="0207/12" value="1k"/>
+<part name="R29" library="rcl" deviceset="R-EU_" device="0207/12" value="100k"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="JP15" library="bigger" deviceset="JP1E" device=""/>
@@ -18381,8 +18381,8 @@ Source: http://www.irf.com/product-info/datasheets/data/irfz48z.pdf</description
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="0207/10" value="100k"/>
 <part name="R21" library="rcl" deviceset="R-EU_" device="0204/7" value="1k"/>
-<part name="R30" library="rcl" deviceset="R-EU_" device="0207/10" value="100k"/>
-<part name="C7" library="rcl" deviceset="CPOL-EU" device="E5-5" value="10µ"/>
+<part name="R30" library="rcl" deviceset="R-EU_" device="0207/10" value="10M"/>
+<part name="C7" library="rcl" deviceset="CPOL-EU" device="E5-5" value="100n"/>
 <part name="R27" library="rcl" deviceset="R-EU_" device="0207/10" value="10k"/>
 <part name="C4" library="rcl" deviceset="CPOL-EU" device="E5-5" value="3µ3"/>
 <part name="R18" library="rcl" deviceset="R-EU_" device="0207/10" value="100k"/>
@@ -18393,9 +18393,9 @@ Source: http://www.irf.com/product-info/datasheets/data/irfz48z.pdf</description
 <part name="C1" library="rcl" deviceset="C-EU" device="025_050-025X075" value="100n"/>
 <part name="P+5" library="supply1" deviceset="VCC" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="R11" library="rcl" deviceset="R-EU_" device="0204/7" value="1k"/>
+<part name="R11" library="rcl" deviceset="R-EU_" device="0204/7" value="800"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="0207/10" value="470"/>
-<part name="LED3" library="bigger" deviceset="LED" device="5MM_BIG"/>
+<part name="LED3" library="bigger" deviceset="LED" device="5MM_BIG" value="DIS1"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="S3" library="bigger" deviceset="SWITCH-MOMENTARY-2" device="PTH_UMSE" value="Start"/>
 <part name="S6" library="bigger" deviceset="SWITCH-MOMENTARY-2" device="PTH_UMSE" value="Discharge"/>
@@ -18408,7 +18408,7 @@ Source: http://www.irf.com/product-info/datasheets/data/irfz48z.pdf</description
 <part name="R4" library="rcl" deviceset="R-EU_" device="0204/7" value="200"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="0207/10" value="4k7"/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="0207/10" value="470"/>
-<part name="LED4" library="bigger" deviceset="LED" device="5MM_BIG"/>
+<part name="LED4" library="bigger" deviceset="LED" device="5MM_BIG" value="DIS2"/>
 <part name="R14" library="rcl" deviceset="R-EU_" device="0207/10" value="0"/>
 <part name="C2" library="rcl" deviceset="CPOL-EU" device="E5-5" value="3µ3"/>
 <part name="Q3" library="transistor-fet" deviceset="BUZ171" device=""/>
@@ -18474,6 +18474,7 @@ Source: http://www.irf.com/product-info/datasheets/data/irfz48z.pdf</description
 <part name="JP16" library="bigger" deviceset="JP1E" device=""/>
 <part name="R39" library="rcl" deviceset="R-EU_" device="0204/7" value="*"/>
 <part name="JP25" library="bigger" deviceset="JP1E" device=""/>
+<part name="R40" library="rcl" deviceset="R-EU_" device="0207/10" value="1M"/>
 </parts>
 <sheets>
 <sheet>
@@ -19181,6 +19182,9 @@ Current</text>
 <text x="205.74" y="147.32" size="5.08" layer="105">Battery
 Voltage</text>
 <text x="234.95" y="6.35" size="2.54" layer="105">by Jedzia</text>
+<text x="217.805" y="135.255" size="1.778" layer="96">*1k</text>
+<text x="229.87" y="127.635" size="1.778" layer="96">*10µ</text>
+<text x="245.11" y="129.54" size="1.778" layer="96" rot="R90">*100k</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
@@ -19233,8 +19237,8 @@ Voltage</text>
 <instance part="C1" gate="G$1" x="17.78" y="39.37"/>
 <instance part="P+5" gate="VCC" x="16.51" y="64.77"/>
 <instance part="GND12" gate="1" x="26.67" y="19.05"/>
-<instance part="R11" gate="G$1" x="49.53" y="72.39"/>
-<instance part="Q1" gate="G$1" x="62.23" y="74.93"/>
+<instance part="R11" gate="G$1" x="36.83" y="72.39"/>
+<instance part="Q1" gate="G$1" x="50.8" y="74.93"/>
 <instance part="P+7" gate="1" x="34.29" y="64.77"/>
 <instance part="R14" gate="G$1" x="66.04" y="57.15" rot="MR0"/>
 <instance part="C2" gate="G$1" x="72.39" y="40.64"/>
@@ -19262,6 +19266,7 @@ Voltage</text>
 <instance part="JP17" gate="A" x="240.03" y="77.47"/>
 <instance part="JP16" gate="A" x="236.22" y="100.33"/>
 <instance part="R39" gate="G$1" x="134.62" y="72.39" rot="R90"/>
+<instance part="R40" gate="G$1" x="43.18" y="40.64" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -19378,6 +19383,10 @@ Voltage</text>
 <wire x1="72.39" y1="35.56" x2="72.39" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="72.39" y1="22.86" x2="58.42" y2="22.86" width="0.1524" layer="91"/>
 <junction x="58.42" y="22.86"/>
+<pinref part="R40" gate="G$1" pin="1"/>
+<wire x1="43.18" y1="35.56" x2="43.18" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="22.86" x2="52.07" y2="22.86" width="0.1524" layer="91"/>
+<junction x="52.07" y="22.86"/>
 </segment>
 <segment>
 <pinref part="R26" gate="G$1" pin="1"/>
@@ -19572,10 +19581,10 @@ Voltage</text>
 <wire x1="210.82" y1="107.95" x2="180.34" y2="107.95" width="0.1524" layer="91"/>
 <junction x="210.82" y="107.95"/>
 <wire x1="180.34" y1="107.95" x2="180.34" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="91.44" x2="68.58" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="77.47" x2="68.58" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="91.44" x2="57.15" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="57.15" y1="77.47" x2="57.15" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
-<wire x1="68.58" y1="77.47" x2="67.31" y2="77.47" width="0.1524" layer="91"/>
+<wire x1="57.15" y1="77.47" x2="55.88" y2="77.47" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -19658,7 +19667,11 @@ Voltage</text>
 <segment>
 <pinref part="Q1" gate="G$1" pin="G"/>
 <pinref part="R11" gate="G$1" pin="2"/>
-<wire x1="57.15" y1="72.39" x2="54.61" y2="72.39" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="72.39" x2="43.18" y2="72.39" width="0.1524" layer="91"/>
+<pinref part="R40" gate="G$1" pin="2"/>
+<wire x1="43.18" y1="72.39" x2="41.91" y2="72.39" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="45.72" x2="43.18" y2="72.39" width="0.1524" layer="91"/>
+<junction x="43.18" y="72.39"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -19673,25 +19686,22 @@ Voltage</text>
 <net name="PWM_DISCHARGE1" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
-<wire x1="44.45" y1="72.39" x2="40.64" y2="72.39" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="72.39" x2="40.64" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="83.82" x2="54.61" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="83.82" x2="54.61" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="88.9" x2="49.53" y2="88.9" width="0.1524" layer="91"/>
-<label x="49.53" y="88.9" size="2.54" layer="95" rot="R180" xref="yes"/>
+<wire x1="31.75" y1="72.39" x2="27.94" y2="72.39" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="72.39" x2="27.94" y2="90.17" width="0.1524" layer="91"/>
+<label x="27.94" y="90.17" size="1.6764" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
 <wire x1="55.88" y1="57.15" x2="52.07" y2="57.15" width="0.1524" layer="91"/>
-<wire x1="69.85" y1="72.39" x2="69.85" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="69.85" y1="63.5" x2="52.07" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="57.15" y1="72.39" x2="57.15" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="57.15" y1="63.5" x2="52.07" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="52.07" y1="63.5" x2="52.07" y2="57.15" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="52.07" y1="57.15" x2="52.07" y2="45.72" width="0.1524" layer="91"/>
 <junction x="52.07" y="57.15"/>
 <pinref part="Q1" gate="G$1" pin="S"/>
-<wire x1="67.31" y1="72.39" x2="69.85" y2="72.39" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="72.39" x2="57.15" y2="72.39" width="0.1524" layer="91"/>
 <pinref part="JP10" gate="A" pin="1"/>
 </segment>
 </net>
