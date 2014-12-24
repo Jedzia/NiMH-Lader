@@ -55,8 +55,8 @@ const float TREND_DELTA_MAX = 0.0012;
 const int TREND_DELTA_MAX_COUNT = 20;
 const float TEMP_MAX = 7.0;
 const float TEMP_DELTA_MAX = 0.99;
-const float PWMSENSORTOLERANCE = 0.05;
-const float PWMUPDOWNSTEP = 0.05;
+const float PWMSENSORTOLERANCE = 0.01;
+const float PWMUPDOWNSTEP = 0.01;
 
 //const float REF = 5.00;
 const float REF = 2.245;
@@ -268,7 +268,7 @@ void setup() {
 
 }
 
-void checkStates()
+void checkStates(void)
 {
   if (debTest.fell())
   {
@@ -336,10 +336,55 @@ void delayedCheckStates(int millis10)
     debS6.update();
 
     checkStates();
+
+    if (i % 10 == 0) {
+      updateUpDown();
+    }
+
     delay(10);
   }
 
 }
+
+void updateUpDown(void) {
+  if (appState == Charging)
+  {
+    if (!debDown.read() && (currentSet >= PWMUPDOWNSTEP))
+    {
+      currentSet -= PWMUPDOWNSTEP;
+#ifdef DEBUG_I
+      Serial.print(F("ISet: "));
+      Serial.println(currentSet, 3);
+#endif
+    }
+    else if (!debUp.read() && (currentSet <= (REF - (REF * 0.04))))
+    {
+      currentSet += PWMUPDOWNSTEP;
+#ifdef DEBUG_I
+      Serial.print(F("ISet: "));
+      Serial.println(currentSet, 3);
+#endif
+    }
+  }
+  else
+  {
+    if (!debDown.read() && (sensorValue > 0))
+    {
+      sensorValue--;
+      Serial.print(F("PWM: "));
+      Serial.println(sensorValue, DEC);
+    }
+    else if (!debUp.read() && (sensorValue < PWMMAX))
+    {
+      sensorValue++;
+      Serial.print(F("PWM: "));
+      Serial.println(sensorValue, DEC);
+    }
+
+  }
+}
+
+
 
 void loop() {
 
@@ -356,41 +401,7 @@ void loop() {
     // save the last time you blinked the LED
     previousMillis = currentMillis;
 
-    if (appState == Charging)
-    {
-      if (!debDown.read() && (currentSet >= PWMUPDOWNSTEP))
-      {
-        currentSet -= PWMUPDOWNSTEP;
-#ifdef DEBUG_I
-        Serial.print(F("ISet: "));
-        Serial.println(currentSet, 3);
-#endif
-      }
-      else if (!debUp.read() && (currentSet <= (REF - (REF * 0.04))))
-      {
-        currentSet += PWMUPDOWNSTEP;
-#ifdef DEBUG_I
-        Serial.print(F("ISet: "));
-        Serial.println(currentSet, 3);
-#endif
-      }
-    }
-    else
-    {
-      if (!debDown.read() && (sensorValue > 0))
-      {
-        sensorValue--;
-        Serial.print(F("PWM: "));
-        Serial.println(sensorValue, DEC);
-      }
-      else if (!debUp.read() && (sensorValue < PWMMAX))
-      {
-        sensorValue++;
-        Serial.print(F("PWM: "));
-        Serial.println(sensorValue, DEC);
-      }
-
-    }
+    updateUpDown();
 
     float f = 0;
     delay(1);
