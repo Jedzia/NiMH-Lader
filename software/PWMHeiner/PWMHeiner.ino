@@ -43,6 +43,8 @@
 #define butUp       7
 #define butStart    8
 #define butTest    12
+#define butS5       6
+#define butS6     SDA
 
 
 const float CHARGE_ENDVOLTAGE = 1.54;
@@ -92,6 +94,8 @@ Bounce debDown  = Bounce();
 Bounce debUp    = Bounce();
 Bounce debStart    = Bounce();
 Bounce debTest    = Bounce();
+Bounce debS5    = Bounce();
+Bounce debS6    = Bounce();
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 OneWire oneWire(ONE_WIRE_BUS);
 // Pass our oneWire reference to Dallas Temperature.
@@ -239,6 +243,14 @@ void setup() {
   debTest.attach(butTest);
   debTest.interval(25);
 
+  pinMode(butS5, INPUT_PULLUP);
+  debS5.attach(butS5);
+  debS5.interval(25);
+
+  pinMode(butS6, INPUT_PULLUP);
+  debS6.attach(butS6);
+  debS6.interval(25);
+
   average.clear();
   trend.clear();
   trendTemp.clear();
@@ -256,14 +268,8 @@ void setup() {
 
 }
 
-void loop() {
-
-  unsigned long currentMillis = millis();
-  debDown.update();
-  debUp.update();
-  debStart.update();
-  debTest.update();
-
+void checkStates()
+{
   if (debTest.fell())
   {
     if (appState != Discharging)
@@ -305,6 +311,46 @@ void loop() {
     chargeCapacity = 0;
     previousMeasureTime = millis();
   }
+
+  if (!debS5.read())
+  {
+    Serial.println(F("butS5 pressed."));
+  }
+
+  if (!debS6.read())
+  {
+    Serial.println(F("butS6 pressed."));
+  }
+
+}
+
+void delayedCheckStates(int millis10)
+{
+  for (int i = 0; i < millis10; i++)
+  {
+    debDown.update();
+    debUp.update();
+    debStart.update();
+    debTest.update();
+    debS5.update();
+    debS6.update();
+
+    checkStates();
+    delay(10);
+  }
+
+}
+
+void loop() {
+
+  unsigned long currentMillis = millis();
+  debDown.update();
+  debUp.update();
+  debStart.update();
+  debTest.update();
+
+  checkStates();
+
 
   if (currentMillis - previousMillis >= interval) {
     // save the last time you blinked the LED
@@ -428,13 +474,15 @@ void loop() {
       if (appState == Discharging)
       {
         analogReference(DEFAULT);
-        delay(400);
+        //delay(400);
+        delayedCheckStates(40);
         battDisCurrent = analogRead(sensorPin3);
         delay(1);
         battDisCurrent = analogRead(sensorPin3);
         delay(1);
         analogReference(EXTERNAL);
-        delay(400);
+        //delay(400);
+        delayedCheckStates(40);
         analogRead(sensorPin3);
         delay(2);
         analogRead(sensorPin2);
@@ -461,7 +509,8 @@ void loop() {
       if (appState == Discharging)
         delay(1);
       else
-        delay(300 + sensorValue * 2);
+        //delay(300 + sensorValue * 2);
+        delayedCheckStates(30 + (sensorValue / 10) * 2);
       battVoltage = analogRead(sensorPin);
       average.update(battVoltage);
       float averageBatt = REF / 1024 * average.averagef();
@@ -652,7 +701,7 @@ void loop() {
       Serial.print(F("|Idis: "));
       Serial.print(fbattDisCurrent, 3);
       Serial.print(F("|"));
-      Serial.print(fbattDisCurrent*realCurrentDisNorm, 3);
+      Serial.print(fbattDisCurrent * realCurrentDisNorm, 3);
 
       Serial.print(F("|Bavg: "));
       Serial.print(averageBatt, 3);
