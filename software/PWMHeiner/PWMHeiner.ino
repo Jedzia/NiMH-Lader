@@ -51,7 +51,10 @@ const float DISCHARGE_ENDVOLTAGE = 1.02;
 //const float TREND_DELTA_MAX = -0.0005;
 const float TREND_DELTA_MAX = 0.0012;
 const int TREND_DELTA_MAX_COUNT = 20;
-const float TEMP_DELTA_MAX = 0.59;
+const float TEMP_MAX = 7.0;
+const float TEMP_DELTA_MAX = 0.99;
+const float PWMSENSORTOLERANCE = 0.05;
+const float PWMUPDOWNSTEP = 0.05;
 
 //const float REF = 5.00;
 const float REF = 2.245;
@@ -309,17 +312,17 @@ void loop() {
 
     if (appState == Charging)
     {
-      if (!debDown.read() && (currentSet >= 0.05))
+      if (!debDown.read() && (currentSet >= PWMUPDOWNSTEP))
       {
-        currentSet -= 0.05;
+        currentSet -= PWMUPDOWNSTEP;
 #ifdef DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
 #endif
       }
-      else if (!debUp.read() && (currentSet <= (REF - 0.20)))
+      else if (!debUp.read() && (currentSet <= (REF - (REF * 0.04))))
       {
-        currentSet += 0.05;
+        currentSet += PWMUPDOWNSTEP;
 #ifdef DEBUG_I
         Serial.print(F("ISet: "));
         Serial.println(currentSet, 3);
@@ -376,7 +379,7 @@ void loop() {
         }
         else*/
         {
-          if (diff >= 0.05 )
+          if (diff >= PWMSENSORTOLERANCE)
           {
             sensorValue--;
 #ifdef DEBUG_PWM
@@ -386,7 +389,7 @@ void loop() {
             Serial.println(diff, 3);
 #endif
           }
-          else if (diff <= -0.05 )
+          else if (diff <= -PWMSENSORTOLERANCE )
           {
             sensorValue++;
 #ifdef DEBUG_PWM
@@ -539,7 +542,7 @@ void loop() {
           }
         }
 
-        if (( temp2 - temp1) > 7.0 )
+        if (( temp2 - temp1) > TEMP_MAX )
         {
           //runCharge = false;
           appState = Running;
