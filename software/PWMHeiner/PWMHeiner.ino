@@ -30,8 +30,8 @@
 
 #define chargeLed1Pin 13      // select the pin for the LED
 #define chargePWM1Pin 3    // select the pin for the LED
-#define dischargePWM1Pin 5    // select the pin for the LED
-#define chargeLed2Pin 10      // on testboard is PWM for discharge
+#define dischargePWM1Pin 10    // select the pin for the LED
+#define chargeLed2Pin 5      // on testboard is PWM for discharge
 #define chargePWM2Pin 11    // select the pin for the LED
 #define dischargePWM2Pin 9    // select the pin for the LED
 //#define PWMout 12
@@ -68,8 +68,8 @@ const long interval = 139;
 #endif
 
 //                            display / real
-const float realCurrentNorm = 0.470 / 0.490;
-const float realCurrentDisNorm = 0.580 / 3.730;
+const float realCurrentNorm = 0.931 / 1.000 ;
+const float realCurrentDisNorm = 0.733 / 4.272;
 
 float currentSet = 0.5;
 float maxVoltage = 0;
@@ -254,7 +254,7 @@ setupBuck();
   // declare the chargeLed1Pin as an OUTPUT:
   pinMode(chargeLed1Pin, OUTPUT);
   pinMode(dischargePWM1Pin, OUTPUT);
-  pinMode(chargeLed2Pin, OUTPUT);
+  //pinMode(chargeLed2Pin, OUTPUT);
 
 
   pinMode(butDown, INPUT_PULLUP);
@@ -558,7 +558,7 @@ void loop() {
       lowMeasureTime = millis();
       digitalWrite(dischargePWM1Pin, LOW);
 #ifdef PROTOTYPE_BOARD
-      digitalWrite(chargeLed2Pin, LOW);
+      //digitalWrite(chargeLed2Pin, LOW);
 #endif
       analogWrite(chargePWM1Pin, 0);
       sensors.requestTemperatures();
@@ -868,14 +868,14 @@ void loop() {
   {
     digitalWrite(dischargePWM1Pin, HIGH);
 #ifdef PROTOTYPE_BOARD
-    digitalWrite(chargeLed2Pin, HIGH);
+    //digitalWrite(chargeLed2Pin, HIGH);
 #endif
   }
   else
   {
     digitalWrite(dischargePWM1Pin, LOW);
 #ifdef PROTOTYPE_BOARD
-    digitalWrite(chargeLed2Pin, LOW);
+    //digitalWrite(chargeLed2Pin, LOW);
 #endif
   }
 
