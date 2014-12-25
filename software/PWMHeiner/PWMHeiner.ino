@@ -14,7 +14,7 @@
  */
 #define DEBUG_I
 #define PROTOTYPE_BOARD
-
+//#define BUCKBOOST
 
 #include <Time.h>
 #include <Bounce2.h>
@@ -22,7 +22,7 @@
 #include <DallasTemperature.h>
 #include "trend.h"
 
-#define PWMMAX 190        // restrict pwm max-value for testing.
+#define PWMMAX 255        // restrict pwm max-value for testing.
 
 #define sensorPin A0    // Battery Voltage
 #define sensorPin2 A1    // Battery charge current
@@ -60,7 +60,12 @@ const float PWMUPDOWNSTEP = 0.01;
 
 //const float REF = 5.00;
 const float REF = 2.245;
+
+#ifdef BUCKBOOST
+const long interval = 139*40;
+#else
 const long interval = 139;
+#endif
 
 //                            display / real
 const float realCurrentNorm = 0.470 / 0.490;
@@ -79,7 +84,8 @@ float chargeCapacity = 0;
 int skipcounter = 0;
 int trendDeltaMaxCounter = 0;
 //int sensorValue = 128;  // variable to store the value coming from the sensor
-int sensorValue = 0;  // variable to store the value coming from the sensor
+int sensorValue = 0;  // buck pwm sollwert
+int sensorValue2 = 0;  // boost pwm 
 int battVoltage = 0;
 int battLoadVoltage = 0;
 int battCurrent = 0;
@@ -210,16 +216,40 @@ void printDigitsWithColon(int digits) {
   printDigits(digits);
 }
 
+void setupBuckBoost(){
+// Set timers 0, 1, and 2 to non-inverting fast PWM mode with prescalers of 1
+TCCR0A = _BV(COM0A1)|_BV(COM0B1)|_BV(WGM01)|_BV(WGM00);
+TCCR0B = _BV(CS00);
+TCCR1A = _BV(COM1A1)|_BV(COM1B1)|_BV(WGM11);
+TCCR1B = _BV(WGM12)|_BV(WGM13)|_BV(CS10);
+TCCR2A = _BV(COM2A1)|_BV(COM2B1)|_BV(WGM21)|_BV(WGM20);
+TCCR2B = _BV(CS20);
+}
+
+void setupBuck(){
+  TCCR2A = 0x23;
+  TCCR2B = 0x09;  // select timer2 clock as unscaled 16 MHz I/O clock
+  OCR2A = 159;  // top/overflow value is 159 => produces a 100 kHz PWM 
+
+}
+
 void setup() {
 
   analogReference(EXTERNAL);
 
-  //setPwmFrequency(chargePWM1Pin, 1);
-  TCCR2A = 0x23;
-  TCCR2B = 0x09;  // select timer2 clock as unscaled 16 MHz I/O clock
-  OCR2A = 159;  // top/overflow value is 159 => produces a 100 kHz PWM
-  pinMode(chargePWM1Pin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 3)
+  //setPwmFrequency(chargePWM1Pin, 8);
+  //setPwmFrequency(chargePWM2Pin, 1);
 
+   
+  
+  pinMode(chargePWM1Pin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 3)
+  pinMode(chargePWM2Pin, OUTPUT);  // enable the PWM output (you now have a PWM signal on digital pin 11)
+
+#ifdef BUCKBOOST
+setupBuckBoost();
+#else BUCKBOOST
+setupBuck();
+#endif
 
   // declare the chargeLed1Pin as an OUTPUT:
   pinMode(chargeLed1Pin, OUTPUT);
@@ -372,6 +402,19 @@ void updateUpDown(void) {
       Serial.println(sensorValue, DEC);
     }
 
+    if (!debS5.read() && (sensorValue2 > 0))
+    {
+      sensorValue2--;
+      Serial.print(F("PWM2: "));
+      Serial.println(sensorValue2, DEC);
+    }
+    else if (!debS6.read() && (sensorValue2 < PWMMAX))
+    {
+      sensorValue2++;
+      Serial.print(F("PWM2: "));
+      Serial.println(sensorValue2, DEC);
+    }
+
   }
 }
 
@@ -397,7 +440,7 @@ void loop() {
 
     updateUpDown();
 
-  if (!debS5.read())
+/*  if (!debS5.read())
   {
     Serial.println(F("butS5 pressed."));
   }
@@ -405,7 +448,7 @@ void loop() {
   if (!debS6.read())
   {
     Serial.println(F("butS6 pressed."));
-  }
+  }*/
 
     float f = 0;
     delay(1);
@@ -791,6 +834,8 @@ void loop() {
   if (appState == Charging)
   {
     analogWrite(chargePWM1Pin, sensorValue);
+    delay(1);
+    analogWrite(chargePWM2Pin, sensorValue2);
     //dischargeState = false;
     //appState=Running;
   }
@@ -798,6 +843,8 @@ void loop() {
   {
     //analogWrite(chargePWM1Pin, 0);
     analogWrite(chargePWM1Pin, sensorValue);
+    delay(1);
+    analogWrite(chargePWM2Pin, sensorValue2);
   }
 
 
