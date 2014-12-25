@@ -312,15 +312,6 @@ void checkStates(void)
     previousMeasureTime = millis();
   }
 
-  if (!debS5.read())
-  {
-    Serial.println(F("butS5 pressed."));
-  }
-
-  if (!debS6.read())
-  {
-    Serial.println(F("butS6 pressed."));
-  }
 
 }
 
@@ -393,8 +384,11 @@ void loop() {
   debUp.update();
   debStart.update();
   debTest.update();
+    debS5.update();
+    debS6.update();
 
   checkStates();
+
 
 
   if (currentMillis - previousMillis >= interval) {
@@ -402,6 +396,16 @@ void loop() {
     previousMillis = currentMillis;
 
     updateUpDown();
+
+  if (!debS5.read())
+  {
+    Serial.println(F("butS5 pressed."));
+  }
+
+  if (!debS6.read())
+  {
+    Serial.println(F("butS6 pressed."));
+  }
 
     float f = 0;
     delay(1);
