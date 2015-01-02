@@ -290,6 +290,7 @@ setupBuck();
   sensors.setResolution(11);
 
   Serial.begin(9600);
+  Serial.println(F("Moin Holger:"));
   Serial.println(F("One Wire Bus Mode is:"));
   if (sensors.isParasitePowerMode() == true)
     Serial.println(F("in ParasitePower Mode."));
