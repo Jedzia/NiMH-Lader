@@ -59,7 +59,7 @@ const float PWMSENSORTOLERANCE = 0.01;
 const float PWMUPDOWNSTEP = 0.01;
 
 //const float REF = 5.00;
-const float REF = 2.245;
+const float REF = 2.208;
 
 #ifdef BUCKBOOST
 const long interval = 139*40;
