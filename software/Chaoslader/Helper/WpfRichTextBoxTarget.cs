@@ -47,7 +47,7 @@ namespace Jedzia.Arduino.Chaoslader.Application.Helper
     using System.ComponentModel;
     using System.Windows;
     using System.Text.RegularExpressions;
-    using System.Windows.Forms;
+    //using System.Windows.Forms;
     using NLog.Config;
     using NLog.Internal;
     using System.Windows.Documents;

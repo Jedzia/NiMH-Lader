@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Jedzia.Arduino.Chaoslader.Application</RootNamespace>
-    <AssemblyName>Jedzia.Arduino.Chaoslader.Application</AssemblyName>
+    <AssemblyName>Chaoslader</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -90,9 +90,6 @@
     <Compile Include="Helper\WpfRichTextBoxRowColoringRule.cs" />
     <Compile Include="Helper\WpfRichTextBoxTarget.cs" />
     <Compile Include="Helper\WpfRichTextBoxWordColoringRule.cs" />
-    <Compile Include="Logger\WpfRichTextBoxRowColoringRule.cs" />
-    <Compile Include="Logger\WpfRichTextBoxTarget.cs" />
-    <Compile Include="Logger\WpfRichTextBoxWordColoringRule.cs" />
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\IDataService.cs" />

@@ -7,6 +7,8 @@ namespace Jedzia.Arduino.Chaoslader.Application
 
     using Castle.Core.Logging;
 
+    using Jedzia.Arduino.Chaoslader.Application.Helper;
+
     using NLog;
     using NLog.Config;
     using NLog.Targets;
@@ -55,6 +57,29 @@ namespace Jedzia.Arduino.Chaoslader.Application
                 WrappedTarget = target
             };*/
             //SimpleConfigurator.ConfigureForTargetLogging(_wrapper, LogLevel.Trace);
+            TextLog.Document.PageWidth = 1000;
+
+            Dispatcher.Invoke(() =>
+            {
+                var target = new WpfRichTextBoxTarget
+                {
+                    Name = "RichText",
+                    Layout =
+                        //"[${longdate:useUTC=false}] :: [${level:uppercase=true}] :: ${logger}:${callsite} :: ${message} ${exception:innerFormat=tostring:maxInnerExceptionLevel=10:separator=,:format=tostring}",
+                    "${date:format=MM-dd-yyyy HH\\:mm\\:ss} [${uppercase:${level}}] ${message}",
+                    ControlName = TextLog.Name,
+                    FormName = GetType().Name,
+                    AutoScroll = true,
+                    MaxLines = 100000,
+                    UseDefaultRowColoringRules = true,
+                };
+                var asyncWrapper = new AsyncTargetWrapper { Name = "RichTextAsync", WrappedTarget = target };
+
+                LogManager.Configuration.AddTarget(asyncWrapper.Name, asyncWrapper);
+                LogManager.Configuration.LoggingRules.Insert(0, new LoggingRule("*", LogLevel.Debug, asyncWrapper));
+                LogManager.ReconfigExistingLoggers();
+
+            });
 
 
             /*Logger.Log(LogLevel.Info, "The time is: {0}", DateTime.Now);

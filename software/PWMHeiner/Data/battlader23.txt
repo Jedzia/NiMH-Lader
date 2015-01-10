@@ -1,0 +1,2 @@
+Production\V1\ChargerShieldExpA
+charge 1700mAh
