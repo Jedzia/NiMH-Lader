@@ -1,6 +1,4 @@
-
 /*
-
 
  Created by Jedzia
 
@@ -17,6 +15,7 @@
 //#define BUCKBOOST
 
 #include <Time.h>
+#include <TimeLib.h>
 #include <Bounce2.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
@@ -247,9 +246,9 @@ void setup() {
 
 #ifdef BUCKBOOST
 setupBuckBoost();
-#else BUCKBOOST
+#else // BUCKBOOST
 setupBuck();
-#endif
+#endif // BUCKBOOST
 
   // declare the chargeLed1Pin as an OUTPUT:
   pinMode(chargeLed1Pin, OUTPUT);
