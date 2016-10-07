@@ -54,7 +54,7 @@ const float DISCHARGE_ENDVOLTAGE = 1.02;
 const float TREND_DELTA_MAX = 0.0012;
 const int TREND_DELTA_MAX_COUNT = 20;
 const float TEMP_MAX = 7.0;
-const float TEMP_DELTA_MAX = 0.99;
+const float TEMP_DELTA_MAX = 1.29;
 const float PWMSENSORTOLERANCE = 0.01;
 const float PWMUPDOWNSTEP = 0.01;
 
@@ -290,7 +290,7 @@ setupBuck();
   sensors.setResolution(11);
 
   Serial.begin(9600);
-  Serial.println(F("Moin Holger:"));
+  Serial.println(F("Moin Holger, hehehe;)"));
   Serial.println(F("One Wire Bus Mode is:"));
   if (sensors.isParasitePowerMode() == true)
     Serial.println(F("in ParasitePower Mode."));
